@@ -1,0 +1,109 @@
+/* ============================================================
+   XTOPIA — Keyframes & reveal base states
+   ============================================================ */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes grain-shift {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-3%, 2%); }
+  50%  { transform: translate(2%, -2%); }
+  75%  { transform: translate(-2%, -3%); }
+  100% { transform: translate(2%, 2%); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: translate(-50%, -50%) scale(0.6); opacity: 0.9; }
+  70%  { opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(2.6); opacity: 0; }
+}
+
+@keyframes arrow-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
+}
+
+@keyframes overlay-item-in {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes loader-pulse {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 1; }
+}
+
+/* ---------- Reveal base states (JS adds .is-in) ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  will-change: transform, opacity;
+}
+[data-reveal].is-in { opacity: 1; transform: none; }
+
+[data-reveal="fade"] { transform: none; }
+[data-reveal="up-sm"] { transform: translateY(30px); }
+[data-reveal="blur"] { filter: blur(10px); }
+[data-reveal="blur"].is-in { filter: blur(0); }
+
+[data-reveal-delay="1"] { transition-delay: 0.1s; }
+[data-reveal-delay="2"] { transition-delay: 0.2s; }
+[data-reveal-delay="3"] { transition-delay: 0.3s; }
+[data-reveal-delay="4"] { transition-delay: 0.4s; }
+[data-reveal-delay="5"] { transition-delay: 0.5s; }
+
+/* Bouncing scroll arrow */
+.scroll-hint__arrow { animation: arrow-bob 1.8s var(--ease-in-out) infinite; }
+
+/* ---------- Graceful image load-in (blur-up / soft fade) ---------- */
+.lazy-img {
+  opacity: 0;
+  filter: blur(18px);
+  transform: scale(1.06);
+  transition: opacity 1s var(--ease-out), filter 1.1s var(--ease-out), transform 1.3s var(--ease-out);
+  will-change: opacity, filter, transform;
+}
+.lazy-img.is-loaded {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+/* Soft fade — for images that carry their own filters (e.g. B&W team photos) */
+.lazy-soft {
+  opacity: 0;
+  transition: opacity 1s var(--ease-out);
+  will-change: opacity;
+}
+.lazy-soft.is-loaded { opacity: 1; }
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .lazy-img, .lazy-soft { opacity: 1 !important; filter: none !important; transform: none !important; }
+  .ticker__track,
+  .logo-ticker__track { animation: none !important; }
+  .grain::after { animation: none !important; }
+
+  /* Flip statement: stack both messages instead of overlaying */
+  .flip { flex-direction: column; gap: 3rem; min-height: auto; padding-block: 8rem; }
+  .flip__a .word { opacity: 1 !important; filter: none !important; }
+  .flip__b { position: static; opacity: 1 !important; filter: none !important; }
+  .hero__headline .line > span { opacity: 1 !important; transform: none !important; filter: none !important; }
+}

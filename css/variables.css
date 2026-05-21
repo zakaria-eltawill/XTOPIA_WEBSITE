@@ -1,0 +1,55 @@
+/* ============================================================
+   XTOPIA — Design Tokens
+   ============================================================ */
+:root {
+  /* Core */
+  --c-void:        #111010;   /* Near-black — primary background */
+  --c-charcoal:    #1A1919;   /* Slightly lighter dark panels */
+  --c-cream:       #F0EDE3;   /* Primary text / accent on dark */
+  --c-cream-dim:   #C8C5BC;   /* Secondary text on dark */
+
+  /* Brand palette */
+  --c-sage:        #C2C7A3;
+  --c-olive:       #4F5438;
+  --c-steel:       #BFD4DE;
+  --c-navy:        #00263D;
+  --c-burgundy:    #360005;
+
+  /* UI */
+  --c-line:        rgba(240, 237, 227, 0.12);
+  --c-line-bright: rgba(240, 237, 227, 0.35);
+  --c-overlay:     rgba(17, 16, 16, 0.72);
+
+  /* Gradients */
+  --g-fade-up:   linear-gradient(to top, var(--c-void) 0%, transparent 100%);
+  --g-fade-down: linear-gradient(to bottom, var(--c-void) 0%, transparent 100%);
+
+  /* Spacing scale */
+  --space-xs:   0.5rem;
+  --space-sm:   1rem;
+  --space-md:   2rem;
+  --space-lg:   4rem;
+  --space-xl:   8rem;
+  --space-2xl: 12rem;
+
+  /* Layout */
+  --gutter:      clamp(1.25rem, 5vw, 6rem);
+  --max-width:   1680px;
+  --nav-height:  84px;
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    0.35s;
+  --dur-med:     0.6s;
+  --dur-slow:    1s;
+
+  /* Z-index scale */
+  --z-grid:     0;
+  --z-content:  1;
+  --z-nav:      80;
+  --z-progress: 85;
+  --z-cursor:   90;
+  --z-overlay:  95;
+  --z-loader:   100;
+}
