@@ -251,6 +251,10 @@
   transition: transform 0.5s var(--ease-out);
 }
 .logo-card:hover img { transform: scale(1.05); }
+/* Larger logo within a card */
+.logo-card--lg img { max-height: clamp(52px, 6.5vw, 76px); }
+.logo-card--xl { padding: 0.85rem 1.4rem; }
+.logo-card--xl img { max-height: clamp(64px, 8.5vw, 96px); }
 /* Dark card variant — for logos that are white / light so they stay visible */
 .logo-card--dark {
   background: linear-gradient(180deg, #232220 0%, #161514 100%);
@@ -454,6 +458,65 @@
 }
 .brand-cell img { max-height: 56%; max-width: 78%; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.7; transition: opacity var(--dur-fast), filter var(--dur-fast); }
 .brand-cell:hover img { opacity: 1; }
+/* For opaque (JPG) logos that carry their own background — show on a white
+   tile with no monochrome filter so they render true and clear. */
+.brand-cell--photo { background: #ffffff; }
+.brand-cell--photo img { filter: none; opacity: 1; max-height: 62%; max-width: 84%; }
+/* White tile + force the logo solid black (for white/transparent PNG logos) */
+.brand-cell--white-black { background: #ffffff; }
+.brand-cell--white-black img { filter: brightness(0); opacity: 1; max-height: 60%; max-width: 82%; }
+/* Square / circular logos — let them fill more of the tile so they read balanced */
+.brand-cell--square img { max-height: 80%; max-width: 80%; }
+/* Bigger wordmark logos */
+.brand-cell--big img { max-height: 80%; max-width: 92%; }
+
+/* ---------- Awards & Recognition ---------- */
+.awards-laurels { width: 100%; max-width: 660px; height: auto; margin-inline: auto; display: block; }
+.awards-layout {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.75rem, 3vw, 2.75rem) clamp(1.5rem, 2.5vw, 2.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+.award-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(17, 16, 16, 0.14);
+}
+.award-card__logo { height: clamp(40px, 4.6vw, 58px); width: auto; max-width: 90%; object-fit: contain; }
+.award-card__accolade {
+  font-family: 'Acumin Variable Concept', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.06em;
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(17, 16, 16, 0.6);
+}
+.awards-hotlist img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+  border-radius: 10px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+}
+@media (max-width: 920px) {
+  .awards-layout { grid-template-columns: 1fr; gap: clamp(2.5rem, 6vw, 4rem); }
+}
+@media (max-width: 560px) {
+  .award-grid { grid-template-columns: repeat(2, 1fr); }
+}
 .brand-cell__info {
   position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 0.4rem; text-align: center; padding: 1rem;
@@ -465,6 +528,8 @@
 .brand-cell__desc { font-family: 'Acumin Variable Concept'; font-weight: 200; letter-spacing: 0.12em; font-size: 11px; text-transform: uppercase; }
 
 .next-vertical { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: clamp(3rem, 7vw, 6rem); border-top: 1px solid var(--c-line); }
+.next-vertical .type-display { font-size: clamp(2rem, 5.5vw, 4rem); line-height: 0.95; }
+.next-vertical .btn { flex-shrink: 0; }
 
 /* ============================================================
    PROJECTS
