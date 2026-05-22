@@ -20,6 +20,7 @@
 .grid-texture > * { position: relative; z-index: 2; }
 
 /* ---------- Film grain ---------- */
+.grain { position: relative; overflow: hidden; }
 .grain::after {
   content: '';
   position: absolute;

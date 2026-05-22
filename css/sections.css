@@ -214,6 +214,54 @@
 .strip { padding-block: clamp(2.5rem, 5vw, 4rem); }
 .strip__row + .strip__row { margin-top: 1.5rem; }
 
+/* ---------- Recognition & Partners — premium logo wall ---------- */
+.logo-wall { overflow: hidden; display: flex; -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent); mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent); }
+.logo-wall + .logo-wall { margin-top: clamp(0.85rem, 1.4vw, 1.4rem); }
+.logo-wall__track {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  will-change: transform;
+  animation: marquee 55s linear infinite;
+  animation-play-state: running !important; /* keep moving, even on hover */
+}
+.logo-wall--reverse .logo-wall__track { animation-direction: reverse; animation-duration: 68s; }
+
+.logo-card {
+  flex: 0 0 auto;
+  width: clamp(184px, 19vw, 248px);
+  height: clamp(92px, 10vw, 120px);
+  margin-inline: clamp(0.5rem, 0.9vw, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1.85rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f6f4ec 0%, #ece9df 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+}
+.logo-card:hover { transform: translateY(-5px); box-shadow: 0 18px 46px rgba(0, 0, 0, 0.45); }
+.logo-card img {
+  max-height: clamp(34px, 4vw, 48px);
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.5s var(--ease-out);
+}
+.logo-card:hover img { transform: scale(1.05); }
+/* Dark card variant — for logos that are white / light so they stay visible */
+.logo-card--dark {
+  background: linear-gradient(180deg, #232220 0%, #161514 100%);
+  border-color: rgba(240, 237, 227, 0.12);
+}
+/* Per-logo overrides */
+.logo-card--white { background: #ffffff; }
+.logo-card--black img { filter: brightness(0); }      /* render the logo solid black */
+.logo-card--lg img { max-height: clamp(48px, 6vw, 70px); }
+.logo-card--xl img { max-height: clamp(62px, 8vw, 92px); }
+
 /* ============================================================
    FOOTER CTA
    ============================================================ */
@@ -229,7 +277,17 @@
 .about-hero__media img { width: 100%; height: 100%; object-fit: cover; }
 
 .philosophy { position: relative; }
-.philosophy__screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-inline: var(--gutter); }
+.philosophy__screen {
+  min-height: 56vh;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: clamp(3rem, 9vh, 7rem) var(--gutter);
+}
+.philosophy__screen .type-display {
+  max-width: 16ch;
+  margin-inline: auto;
+  font-size: clamp(2.25rem, 5.5vw, 5rem);
+  line-height: 1.08;
+}
 
 .deep-row { align-items: center; }
 .deep-row__icon { width: clamp(90px, 12vw, 150px); height: auto; opacity: 0.9; }
@@ -440,6 +498,20 @@
 .proj-card:hover .proj-card__hover { opacity: 1; transform: translateY(0); }
 .proj-card__stat { font-family: 'Acumin Variable Concept'; font-weight: 200; letter-spacing: 0.12em; font-size: 13px; color: var(--c-cream); }
 
+/* Project detail sections */
+.proj-detail { scroll-margin-top: 96px; }
+.proj-logo { height: clamp(72px, 11vw, 150px); width: auto; max-width: 100%; object-fit: contain; margin-bottom: 1rem; }
+.proj-logo--invert { filter: brightness(0) invert(1); }
+/* Wide wordmark logos: size by width so they read as large as SOHO */
+.proj-logo--lg { height: auto; width: clamp(260px, 36vw, 460px); max-height: 220px; }
+.proj-logo--xl { height: auto; width: clamp(360px, 48vw, 620px); max-height: 300px; }
+.proj-detail .type-italic { font-size: clamp(20px, 2.4vw, 32px); }
+.proj-mix {
+  font-family: 'Acumin Variable Concept'; font-weight: 200; letter-spacing: 0.12em;
+  line-height: 1.9; font-size: 13px; color: var(--c-cream-dim);
+}
+.section--panel .proj-mix { color: var(--c-cream-dim); }
+
 /* SOHO deep dive floor stack */
 .floors { display: flex; flex-direction: column-reverse; gap: 4px; }
 .floor {
@@ -495,7 +567,14 @@
 .exp-card:hover img { transform: scale(1.05); }
 .exp-card__veil { position: absolute; inset: 0; background: linear-gradient(to top, rgba(17,16,16,0.85), transparent 60%); }
 .exp-card__name { position: absolute; left: 1.5rem; bottom: 1.5rem; z-index: 2; font-family: 'Barques'; font-weight: 700; font-size: 1.4rem; }
-.exp-card__logo { position: absolute; left: 1.5rem; bottom: 1.5rem; z-index: 2; max-height: 46px; max-width: 60%; filter: brightness(0) invert(1); }
+/* Higher specificity than ".exp-card img" so the logo shows fully (contain),
+   not cropped by the background image's object-fit:cover. Size unchanged. */
+.exp-card img.exp-card__logo {
+  position: absolute; left: 1.5rem; bottom: 1.5rem; z-index: 2;
+  width: auto; height: auto; max-height: 46px; max-width: 60%;
+  object-fit: contain; filter: brightness(0) invert(1);
+}
+.exp-card:hover img.exp-card__logo { transform: none; }
 
 /* ============================================================
    CONTACT

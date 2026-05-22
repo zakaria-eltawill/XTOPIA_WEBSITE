@@ -13,13 +13,13 @@
   <link rel="preload" href="assets/Fonts/AcuminVariableConcept.otf" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="assets/images/photos/hero/hero-cover-architectural-abstract.jpg" as="image" />
 
-  <link rel="stylesheet" href="css/reset.css?v=11" />
-  <link rel="stylesheet" href="css/variables.css?v=11" />
-  <link rel="stylesheet" href="css/typography.css?v=11" />
-  <link rel="stylesheet" href="css/layout.css?v=11" />
-  <link rel="stylesheet" href="css/components.css?v=11" />
-  <link rel="stylesheet" href="css/sections.css?v=11" />
-  <link rel="stylesheet" href="css/animations.css?v=11" />
+  <link rel="stylesheet" href="css/reset.css?v=30" />
+  <link rel="stylesheet" href="css/variables.css?v=30" />
+  <link rel="stylesheet" href="css/typography.css?v=30" />
+  <link rel="stylesheet" href="css/layout.css?v=30" />
+  <link rel="stylesheet" href="css/components.css?v=30" />
+  <link rel="stylesheet" href="css/sections.css?v=30" />
+  <link rel="stylesheet" href="css/animations.css?v=30" />
 </head>
 <body>
 
@@ -212,11 +212,11 @@
           </div>
         </article>
         <article class="v-panel">
-          <div class="v-panel__bg"><img src="assets/images/collages/collage-beyond-destinations-strip.png" alt="BEYOND destinations" /></div>
+          <div class="v-panel__bg"><img src="assets/images/photos/community/community-beyond-activation-crowd.png" alt="BEYOND activation" /></div>
           <div class="v-panel__veil"></div>
           <span class="v-panel__num">05</span>
           <div class="v-panel__content">
-            <img class="v-panel__logo" src="assets/images/logos/verticals/logo-beyond-dark.png" alt="BEYOND" />
+            <img class="v-panel__logo" src="assets/images/logos/verticals/logo-beyond-dark.png" alt="BEYOND" style="filter:brightness(0) invert(1);" />
             <p class="v-panel__meta">Activations</p>
             <p class="type-italic v-panel__tag">Not events. Social ignition.</p>
             <a class="btn btn--pill" href="verticals/beyond.html">Explore <span class="btn__arrow">→</span></a>
@@ -257,35 +257,45 @@
       </div>
     </section>
 
-    <!-- ============ 1.8 AWARDS & PARTNERS ============ -->
-    <section class="strip section--cream">
-      <div class="container" style="margin-bottom:1.5rem;">
-        <p class="eyebrow type-label">Recognition &amp; Partners</p>
+    <!-- ============ 1.8 RECOGNITION & PARTNERS ============ -->
+    <section class="section section--dark grid-texture">
+      <div class="container u-center" style="margin-bottom:clamp(2.5rem,5vw,4rem);">
+        <p class="eyebrow type-label" style="justify-content:center;" data-reveal="fade">Recognition &amp; Partners</p>
+        <h2 class="type-heading" style="margin-top:1rem;" data-reveal="up-sm">Trusted across the region.</h2>
+        <p class="type-caption u-dim" style="margin-top:1.25rem;">Featured in Fact · What's On · Time Out · Middle East 50 Best</p>
       </div>
-      <div class="logo-ticker ticker strip__row" aria-label="Awards and media">
-        <div class="logo-ticker__track ticker__track">
-          <span class="logo-ticker__item"><img src="assets/images/collages/awards-media-logos-fact-whats-on-timeout-50best.png" alt="Fact · What's On · Time Out · Middle East 50 Best" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/collages/awards-trofi-brands-recognition-row.png" alt="TROFI award-winning brands" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/collages/awards-media-logos-fact-whats-on-timeout-50best.png" alt="" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/collages/awards-trofi-brands-recognition-row.png" alt="" /></span>
+
+      <!-- Row 1 -->
+      <div class="logo-wall" aria-label="Partners">
+        <div class="logo-wall__track">
+          <div class="logo-card"><img src="assets/images/logos/partners/logo-emaar.png" alt="EMAAR" /></div>
+          <div class="logo-card"><img src="assets/images/logos/partners/logo-palm-hills-developments.png" alt="Palm Hills Developments" /></div>
+          <div class="logo-card logo-card--lg"><img src="assets/images/logos/partners/logo-cairo-festival-city.png" alt="Cairo Festival City" /></div>
+          <div class="logo-card"><img src="assets/images/logos/partners/logo-waterway-developments.png" alt="The Waterway Developments" /></div>
+          <div class="logo-card logo-card--white logo-card--xl"><img src="assets/images/logos/partners/logo-marassi.png" alt="Marassi" /></div>
+          <!-- duplicate set for seamless loop -->
+          <div class="logo-card" aria-hidden="true"><img src="assets/images/logos/partners/logo-emaar.png" alt="" /></div>
+          <div class="logo-card" aria-hidden="true"><img src="assets/images/logos/partners/logo-palm-hills-developments.png" alt="" /></div>
+          <div class="logo-card logo-card--lg" aria-hidden="true"><img src="assets/images/logos/partners/logo-cairo-festival-city.png" alt="" /></div>
+          <div class="logo-card" aria-hidden="true"><img src="assets/images/logos/partners/logo-waterway-developments.png" alt="" /></div>
+          <div class="logo-card logo-card--white logo-card--xl" aria-hidden="true"><img src="assets/images/logos/partners/logo-marassi.png" alt="" /></div>
         </div>
       </div>
-      <div class="logo-ticker ticker ticker--reverse strip__row" aria-label="Global partners">
-        <div class="logo-ticker__track ticker__track">
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-emaar.png" alt="EMAAR" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-marassi.png" alt="Marassi" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-palm-hills-developments.png" alt="Palm Hills" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-cairo-festival-city.png" alt="Cairo Festival City" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-waterway-developments.png" alt="The Waterway" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-ninja.png" alt="Ninja" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-hunger-station.png" alt="HungerStation" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-emaar.png" alt="" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-marassi.png" alt="" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-palm-hills-developments.png" alt="" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-cairo-festival-city.png" alt="" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-waterway-developments.png" alt="" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-ninja.png" alt="" /></span>
-          <span class="logo-ticker__item"><img src="assets/images/logos/partners/logo-hunger-station.png" alt="" /></span>
+
+      <!-- Row 2 (reverse) -->
+      <div class="logo-wall logo-wall--reverse" aria-label="Ecosystem partners">
+        <div class="logo-wall__track">
+          <div class="logo-card logo-card--xl"><img src="assets/images/logos/partners/logo-ninja.png" alt="Ninja" /></div>
+          <div class="logo-card"><img src="assets/images/logos/partners/logo-sedco-capital.png" alt="SEDCO Capital" /></div>
+          <div class="logo-card"><img src="assets/images/logos/partners/logo-lamar-development.png" alt="Lamar Development" /></div>
+          <div class="logo-card logo-card--white logo-card--black"><img src="assets/images/logos/partners/logo-nash.png" alt="Nash" /></div>
+          <div class="logo-card logo-card--white logo-card--black"><img src="assets/images/logos/partners/logo-hunger-station.png" alt="HungerStation" /></div>
+          <!-- duplicate set for seamless loop -->
+          <div class="logo-card logo-card--xl" aria-hidden="true"><img src="assets/images/logos/partners/logo-ninja.png" alt="" /></div>
+          <div class="logo-card" aria-hidden="true"><img src="assets/images/logos/partners/logo-sedco-capital.png" alt="" /></div>
+          <div class="logo-card" aria-hidden="true"><img src="assets/images/logos/partners/logo-lamar-development.png" alt="" /></div>
+          <div class="logo-card logo-card--white logo-card--black" aria-hidden="true"><img src="assets/images/logos/partners/logo-nash.png" alt="" /></div>
+          <div class="logo-card logo-card--white logo-card--black" aria-hidden="true"><img src="assets/images/logos/partners/logo-hunger-station.png" alt="" /></div>
         </div>
       </div>
     </section>
@@ -360,12 +370,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="js/main.js?v=11"></script>
-  <script src="js/loader.js?v=11"></script>
-  <script src="js/nav.js?v=11"></script>
-  <script src="js/cursor.js?v=11"></script>
-  <script src="js/scroll-animations.js?v=11"></script>
-  <script src="js/horizontal-scroll.js?v=11"></script>
-  <script type="module" src="js/three-hero.js?v=11"></script>
+  <script src="js/main.js?v=30"></script>
+  <script src="js/loader.js?v=30"></script>
+  <script src="js/nav.js?v=30"></script>
+  <script src="js/cursor.js?v=30"></script>
+  <script src="js/scroll-animations.js?v=30"></script>
+  <script src="js/horizontal-scroll.js?v=30"></script>
+  <script type="module" src="js/three-hero.js?v=30"></script>
 </body>
 </html>
