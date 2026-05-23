@@ -150,6 +150,13 @@ body {
   line-height: 1.7;
 }
 
+/* Mobile: shrink the oversized display type so long words fit on screen */
+@media (max-width: 600px) {
+  .type-hero    { font-size: clamp(2rem, 11.5vw, 3.4rem); letter-spacing: -0.015em; }
+  .type-display { font-size: clamp(1.85rem, 9.5vw, 3rem); }
+  .type-heading { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+}
+
 /* Utilities */
 .u-italic   { font-family: 'Book Antiqua', Georgia, serif; font-style: italic; }
 .u-dim      { color: var(--c-cream-dim); }
