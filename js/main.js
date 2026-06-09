@@ -38,12 +38,26 @@
 
   /* Smooth-scroll for in-page anchors */
   document.addEventListener('click', (e) => {
-    const a = e.target.closest('a[href^="#"]');
+    const a = e.target.closest('a');
     if (!a) return;
-    const id = a.getAttribute('href');
-    if (id.length < 2) return;
-    const target = document.querySelector(id);
+    const href = a.getAttribute('href') || '';
+    if (!href.includes('#')) return;
+
+    // Split into page path and hash anchor
+    const [path, hash] = href.split('#');
+    if (!hash) return;
+
+    // Get current filename (e.g. index.html or empty for root)
+    const currentFile = window.location.pathname.split('/').pop() || '';
+    const isCurrentPage = !path || 
+                          path === currentFile || 
+                          (path === 'index.html' && (currentFile === 'index.html' || currentFile === ''));
+
+    if (!isCurrentPage) return; // Navigate normally to other pages
+
+    const target = document.querySelector('#' + hash);
     if (!target) return;
+
     e.preventDefault();
     if (lenis) lenis.scrollTo(target, { offset: -80 });
     else target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });

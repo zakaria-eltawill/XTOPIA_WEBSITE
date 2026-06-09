@@ -95,15 +95,36 @@
   if (flip) {
     const aWords = flip.querySelectorAll('.flip__a .word');
     const bBlock = flip.querySelector('.flip__b');
-    const tl = gsap.timeline({
-      scrollTrigger: { trigger: flip, start: 'top top', end: '+=200%', pin: true, scrub: 0.6 },
+    const tl = gsap.timeline({ 
+      paused: true,
+      repeat: -1
     });
+    
     aWords.forEach((w) => {
       tl.to(w, { opacity: 1, filter: 'blur(0px)', duration: 0.4 });
     });
-    tl.to({}, { duration: 0.4 });
+    tl.to({}, { duration: 0.6 });
     tl.to(flip.querySelector('.flip__a'), { opacity: 0, filter: 'blur(10px)', duration: 0.4 });
-    if (bBlock) tl.to(bBlock, { opacity: 1, filter: 'blur(0px)', duration: 0.5 }, '<0.1');
+    if (bBlock) {
+      tl.to(bBlock, { opacity: 1, filter: 'blur(0px)', duration: 0.5 }, '<0.1');
+      tl.to({}, { duration: 1.2 });
+      tl.to(bBlock, { opacity: 0, filter: 'blur(10px)', duration: 0.4 });
+      
+      // Explicitly reset flip__a and aWords state while everything is invisible.
+      // This ensures the timeline's ending values align perfectly with its starting values,
+      // preventing any frame-lag or flashing during the loop restart.
+      tl.set(aWords, { opacity: 0, filter: 'blur(6px)' });
+      tl.set(flip.querySelector('.flip__a'), { opacity: 1, filter: 'blur(0px)' });
+      
+      tl.to({}, { duration: 0.2 });
+    }
+
+    ScrollTrigger.create({
+      trigger: flip,
+      start: 'top 40%',
+      once: true,
+      onEnter: () => tl.play(),
+    });
   }
 })();
 

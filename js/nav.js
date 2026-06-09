@@ -9,6 +9,13 @@
   const nav = document.querySelector('.nav');
   if (!nav) return;
 
+  // Detect page path to style transparent nav bar correctly over light/split heroes
+  const path = window.location.pathname;
+  const filename = path.split('/').pop() || 'index.html';
+  if (filename.includes('about.html') || filename.includes('contact.html')) {
+    nav.classList.add('nav--light-links'); // Right side links are dark, logo on left split remains white over black split
+  }
+
   const burger = nav.querySelector('.nav__burger');
   const overlay = document.querySelector('.nav-overlay');
 
@@ -38,7 +45,24 @@
   if (burger) burger.addEventListener('click', () => toggleMenu());
 
   if (overlay) {
-    overlay.querySelectorAll('a').forEach((a) => {
+    // Accordion submenu toggling
+    const items = overlay.querySelectorAll('.nav-overlay__item-wrap');
+    items.forEach((item) => {
+      const trigger = item.querySelector('.nav-overlay__trigger');
+      if (trigger) {
+        trigger.addEventListener('click', (e) => {
+          const isOpen = item.classList.contains('is-open');
+          // Close all other accordions
+          items.forEach((oth) => oth.classList.remove('is-open'));
+          // Toggle this one
+          if (!isOpen) {
+            item.classList.add('is-open');
+          }
+        });
+      }
+    });
+
+    overlay.querySelectorAll('.nav-overlay__sub a').forEach((a) => {
       a.addEventListener('click', () => toggleMenu(false));
     });
   }

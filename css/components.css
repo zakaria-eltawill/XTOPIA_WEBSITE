@@ -186,14 +186,73 @@
 /* Adaptive contrast while transparent: invert against whatever is behind,
    so links read light over dark areas and dark over light areas — even on
    the split contact layout. Disabled once the solid dark bar appears. */
-.nav:not(.is-scrolled) { mix-blend-mode: difference; }
-.nav:not(.is-scrolled) .nav__logo img { filter: brightness(0) invert(1); }
-.nav:not(.is-scrolled) .nav__link,
-.nav:not(.is-scrolled) .nav__cta { color: #fff; }
-.nav:not(.is-scrolled) .nav__link::after { background: #fff; }
-.nav:not(.is-scrolled) .nav__cta { border-color: rgba(255, 255, 255, 0.55); }
-.nav:not(.is-scrolled) .nav__cta:hover { background: rgba(255, 255, 255, 0.16); color: #fff; }
-.nav:not(.is-scrolled) .nav__burger span { background: #fff; }
+/* Transparent navbar defaults (for dark pages like index, verticals, etc.) */
+.nav:not(.is-scrolled) .nav__link {
+  color: var(--c-cream);
+}
+.nav:not(.is-scrolled) .nav__link::after {
+  background: var(--c-cream);
+}
+.nav:not(.is-scrolled) .nav__cta {
+  color: var(--c-cream);
+  border-color: var(--c-line-bright);
+}
+.nav:not(.is-scrolled) .nav__cta:hover {
+  background: var(--c-cream);
+  color: var(--c-void);
+}
+.nav:not(.is-scrolled) .nav__burger span {
+  background: var(--c-cream);
+}
+.nav:not(.is-scrolled) .nav__logo img {
+  filter: none; /* White logo */
+}
+
+/* Page variant: Split layout (about, contact). Left split is dark (logo stays white), right split is light (links become dark) */
+.nav.nav--light-links:not(.is-scrolled) .nav__link {
+  color: var(--c-void);
+}
+.nav.nav--light-links:not(.is-scrolled) .nav__link::after {
+  background: var(--c-void);
+}
+.nav.nav--light-links:not(.is-scrolled) .nav__cta {
+  color: var(--c-void);
+  border-color: rgba(17, 16, 16, 0.3);
+}
+.nav.nav--light-links:not(.is-scrolled) .nav__cta:hover {
+  background: var(--c-void);
+  color: var(--c-cream);
+}
+.nav.nav--light-links:not(.is-scrolled) .nav__burger span {
+  background: var(--c-void);
+}
+
+/* Page variant: Fully light layout (projects, community). Both logo and links are over a light background, so all become dark */
+.nav.nav--light-all:not(.is-scrolled) .nav__logo img {
+  filter: brightness(0); /* Black logo */
+}
+.nav.nav--light-all:not(.is-scrolled) .nav__link {
+  color: var(--c-void);
+}
+.nav.nav--light-all:not(.is-scrolled) .nav__link::after {
+  background: var(--c-void);
+}
+.nav.nav--light-all:not(.is-scrolled) .nav__cta {
+  color: var(--c-void);
+  border-color: rgba(17, 16, 16, 0.3);
+}
+.nav.nav--light-all:not(.is-scrolled) .nav__cta:hover {
+  background: var(--c-void);
+  color: var(--c-cream);
+}
+.nav.nav--light-all:not(.is-scrolled) .nav__burger span {
+  background: var(--c-void);
+}
+
+/* The dropdown menu is kept normal, unblended, and consistent across all pages */
+.dropdown__menu {
+  mix-blend-mode: normal !important;
+}
 .nav__logo img { height: 26px; width: auto; }
 .nav__links {
   display: flex;
@@ -264,8 +323,12 @@
   inset: 0;
   z-index: 79;
   background: var(--c-void);
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 3rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--dur-med) var(--ease-out), visibility var(--dur-med);
@@ -278,34 +341,153 @@
   background-image:
     repeating-linear-gradient(to right, var(--c-cream) 0 1px, transparent 1px 70px),
     repeating-linear-gradient(to bottom, var(--c-cream) 0 1px, transparent 1px 70px);
+  pointer-events: none;
 }
 .nav-overlay.is-open { opacity: 1; visibility: visible; }
-.nav-overlay__item {
+
+/* ---------- Navigation Dropdowns (Desktop Hover Flyouts) ---------- */
+.nav__item {
   position: relative;
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(26, 25, 25, 0.98); /* Solid charcoal with high opacity */
+  border: 1px solid var(--c-line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 0;
+  min-width: 220px;
   display: flex;
-  align-items: center;
-  padding-inline: var(--gutter);
-  border-bottom: 1px solid var(--c-line);
-  font-family: 'Barques', sans-serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 9vw, 4rem);
-  letter-spacing: -0.01em;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out), visibility 0.3s;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-top: 0.5rem;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown__sub-link {
+  font-family: 'Acumin Variable Concept', sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-cream-dim);
+  padding: 0.6rem 1.5rem;
+  transition: color var(--dur-fast) ease, background var(--dur-fast) ease, padding-left var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+  text-align: left;
+  display: block;
+}
+
+.dropdown__sub-link:hover {
   color: var(--c-cream);
+  background: rgba(240, 237, 227, 0.05);
+  padding-left: 1.8rem;
+}
+
+/* Adjustments for the last item (Contact) to align right instead of center-overshoot */
+.nav__links .dropdown:last-child .dropdown__menu {
+  left: auto;
+  right: 0;
+  transform: translateY(10px);
+}
+.nav__links .dropdown:last-child:hover .dropdown__menu {
+  transform: translateY(0);
+}
+
+/* ---------- Mobile Overlay Accordion ---------- */
+.nav-overlay__item-wrap {
+  border-bottom: 1px solid var(--c-line);
+  display: flex;
+  flex-direction: column;
+  position: relative;
   transform: translateY(40px);
   opacity: 0;
-  transition: color var(--dur-fast);
 }
-.nav-overlay.is-open .nav-overlay__item {
+.nav-overlay.is-open .nav-overlay__item-wrap {
   animation: overlay-item-in 0.6s var(--ease-out) forwards;
 }
-.nav-overlay__item:hover { color: var(--c-sage); }
-.nav-overlay__item span {
+.nav-overlay.is-open .nav-overlay__item-wrap:nth-child(1) { animation-delay: 0.05s; }
+.nav-overlay.is-open .nav-overlay__item-wrap:nth-child(2) { animation-delay: 0.12s; }
+.nav-overlay.is-open .nav-overlay__item-wrap:nth-child(3) { animation-delay: 0.19s; }
+.nav-overlay.is-open .nav-overlay__item-wrap:nth-child(4) { animation-delay: 0.26s; }
+
+.nav-overlay__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem var(--gutter);
+  font-family: 'Barques', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--c-cream);
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--dur-fast);
+}
+.nav-overlay__trigger:hover {
+  color: var(--c-sage);
+}
+.nav-overlay__trigger span:first-child {
   font-family: 'Acumin Variable Concept', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.3em;
   margin-right: 1.5rem;
   color: var(--c-cream-dim);
+}
+.nav-overlay__trigger .arrow {
+  font-size: 1.5rem;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.nav-overlay__item-wrap.is-open .nav-overlay__trigger .arrow {
+  transform: rotate(180deg);
+}
+
+.nav-overlay__sub {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s var(--ease-in-out), opacity 0.3s ease, margin-bottom 0.4s var(--ease-in-out);
+  padding-inline: calc(var(--gutter) + 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0;
+}
+.nav-overlay__item-wrap.is-open .nav-overlay__sub {
+  max-height: 300px;
+  opacity: 1;
+  margin-bottom: 1.5rem;
+}
+.nav-overlay__sub a {
+  font-family: 'Acumin Variable Concept', sans-serif;
+  font-weight: 200;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-cream-dim);
+  padding: 0.4rem 0;
+  transition: color var(--dur-fast);
+}
+.nav-overlay__sub a:hover {
+  color: var(--c-cream);
 }
 
 /* ---------- Buttons / CTAs ---------- */

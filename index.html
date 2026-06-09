@@ -13,13 +13,13 @@
   <link rel="preload" href="assets/Fonts/AcuminVariableConcept.otf" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="assets/images/photos/hero/hero-cover-architectural-abstract.jpg" as="image" />
 
-  <link rel="stylesheet" href="css/reset.css?v=46" />
-  <link rel="stylesheet" href="css/variables.css?v=46" />
-  <link rel="stylesheet" href="css/typography.css?v=46" />
-  <link rel="stylesheet" href="css/layout.css?v=46" />
-  <link rel="stylesheet" href="css/components.css?v=46" />
-  <link rel="stylesheet" href="css/sections.css?v=46" />
-  <link rel="stylesheet" href="css/animations.css?v=46" />
+  <link rel="stylesheet" href="css/reset.css?v=62" />
+  <link rel="stylesheet" href="css/variables.css?v=62" />
+  <link rel="stylesheet" href="css/typography.css?v=62" />
+  <link rel="stylesheet" href="css/layout.css?v=62" />
+  <link rel="stylesheet" href="css/components.css?v=62" />
+  <link rel="stylesheet" href="css/sections.css?v=62" />
+  <link rel="stylesheet" href="css/animations.css?v=62" />
 </head>
 <body>
 
@@ -45,11 +45,42 @@
       <img src="assets/images/logos/brand/logo-xtopia-wordmark-white-outline.png" alt="XTOPIA" />
     </a>
     <nav class="nav__links" aria-label="Primary">
-      <a class="nav__link" href="community.html">Community</a>
-      <a class="nav__link" href="about.html">About</a>
-      <a class="nav__link" href="projects.html">Projects</a>
-      <a class="nav__link" href="verticals.html">Experiences</a>
-      <a class="nav__cta" href="contact.html">Contact <span aria-hidden="true">→</span></a>
+      <div class="nav__item dropdown">
+        <a class="nav__link" href="about.html">About</a>
+        <div class="dropdown__menu">
+          <a class="dropdown__sub-link" href="index.html#flip">XTOPIA Preview</a>
+          <a class="dropdown__sub-link" href="about.html">Short introduction</a>
+        </div>
+      </div>
+      <div class="nav__item dropdown">
+        <a class="nav__link" href="projects.html">Projects</a>
+        <div class="dropdown__menu">
+          <a class="dropdown__sub-link" href="index.html#partners">Partners</a>
+          <a class="dropdown__sub-link" href="projects.html">Collaborations</a>
+          <a class="dropdown__sub-link" href="community.html#partnerships">Partnerships</a>
+          <a class="dropdown__sub-link" href="about.html#team">The Team</a>
+        </div>
+      </div>
+      <div class="nav__item dropdown">
+        <a class="nav__link" href="verticals.html">Our Ecosystem</a>
+        <div class="dropdown__menu">
+          <a class="dropdown__sub-link" href="verticals/trofi.html">F&amp;B</a>
+          <a class="dropdown__sub-link" href="verticals/befit.html">Sports &amp; Wellness</a>
+          <a class="dropdown__sub-link" href="verticals/developments.html">Developments</a>
+          <a class="dropdown__sub-link" href="verticals/mahya.html">Neighborhood Parks</a>
+          <a class="dropdown__sub-link" href="verticals/beyond.html">Activations</a>
+        </div>
+      </div>
+      <div class="nav__item dropdown">
+        <a class="nav__cta" href="contact.html">Contact <span aria-hidden="true">→</span></a>
+        <div class="dropdown__menu">
+          <a class="dropdown__sub-link" href="mailto:info@xtopia.com">Email</a>
+          <a class="dropdown__sub-link" href="contact.html#map">Map</a>
+          <a class="dropdown__sub-link" href="contact.html#form">Contact Form</a>
+          <a class="dropdown__sub-link" href="contact.html#info">Company Information</a>
+          <a class="dropdown__sub-link" href="contact.html#social">Social Links</a>
+        </div>
+      </div>
     </nav>
     <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span>
@@ -58,11 +89,42 @@
 
   <!-- ============ MOBILE OVERLAY MENU ============ -->
   <div class="nav-overlay" data-overlay>
-    <a class="nav-overlay__item" href="community.html"><span>01</span>Community</a>
-    <a class="nav-overlay__item" href="about.html"><span>02</span>About</a>
-    <a class="nav-overlay__item" href="projects.html"><span>03</span>Projects</a>
-    <a class="nav-overlay__item" href="verticals.html"><span>04</span>Experiences</a>
-    <a class="nav-overlay__item" href="contact.html"><span>05</span>Contact</a>
+    <div class="nav-overlay__item-wrap">
+      <button class="nav-overlay__trigger"><span>01</span>About <span class="arrow">↓</span></button>
+      <div class="nav-overlay__sub">
+        <a href="index.html#flip">XTOPIA Preview</a>
+        <a href="about.html">Short introduction</a>
+      </div>
+    </div>
+    <div class="nav-overlay__item-wrap">
+      <button class="nav-overlay__trigger"><span>02</span>Projects <span class="arrow">↓</span></button>
+      <div class="nav-overlay__sub">
+        <a href="index.html#partners">Partners</a>
+        <a href="projects.html">Collaborations</a>
+        <a href="community.html#partnerships">Partnerships</a>
+        <a href="about.html#team">The Team</a>
+      </div>
+    </div>
+    <div class="nav-overlay__item-wrap">
+      <button class="nav-overlay__trigger"><span>03</span>Our Ecosystem <span class="arrow">↓</span></button>
+      <div class="nav-overlay__sub">
+        <a href="verticals/trofi.html">F&amp;B</a>
+        <a href="verticals/befit.html">Sports &amp; Wellness</a>
+        <a href="verticals/developments.html">Developments</a>
+        <a href="verticals/mahya.html">Neighborhood Parks</a>
+        <a href="verticals/beyond.html">Activations</a>
+      </div>
+    </div>
+    <div class="nav-overlay__item-wrap">
+      <button class="nav-overlay__trigger"><span>04</span>Contact <span class="arrow">↓</span></button>
+      <div class="nav-overlay__sub">
+        <a href="mailto:info@xtopia.com">Email</a>
+        <a href="contact.html#map">Map</a>
+        <a href="contact.html#form">Contact Form</a>
+        <a href="contact.html#info">Company Information</a>
+        <a href="contact.html#social">Social Links</a>
+      </div>
+    </div>
   </div>
 
   <main>
@@ -75,12 +137,24 @@
       <div class="hero__veil"></div>
       <div class="hero__inner">
         <p class="type-label hero__eyebrow u-dim" data-parallax>Community-Driven Destination Platform</p>
-        <h1 class="type-hero hero__headline" aria-label="Community Driven Destination Platform">
-          <span class="line"><span>COMMUNITY</span></span>
-          <span class="line"><span>DRIVEN</span></span>
-          <span class="line"><span>DESTINATION</span></span>
-          <span class="line"><span>PLATFORM</span></span>
-        </h1>
+        <div class="hero__row">
+          <div class="hero__col-left">
+            <h1 class="type-hero hero__headline" aria-label="Community First. Then Build The World.">
+              <span class="line"><span>COMMUNITY</span></span>
+              <span class="line"><span>FIRST.</span></span>
+              <span class="line"><span>THEN BUILD</span></span>
+              <span class="line"><span>THE WORLD.</span></span>
+            </h1>
+          </div>
+          <div class="hero__col-right" data-reveal="fade" data-reveal-delay="3">
+            <div class="hero-card">
+              <h2 class="hero-card__title">About Us</h2>
+              <p class="hero-card__desc u-dim">
+                XTOPIA is a community-driven destination platform. We establish operational community verticals—from F&B and wellness to parks and activations—before building the physical environment around them.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="hero__foot">
         <a class="scroll-hint type-label u-dim" href="#flip">
@@ -136,6 +210,9 @@
             <p class="type-body u-dim">The space between anchors becomes a living, programmable framework — value compounds over time.</p>
           </div>
         </div>
+        <div class="u-center" style="margin-top: 4.5rem;" data-reveal="fade">
+          <a class="btn btn--pill" href="verticals.html">Explore our ecosystem <span class="btn__arrow">→</span></a>
+        </div>
       </div>
     </section>
 
@@ -164,69 +241,86 @@
       </div>
     </section>
 
-    <!-- ============ 1.5 VERTICALS (horizontal) ============ -->
-    <section class="h-scroll section--dark" data-hscroll aria-label="The five verticals">
-      <div class="h-scroll__track">
-        <article class="v-panel">
-          <div class="v-panel__bg"><img src="assets/images/photos/fnb/fnb-trofi-food-sharing-hands.png" alt="TROFI dining" /></div>
-          <div class="v-panel__veil"></div>
-          <span class="v-panel__num">01</span>
-          <div class="v-panel__content">
-            <img class="v-panel__logo" src="assets/images/logos/verticals/logo-trofi-cream-wide.png" alt="TROFI" />
-            <p class="v-panel__meta">F&amp;B Group</p>
-            <p class="type-italic v-panel__tag">Food as a social connector.</p>
-            <a class="btn btn--pill" href="verticals/trofi.html">Explore <span class="btn__arrow">→</span></a>
-          </div>
-        </article>
-        <article class="v-panel">
-          <div class="v-panel__bg"><img src="assets/images/photos/sports/sports-befit-group-class-weights.png" alt="BeFit 360 class" /></div>
-          <div class="v-panel__veil"></div>
-          <span class="v-panel__num">02</span>
-          <div class="v-panel__content">
-            <img class="v-panel__logo" src="assets/images/logos/verticals/logo-befit360-white.png" alt="BeFit 360" />
-            <p class="v-panel__meta">Sports &amp; Wellness</p>
-            <p class="type-italic v-panel__tag">Well-being as a lifestyle.</p>
-            <a class="btn btn--pill" href="verticals/befit.html">Explore <span class="btn__arrow">→</span></a>
-          </div>
-        </article>
-        <article class="v-panel">
-          <div class="v-panel__bg"><img src="assets/images/photos/developments/dev-soho-jeddah-exterior-night-render.png" alt="XTOPIA Developments" /></div>
-          <div class="v-panel__veil"></div>
-          <span class="v-panel__num">03</span>
-          <div class="v-panel__content">
-            <img class="v-panel__logo" src="assets/images/logos/brand/logo-xtopia-developments-white.png" alt="XTOPIA Developments" />
-            <p class="v-panel__meta">Real Estate</p>
-            <p class="type-italic v-panel__tag">From daily life to city-scale impact.</p>
-            <a class="btn btn--pill" href="verticals/developments.html">Explore <span class="btn__arrow">→</span></a>
-          </div>
-        </article>
-        <article class="v-panel">
-          <div class="v-panel__bg"><img src="assets/images/photos/parks/park-mahya-boardwalk-lake-render.png" alt="MAHYA park" /></div>
-          <div class="v-panel__veil"></div>
-          <span class="v-panel__num">04</span>
-          <div class="v-panel__content">
-            <img class="v-panel__logo" src="assets/images/logos/verticals/logo-mahya-white.png" alt="MAHYA" />
-            <p class="v-panel__meta">Neighborhood Parks</p>
-            <p class="type-italic v-panel__tag">Active ecosystems woven into daily rhythms.</p>
-            <a class="btn btn--pill" href="verticals/mahya.html">Explore <span class="btn__arrow">→</span></a>
-          </div>
-        </article>
-        <article class="v-panel">
-          <div class="v-panel__bg"><img src="assets/images/photos/community/community-beyond-activation-crowd.png" alt="BEYOND activation" /></div>
-          <div class="v-panel__veil"></div>
-          <span class="v-panel__num">05</span>
-          <div class="v-panel__content">
-            <img class="v-panel__logo" src="assets/images/logos/verticals/logo-beyond-dark.png" alt="BEYOND" style="filter:brightness(0) invert(1);" />
-            <p class="v-panel__meta">Activations</p>
-            <p class="type-italic v-panel__tag">Not events. Social ignition.</p>
-            <a class="btn btn--pill" href="verticals/beyond.html">Explore <span class="btn__arrow">→</span></a>
-          </div>
-        </article>
+    <!-- ============ 1.5 VERTICALS (asymmetrical grid) ============ -->
+    <section class="verticals-section section--dark grid-texture" id="ecosystem">
+      <div class="container">
+        <p class="eyebrow type-label" data-reveal="fade">Our Ecosystem</p>
+        <h2 class="type-display" style="margin-block: 1.5rem 3.5rem;" data-reveal="up-sm">Five Verticals.<br>One Platform.</h2>
+        
+        <div class="verticals-grid">
+          <!-- TROFI -->
+          <article class="v-card v-card--wide" data-reveal="up-sm">
+            <div class="v-card__bg"><img src="assets/images/photos/fnb/fnb-trofi-food-sharing-hands.png" alt="TROFI dining" loading="lazy" /></div>
+            <div class="v-card__veil"></div>
+            <span class="v-card__num">01</span>
+            <div class="v-card__content">
+              <img class="v-card__logo" src="assets/images/logos/verticals/logo-trofi-cream-wide.png" alt="TROFI" />
+              <p class="v-card__meta">F&amp;B Group</p>
+              <p class="type-italic v-card__tag">Food as a social connector.</p>
+              <a class="btn btn--pill" href="verticals/trofi.html">Explore <span class="btn__arrow">→</span></a>
+            </div>
+          </article>
+          
+          <!-- BeFit 360 -->
+          <article class="v-card" data-reveal="up-sm" data-reveal-delay="1">
+            <div class="v-card__bg"><img src="assets/images/photos/sports/sports-befit-group-class-weights.png" alt="BeFit 360 class" loading="lazy" /></div>
+            <div class="v-card__veil"></div>
+            <span class="v-card__num">02</span>
+            <div class="v-card__content">
+              <img class="v-card__logo" src="assets/images/logos/verticals/logo-befit360-white.png" alt="BeFit 360" />
+              <p class="v-card__meta">Sports &amp; Wellness</p>
+              <p class="type-italic v-card__tag">Well-being as a lifestyle.</p>
+              <a class="btn btn--pill" href="verticals/befit.html">Explore <span class="btn__arrow">→</span></a>
+            </div>
+          </article>
+          
+          <!-- Developments -->
+          <article class="v-card" data-reveal="up-sm">
+            <div class="v-card__bg"><img src="assets/images/photos/developments/dev-soho-jeddah-exterior-night-render.png" alt="XTOPIA Developments" loading="lazy" /></div>
+            <div class="v-card__veil"></div>
+            <span class="v-card__num">03</span>
+            <div class="v-card__content">
+              <img class="v-card__logo" src="assets/images/logos/brand/logo-xtopia-developments-white.png" alt="XTOPIA Developments" />
+              <p class="v-card__meta">Real Estate</p>
+              <p class="type-italic v-card__tag">From daily life to city-scale impact.</p>
+              <a class="btn btn--pill" href="verticals/developments.html">Explore <span class="btn__arrow">→</span></a>
+            </div>
+          </article>
+          
+          <!-- MAHYA -->
+          <article class="v-card v-card--wide" data-reveal="up-sm" data-reveal-delay="1">
+            <div class="v-card__bg"><img src="assets/images/photos/parks/park-mahya-boardwalk-lake-render.png" alt="MAHYA park" loading="lazy" /></div>
+            <div class="v-card__veil"></div>
+            <span class="v-card__num">04</span>
+            <div class="v-card__content">
+              <img class="v-card__logo" src="assets/images/logos/verticals/logo-mahya-white.png" alt="MAHYA" />
+              <p class="v-card__meta">Neighborhood Parks</p>
+              <p class="type-italic v-card__tag">Active ecosystems woven into daily rhythms.</p>
+              <a class="btn btn--pill" href="verticals/mahya.html">Explore <span class="btn__arrow">→</span></a>
+            </div>
+          </article>
+          
+          <!-- BEYOND -->
+          <article class="v-card v-card--full" data-reveal="up-sm">
+            <div class="v-card__bg"><img src="assets/images/photos/community/community-beyond-activation-crowd.png" alt="BEYOND activation" loading="lazy" /></div>
+            <div class="v-card__veil"></div>
+            <span class="v-card__num">05</span>
+            <div class="v-card__content">
+              <img class="v-card__logo" src="assets/images/logos/verticals/logo-beyond-dark.png" alt="BEYOND" style="filter:brightness(0) invert(1);" />
+              <p class="v-card__meta">Activations</p>
+              <p class="type-italic v-card__tag">Not events. Social ignition.</p>
+              <a class="btn btn--pill" href="verticals/beyond.html">Explore <span class="btn__arrow">→</span></a>
+            </div>
+          </article>
+        </div>
+        <div class="u-center" style="margin-top: 4.5rem;" data-reveal="fade">
+          <a class="type-label u-dim scroll-hint" href="#featured-project">Featured Project: SOHO Jeddah <span class="scroll-hint__arrow">↓</span></a>
+        </div>
       </div>
     </section>
 
     <!-- ============ 1.6 FEATURED PROJECT ============ -->
-    <section class="section section--dark feature grain">
+    <section class="section section--dark feature grain" id="featured-project">
       <div class="container">
         <div class="feature__grid">
           <div class="stack">
@@ -258,7 +352,7 @@
     </section>
 
     <!-- ============ 1.8 RECOGNITION & PARTNERS ============ -->
-    <section class="section section--dark grid-texture">
+    <section class="section section--dark grid-texture" id="partners">
       <div class="container u-center" style="margin-bottom:clamp(2.5rem,5vw,4rem);">
         <p class="eyebrow type-label" style="justify-content:center;" data-reveal="fade">Recognition &amp; Partners</p>
         <h2 class="type-heading" style="margin-top:1rem;" data-reveal="up-sm">Trusted across the region.</h2>
@@ -370,12 +464,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="js/main.js?v=46"></script>
-  <script src="js/loader.js?v=46"></script>
-  <script src="js/nav.js?v=46"></script>
-  <script src="js/cursor.js?v=46"></script>
-  <script src="js/scroll-animations.js?v=46"></script>
-  <script src="js/horizontal-scroll.js?v=46"></script>
-  <script type="module" src="js/three-hero.js?v=46"></script>
+  <script src="js/main.js?v=62"></script>
+  <script src="js/loader.js?v=62"></script>
+  <script src="js/nav.js?v=62"></script>
+  <script src="js/cursor.js?v=62"></script>
+  <script src="js/scroll-animations.js?v=62"></script>
+  <script src="js/horizontal-scroll.js?v=62"></script>
+  <script type="module" src="js/three-hero.js?v=62"></script>
 </body>
 </html>
