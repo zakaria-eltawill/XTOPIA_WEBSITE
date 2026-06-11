@@ -261,7 +261,7 @@
 }
 .nav__link {
   position: relative;
-  font-family: 'Acumin Variable Concept', sans-serif;
+  font-family: 'Barques', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.25em;
@@ -285,8 +285,8 @@
 .nav__link.is-active::after { transform: scaleX(1); }
 
 .nav__cta {
-  font-family: 'Acumin Variable Concept', sans-serif;
-  font-weight: 200;
+  font-family: 'Barques', sans-serif;
+  font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;

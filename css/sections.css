@@ -94,8 +94,8 @@
 }
 
 .hero-card__title {
-  font-family: 'Acumin Variable Concept', 'Helvetica Neue', sans-serif;
-  font-weight: 200;
+  font-family: 'Barques', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   font-size: 11px;
   line-height: 1;
   letter-spacing: 0.25em;
@@ -116,8 +116,8 @@
 }
 
 .hero-card__desc {
-  font-family: 'Acumin Variable Concept', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
+  font-family: 'Barques', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
   font-size: clamp(16px, 1.2vw, 19px);
   line-height: 1.8;
   letter-spacing: 0.03em;
