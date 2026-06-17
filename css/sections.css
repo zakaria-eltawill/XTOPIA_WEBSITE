@@ -525,66 +525,67 @@
 .map-dot:nth-child(5)::before { animation-delay: 1.2s; }
 .map-dot:nth-child(6)::before { animation-delay: 1.5s; }
 
-/* Team grid */
-.team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(0.75rem, 1.5vw, 1.5rem); }
-.team-card { position: relative; overflow: hidden; aspect-ratio: 3/4; background: var(--c-charcoal); }
-.team-card::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(240, 237, 227, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(240, 237, 227, 0.04) 1px, transparent 1px);
-  background-size: 6px 6px;
-  pointer-events: none;
-  z-index: 2;
-  mix-blend-mode: overlay;
+/* Section Divider */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--c-line);
+  margin: clamp(4rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 4rem);
 }
-.team-card::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(17,16,16,0.15) 0%, rgba(17,16,16,0.8) 100%);
-  pointer-events: none;
-  z-index: 1;
-  transition: background var(--dur-med);
-}
-.team-card:hover::after {
-  background: linear-gradient(180deg, rgba(17,16,16,0.05) 0%, rgba(17,16,16,0.65) 100%);
-}
-.team-card img { 
-  width: 100%; height: 100%; object-fit: cover; 
-  filter: grayscale(1) contrast(1.08) brightness(0.85); 
-  transition: filter var(--dur-med), transform var(--dur-med) var(--ease-out); 
-}
-.team-card:hover img { 
-  filter: grayscale(0.2) contrast(1.02) brightness(0.95); 
-  transform: scale(1.04); 
-}
-.team-card__bar {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  padding: 1.25rem 1rem;
-  z-index: 3;
-  background: linear-gradient(to top, rgba(17,16,16,0.95), transparent);
-  transform: translateY(20%); opacity: 0.85;
-  transition: transform var(--dur-med) var(--ease-out), opacity var(--dur-med);
-}
-.team-card:hover .team-card__bar { transform: translateY(0); opacity: 1; }
-.team-card__name { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: clamp(13px, 1vw, 16px); }
-.team-card__role { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.16em; text-transform: uppercase; font-size: 10px; color: var(--c-cream-dim); margin-top: 0.3rem; }
 
-/* Placeholder card (member without a photo) */
-.team-card--ph {
-  display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(150deg, #232220 0%, var(--c-charcoal) 100%);
+/* Compact Directory Style */
+.team-grid { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: clamp(1.5rem, 3vw, 2.5rem); 
 }
-.team-card--ph .team-card__initials {
-  font-family: 'Gotham', sans-serif; font-weight: 300;
-  font-size: clamp(2.4rem, 4vw, 3.4rem); letter-spacing: 0.04em;
-  color: var(--c-cream-dim); opacity: 0.7;
+
+.compact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 }
-.team-card--ph::after {
-  content: ''; position: absolute; inset: 0;
-  background-image:
-    repeating-linear-gradient(to right, var(--c-cream) 0 1px, transparent 1px 22px),
-    repeating-linear-gradient(to bottom, var(--c-cream) 0 1px, transparent 1px 22px);
-  opacity: 0.04; pointer-events: none;
+
+.compact-card__media {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--c-charcoal);
+  border: 1px solid rgba(240, 237, 227, 0.08);
+}
+
+.compact-card__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter var(--dur-med), transform var(--dur-med) var(--ease-out);
+}
+
+.compact-card:hover .compact-card__media img {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.05);
+}
+
+.compact-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.compact-card__name {
+  font-family: 'Gotham', sans-serif;
+  font-weight: 300;
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: var(--c-cream);
+}
+
+.compact-card__role {
+  font-family: 'Gotham', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--c-cream-dim);
 }
 
 /* ============================================================
