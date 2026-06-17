@@ -78,7 +78,7 @@
    Type scale
    ============================================================ */
 body {
-  font-family: 'Barques', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
   color: var(--c-cream);
   background: var(--c-void);
@@ -87,30 +87,33 @@ body {
 
 /* Display — BARQUES ExtraBold / Heavy */
 .type-hero {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 300;
-  font-size: clamp(38px, 5.2vw, 96px);
+  font-size: clamp(36px, 4.9vw, 90px);
   line-height: 0.96;
   letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 .type-display {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 300;
-  font-size: clamp(44px, 7vw, 120px);
+  font-size: clamp(40px, 6.6vw, 110px);
   line-height: 0.95;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 /* Heading — BARQUES Bold */
 .type-heading {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 300;
-  font-size: clamp(30px, 4vw, 64px);
+  font-size: clamp(28px, 3.8vw, 60px);
   line-height: 1.08;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 .type-subhead {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 300;
   font-size: clamp(18px, 2vw, 28px);
   line-height: 1.55;
@@ -128,7 +131,7 @@ body {
 
 /* Descriptor / Labels — Acumin ExtraLight, tracked */
 .type-label {
-  font-family: 'Barques', 'Helvetica Neue', sans-serif;
+  font-family: 'Gotham', 'Helvetica Neue', sans-serif;
   font-weight: 300;
   font-size: 12px;
   line-height: 1;
@@ -136,7 +139,7 @@ body {
   text-transform: uppercase;
 }
 .type-caption {
-  font-family: 'Barques', 'Helvetica Neue', sans-serif;
+  font-family: 'Gotham', 'Helvetica Neue', sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 1.4;
@@ -145,7 +148,7 @@ body {
 
 /* Body — BARQUES Regular */
 .type-body {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 300;
   font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.85;
@@ -154,13 +157,13 @@ body {
 
 /* Mobile: shrink the oversized display type so long words fit on screen */
 @media (max-width: 600px) {
-  .type-hero    { font-size: clamp(1.55rem, 8.6vw, 2.7rem); letter-spacing: -0.02em; line-height: 0.96; }
-  .type-display { font-size: clamp(1.7rem, 8vw, 2.7rem); }
-  .type-heading { font-size: clamp(1.5rem, 6.5vw, 2.3rem); }
+  .type-hero    { font-size: clamp(1.4rem, 8vw, 2.5rem); letter-spacing: -0.02em; line-height: 0.96; }
+  .type-display { font-size: clamp(1.6rem, 7.6vw, 2.5rem); }
+  .type-heading { font-size: clamp(1.4rem, 6vw, 2.1rem); }
 }
 
 /* Utilities */
-em, i, .u-italic { font-family: 'Book Antiqua', Georgia, serif; font-style: italic; font-weight: 400; }
+em, i, .u-italic { font-family: 'Book Antiqua', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; }
 .u-dim      { color: var(--c-cream-dim); }
 .u-sage     { color: var(--c-sage); }
 .u-center   { text-align: center; }

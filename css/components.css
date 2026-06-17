@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 9px;
   letter-spacing: 0.2em;
   color: var(--c-cream);
@@ -127,7 +127,7 @@
   position: absolute;
   top: clamp(1.5rem, 4vw, 3rem);
   right: clamp(1.5rem, 4vw, 3rem);
-  font-family: 'Barques', sans-serif, monospace;
+  font-family: 'Gotham', sans-serif, monospace;
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.2em;
@@ -261,7 +261,7 @@
 }
 .nav__link {
   position: relative;
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.25em;
@@ -285,7 +285,7 @@
 .nav__link.is-active::after { transform: scaleX(1); }
 
 .nav__cta {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.2em;
@@ -379,7 +379,7 @@
 }
 
 .dropdown__sub-link {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 200;
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -431,7 +431,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem var(--gutter);
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 300;
   font-size: clamp(1.8rem, 6vw, 3rem);
   color: var(--c-cream);
@@ -445,7 +445,7 @@
   color: var(--c-sage);
 }
 .nav-overlay__trigger span:first-child {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.3em;
@@ -477,7 +477,7 @@
   margin-bottom: 1.5rem;
 }
 .nav-overlay__sub a {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.15em;
@@ -495,7 +495,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.22em;
@@ -549,13 +549,13 @@
   padding-inline: clamp(1.5rem, 3vw, 3rem);
 }
 .ticker__num {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 300;
   font-size: clamp(28px, 3.5vw, 46px);
   line-height: 1;
 }
 .ticker__label {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.2em;
@@ -608,7 +608,7 @@
   border-bottom: 1px solid var(--c-line);
 }
 .footer__col h4 {
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.25em;
@@ -618,7 +618,7 @@
 }
 .footer__col a {
   display: block;
-  font-family: 'Barques', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 15px;
   color: var(--c-cream-dim);
   padding-block: 0.4rem;
