@@ -79,7 +79,7 @@
    ============================================================ */
 body {
   font-family: 'Barques', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--c-cream);
   background: var(--c-void);
   letter-spacing: 0.005em;
@@ -88,14 +88,14 @@ body {
 /* Display — BARQUES ExtraBold / Heavy */
 .type-hero {
   font-family: 'Barques', sans-serif;
-  font-weight: 900;
+  font-weight: 300;
   font-size: clamp(38px, 5.2vw, 96px);
   line-height: 0.96;
   letter-spacing: -0.02em;
 }
 .type-display {
   font-family: 'Barques', sans-serif;
-  font-weight: 800;
+  font-weight: 300;
   font-size: clamp(44px, 7vw, 120px);
   line-height: 0.95;
   letter-spacing: -0.01em;
@@ -104,14 +104,14 @@ body {
 /* Heading — BARQUES Bold */
 .type-heading {
   font-family: 'Barques', sans-serif;
-  font-weight: 700;
+  font-weight: 300;
   font-size: clamp(30px, 4vw, 64px);
   line-height: 1.08;
   letter-spacing: -0.01em;
 }
 .type-subhead {
   font-family: 'Barques', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: clamp(18px, 2vw, 28px);
   line-height: 1.55;
   letter-spacing: 0.02em;
@@ -128,16 +128,16 @@ body {
 
 /* Descriptor / Labels — Acumin ExtraLight, tracked */
 .type-label {
-  font-family: 'Acumin Variable Concept', 'Helvetica Neue', sans-serif;
-  font-weight: 200;
+  font-family: 'Barques', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
   font-size: 12px;
   line-height: 1;
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
 .type-caption {
-  font-family: 'Acumin Variable Concept', 'Helvetica Neue', sans-serif;
-  font-weight: 200;
+  font-family: 'Barques', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.15em;
@@ -146,7 +146,7 @@ body {
 /* Body — BARQUES Regular */
 .type-body {
   font-family: 'Barques', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.85;
   letter-spacing: 0.02em;
@@ -160,7 +160,7 @@ body {
 }
 
 /* Utilities */
-.u-italic   { font-family: 'Book Antiqua', Georgia, serif; font-style: italic; }
+em, i, .u-italic { font-family: 'Book Antiqua', Georgia, serif; font-style: italic; font-weight: 400; }
 .u-dim      { color: var(--c-cream-dim); }
 .u-sage     { color: var(--c-sage); }
 .u-center   { text-align: center; }

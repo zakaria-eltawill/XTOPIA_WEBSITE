@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Acumin Variable Concept', sans-serif;
+  font-family: 'Barques', sans-serif;
   font-size: 9px;
   letter-spacing: 0.2em;
   color: var(--c-cream);
@@ -127,7 +127,7 @@
   position: absolute;
   top: clamp(1.5rem, 4vw, 3rem);
   right: clamp(1.5rem, 4vw, 3rem);
-  font-family: 'Acumin Variable Concept', monospace;
+  font-family: 'Barques', sans-serif, monospace;
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.2em;
@@ -286,7 +286,7 @@
 
 .nav__cta {
   font-family: 'Barques', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -379,7 +379,7 @@
 }
 
 .dropdown__sub-link {
-  font-family: 'Acumin Variable Concept', sans-serif;
+  font-family: 'Barques', sans-serif;
   font-weight: 200;
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -432,7 +432,7 @@
   justify-content: space-between;
   padding: 1.25rem var(--gutter);
   font-family: 'Barques', sans-serif;
-  font-weight: 700;
+  font-weight: 300;
   font-size: clamp(1.8rem, 6vw, 3rem);
   color: var(--c-cream);
   background: transparent;
@@ -445,7 +445,7 @@
   color: var(--c-sage);
 }
 .nav-overlay__trigger span:first-child {
-  font-family: 'Acumin Variable Concept', sans-serif;
+  font-family: 'Barques', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.3em;
@@ -477,7 +477,7 @@
   margin-bottom: 1.5rem;
 }
 .nav-overlay__sub a {
-  font-family: 'Acumin Variable Concept', sans-serif;
+  font-family: 'Barques', sans-serif;
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.15em;
@@ -495,7 +495,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: 'Acumin Variable Concept', sans-serif;
+  font-family: 'Barques', sans-serif;
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.22em;
@@ -550,12 +550,12 @@
 }
 .ticker__num {
   font-family: 'Barques', sans-serif;
-  font-weight: 800;
+  font-weight: 300;
   font-size: clamp(28px, 3.5vw, 46px);
   line-height: 1;
 }
 .ticker__label {
-  font-family: 'Acumin Variable Concept', sans-serif;
+  font-family: 'Barques', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.2em;
@@ -608,7 +608,7 @@
   border-bottom: 1px solid var(--c-line);
 }
 .footer__col h4 {
-  font-family: 'Acumin Variable Concept', sans-serif;
+  font-family: 'Barques', sans-serif;
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.25em;
