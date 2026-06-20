@@ -48,9 +48,9 @@
     // Accordion submenu toggling
     const items = overlay.querySelectorAll('.nav-overlay__item-wrap');
     items.forEach((item) => {
-      const trigger = item.querySelector('.nav-overlay__trigger');
-      if (trigger) {
-        trigger.addEventListener('click', (e) => {
+      const toggle = item.querySelector('.nav-overlay__toggle');
+      if (toggle) {
+        toggle.addEventListener('click', (e) => {
           const isOpen = item.classList.contains('is-open');
           // Close all other accordions
           items.forEach((oth) => oth.classList.remove('is-open'));
@@ -62,7 +62,7 @@
       }
     });
 
-    overlay.querySelectorAll('.nav-overlay__sub a').forEach((a) => {
+    overlay.querySelectorAll('.nav-overlay__sub a, .nav-overlay__link').forEach((a) => {
       a.addEventListener('click', () => toggleMenu(false));
     });
   }

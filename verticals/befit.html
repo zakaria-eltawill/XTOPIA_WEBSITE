@@ -76,10 +76,13 @@
     </button>
   </header>
 
-  <!-- ============ MOBILE OVERLAY MENU ============ -->
+      <!-- ============ MOBILE OVERLAY MENU ============ -->
   <div class="nav-overlay" data-overlay>
     <div class="nav-overlay__item-wrap">
-      <button class="nav-overlay__trigger"><span>01</span>About <span class="arrow">↓</span></button>
+      <div class="nav-overlay__header">
+        <a href="../about.html" class="nav-overlay__link">About</a>
+        <button class="nav-overlay__toggle" aria-label="Toggle Submenu"><span class="arrow">↓</span></button>
+      </div>
       <div class="nav-overlay__sub">
         <a href="../community.html">Our story</a>
         <a href="../about.html#framework-deep">Our value</a>
@@ -87,7 +90,10 @@
       </div>
     </div>
     <div class="nav-overlay__item-wrap">
-      <button class="nav-overlay__trigger"><span>02</span>Our Ecosystem <span class="arrow">↓</span></button>
+      <div class="nav-overlay__header">
+        <a href="../verticals.html" class="nav-overlay__link">Our Ecosystem</a>
+        <button class="nav-overlay__toggle" aria-label="Toggle Submenu"><span class="arrow">↓</span></button>
+      </div>
       <div class="nav-overlay__sub">
         <a href="trofi.html">F&amp;B</a>
         <a href="befit.html">Sports &amp; Wellness</a>
@@ -96,13 +102,20 @@
       </div>
     </div>
     <div class="nav-overlay__item-wrap">
-      <a href="javascript:void(0)" class="nav-overlay__trigger" style="text-decoration:none; cursor:default;"><span>03</span>Careers</a>
+      <div class="nav-overlay__header">
+        <a href="javascript:void(0)" class="nav-overlay__link" style="cursor:default;">Careers</a>
+      </div>
     </div>
     <div class="nav-overlay__item-wrap">
-      <a href="../people.html" class="nav-overlay__trigger" style="text-decoration:none;"><span>04</span>People</a>
+      <div class="nav-overlay__header">
+        <a href="../people.html" class="nav-overlay__link">People</a>
+      </div>
     </div>
     <div class="nav-overlay__item-wrap">
-      <button class="nav-overlay__trigger"><span>05</span>Contact <span class="arrow">↓</span></button>
+      <div class="nav-overlay__header">
+        <a href="../contact.html" class="nav-overlay__link">Contact</a>
+        <button class="nav-overlay__toggle" aria-label="Toggle Submenu"><span class="arrow">↓</span></button>
+      </div>
       <div class="nav-overlay__sub">
         <a href="mailto:info@xtopia.com">Email</a>
         <a href="../contact.html#map">Map</a>

@@ -105,4 +105,10 @@
   .grid--3,
   .grid--4 { grid-template-columns: 1fr; }
   .section { padding-block: clamp(3.5rem, 9vh, 6rem); }
+  
+  .mobile-break { display: block; }
+  .mobile-push-up { padding-bottom: 15vh !important; }
+}
+@media (min-width: 768px) {
+  .mobile-break { display: none; }
 }
