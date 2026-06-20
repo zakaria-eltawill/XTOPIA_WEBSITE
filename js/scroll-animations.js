@@ -37,7 +37,7 @@
     const obj = { v: 0 };
     el.textContent = prefix + formatCount(el, 0) + suffix;
     gsap.to(obj, {
-      v: target, duration: 1.6, ease: 'power2.out',
+      v: target, duration: 0.8, ease: 'power2.out',
       onUpdate: () => { el.textContent = prefix + formatCount(el, obj.v) + suffix; },
     });
   }
@@ -59,7 +59,7 @@
   /* ---------- Framework columns ---------- */
   gsap.utils.toArray('.fw-col').forEach((col, i) => {
     gsap.from(col, {
-      y: 80, opacity: 0, duration: 0.9, ease: 'power3.out', delay: i * 0.12,
+      y: 80, opacity: 0, duration: 0.4, ease: 'power3.out', delay: i * 0.05,
       scrollTrigger: { trigger: col, start: 'top 85%' },
     });
     ScrollTrigger.create({ trigger: col, start: 'top 80%', onEnter: () => col.classList.add('is-in') });
@@ -69,7 +69,7 @@
   gsap.utils.toArray('.feature__media').forEach((media) => {
     gsap.fromTo(media,
       { clipPath: 'inset(100% 0 0 0)' },
-      { clipPath: 'inset(0% 0 0 0)', duration: 1.2, ease: 'power4.out',
+      { clipPath: 'inset(0% 0 0 0)', duration: 0.5, ease: 'power4.out',
         scrollTrigger: { trigger: media, start: 'top 80%' },
         onStart: () => media.classList.add('is-in') });
   });
@@ -77,7 +77,7 @@
   /* ---------- Floor stack (SOHO deep-dive) ---------- */
   gsap.utils.toArray('.floor').forEach((f, i) => {
     ScrollTrigger.create({ trigger: f, start: 'top 90%',
-      onEnter: () => setTimeout(() => f.classList.add('is-in'), i * 90) });
+      onEnter: () => setTimeout(() => f.classList.add('is-in'), i * 40) });
   });
 
   /* ---------- Philosophy pinned screens (about) ---------- */
@@ -99,11 +99,11 @@
       scrollTrigger: { trigger: flip, start: 'top top', end: '+=200%', pin: true, scrub: 0.6 },
     });
     aWords.forEach((w) => {
-      tl.to(w, { opacity: 1, filter: 'blur(0px)', duration: 0.4 });
+      tl.to(w, { opacity: 1, filter: 'blur(0px)', duration: 0.2 });
     });
-    tl.to({}, { duration: 1.0 }); // Space to read while scrolling
-    tl.to(flip.querySelector('.flip__a'), { opacity: 0, filter: 'blur(10px)', duration: 0.4 });
-    if (bBlock) tl.to(bBlock, { opacity: 1, filter: 'blur(0px)', duration: 0.5 }, '<0.1');
+    tl.to({}, { duration: 0.5 }); // Space to read while scrolling
+    tl.to(flip.querySelector('.flip__a'), { opacity: 0, filter: 'blur(10px)', duration: 0.2 });
+    if (bBlock) tl.to(bBlock, { opacity: 1, filter: 'blur(0px)', duration: 0.25 }, '<0.1');
   }
 })();
 
