@@ -1,6 +1,6 @@
 # XTOPIA — Company Profile
 > **Document:** Company Profile 3.0 · 2026
-> **Positioning:** Community-Driven Destination Platform
+> **Positioning:** Community-Driven Platform
 > **Closing Line:** One Platform. Multiple Expressions of Life.
 
 ---
@@ -356,7 +356,7 @@ These are direct quotes and key statements from the company profile, useful for 
 
 > "One Platform. Multiple Expressions of Life."
 
-> "A Community-Driven Destination Platform."
+> "A Community-Driven Platform."
 
 > "From daily life to city-scale impact."
 
@@ -386,7 +386,7 @@ Based on the company profile, the following sections and content blocks are reco
 
 | Page / Section | Content Source |
 |---|---|
-| **Hero** | "One Platform. Multiple Expressions of Life." or "Community-Driven Destination Platform" |
+| **Hero** | "One Platform. Multiple Expressions of Life." or "Community-Driven Platform" |
 | **About / Who We Are** | The XTOPIA Framework (Anchor → Develop → Activate) |
 | **Stats Bar** | 9+ Countries · 3,000+ Employees · 100K+ Gym Members · 35M+ SQM · 20M Meals · 18+ Parks |
 | **Verticals / What We Do** | 5 verticals: F&B (TROFI) · Sports (BeFit 360) · Developments · Neighborhood Parks (MAHYA) · Activations (BEYOND) |
@@ -400,4 +400,4 @@ Based on the company profile, the following sections and content blocks are reco
 
 ---
 
-*XTOPIA Company Profile 3.0 · 2026 · Community-Driven Destination Platform*
+*XTOPIA Company Profile 3.0 · 2026 · Community-Driven Platform*

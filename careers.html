@@ -6,8 +6,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>XTOPIA — The Ecosystem · One Platform, Multiple Expressions</title>
-  <meta name="description" content="One platform, four expressions. Explore the XTOPIA ecosystem: TROFI, BeFit 360, Developments, and BEYOND." />
+  <title>XTOPIA — Careers</title>
+  <meta name="description" content="Build the community you want to live in. Join the XTOPIA team." />
 
   
   
@@ -28,7 +28,11 @@
     <div class="loader__wipe"></div>
   </div>
 
-  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span>VIEW&nbsp;↗</span></div></div>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"><span>VIEW&nbsp;↗</span></div>
+  </div>
+
   <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
     <!-- ============ NAV ============ -->
@@ -46,7 +50,7 @@
         </div>
       </div>
       <div class="nav__item dropdown">
-        <a class="nav__link is-active" href="verticals.html">Our Ecosystem</a>
+        <a class="nav__link" href="verticals.html">Our Ecosystem</a>
         <div class="dropdown__menu">
           <a class="dropdown__sub-link" href="verticals/trofi.html">F&amp;B</a>
           <a class="dropdown__sub-link" href="verticals/befit.html">Sports &amp; Wellness</a>
@@ -55,7 +59,7 @@
         </div>
       </div>
       <div class="nav__item">
-        <a class="nav__link" href="careers.html">Careers</a>
+        <a class="nav__link is-active" href="careers.html">Careers</a>
       </div>
       <div class="nav__item">
         <a class="nav__link" href="people.html">People</a>
@@ -103,7 +107,7 @@
     </div>
     <div class="nav-overlay__item-wrap">
       <div class="nav-overlay__header">
-        <a href="careers.html" class="nav-overlay__link">Careers</a>
+        <a href="careers.html" class="nav-overlay__link is-active">Careers</a>
       </div>
     </div>
     <div class="nav-overlay__item-wrap">
@@ -127,107 +131,132 @@
   </div>
 
 <main>
-    <!-- ============ 3.1 VERTICALS HERO ============ -->
-    <section class="hero hero--center grain">
-      <div class="hero__canvas"><canvas data-three-grid></canvas></div>
-      <div class="hero__veil"></div>
-      <div class="hero__inner">
-        <p class="type-label hero__eyebrow u-dim" style="text-align:center;">The Ecosystem</p>
-        <h1 class="type-hero hero__headline" aria-label="One Platform. Multiple <em>Expressions.</em>">
-          <span class="line"><span>ONE PLATFORM.</span></span>
-          <span class="line"><span>MULTIPLE EXPRESSIONS.</span></span>
+    <!-- ============ CAREERS HERO ============ -->
+    <section class="careers-hero section--dark grain" style="padding-top: calc(var(--nav-height) + 2rem); padding-bottom: 4rem;">
+      <div class="container stack" data-reveal="fade">
+        
+        <!-- Center Logo and Title -->
+        <div class="u-center" style="margin-bottom: 4rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+          <div class="careers-hero__logo" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/images/photos/hero/hero-x-symbol-architectural.png" alt="XTOPIA Symbol" style="width: 100%; height: 100%; object-fit: contain;" />
+          </div>
+          <p class="type-label" style="letter-spacing: 0.1em; text-transform: uppercase;">Careers</p>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="type-display" style="font-size: clamp(40px, 6vw, 90px); line-height: 1.1; max-width: 100%; margin-bottom: 5rem; text-align: left; text-transform: uppercase;" data-reveal="up-sm">
+          Build the community<br>you want to live in
         </h1>
-        <p class="type-label u-dim" style="margin-top:2rem;">Anchor · Develop · Activate</p>
+
+        <!-- 2-Column Details -->
+        <div class="grid grid--2 careers-hero__grid" style="align-items: start; gap: 4rem;">
+          <div class="careers-hero__text stack" data-reveal="up-sm" data-reveal-delay="1">
+            <p class="type-body u-dim" style="font-size: 1.1rem; line-height: 1.6; max-width: 40ch;">
+              Calling all bold souls, ready to release the grip on their imaginations and plunge into a sea of endless possibilities. We're on the lookout for you! If your creative energy knows no bounds, if you speak in the language of visuals and concepts, then you've landed where you truly belong. Big picture thinkers, it's time.
+            </p>
+            
+            <div style="margin-top: 4rem;">
+              <h2 class="type-heading" style="font-size: 2.5rem; line-height: 1.2; text-transform: uppercase; margin-bottom: 1.5rem;">
+                If you are<br>one,<br>get in touch:
+              </h2>
+              <a href="mailto:hr@xtopia.life" class="careers-hero__email" style="font-size: 1.2rem; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 4px; transition: border-color 0.3s ease;">
+                hr@xtopia.life
+              </a>
+            </div>
+          </div>
+          
+          <div class="careers-hero__image" data-reveal="up-sm" data-reveal-delay="2" style="width: 100%; aspect-ratio: 3/4; overflow: hidden;">
+            <img src="assets/images/photos/office-workspace.jpg" alt="XTOPIA Creative Workspace" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='assets/images/photos/developments/dev-soho-jeddah-promenade-people.png'" />
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ============ 3.2 VERTICAL SELECTOR (accordion) ============ -->
-    <section class="accordion section--dark" data-accordion aria-label="The five verticals">
-      <article class="acc-bar" style="--accent:var(--c-sage);">
-        <span class="acc-bar__accent"></span>
-        <div class="acc-bar__bg"><img src="assets/images/photos/fnb/fnb-trofi-food-sharing-hands.png" alt="TROFI dining" /></div>
-        <div class="acc-bar__inner container">
-          <div class="acc-bar__head">
-            <span class="acc-bar__idx">01</span>
-            <h2 class="acc-bar__name">TROFI · F&amp;B Group</h2>
-            <span class="acc-bar__tag">Food as a Social Connector <span aria-hidden="true">→</span></span>
-          </div>
-          <div class="acc-bar__detail">
-            <p class="type-body u-dim">A tech-powered F&amp;B platform built on the idea that food is the original social connector — premium dine-in restaurants and high-density cloud kitchens.</p>
-            <div class="acc-bar__stats">
-              <div class="acc-stat"><span class="num">30+</span><span class="lbl">Brands</span></div>
-              <div class="acc-stat"><span class="num">12</span><span class="lbl">Cities</span></div>
-              <div class="acc-stat"><span class="num">20M</span><span class="lbl">Meals</span></div>
-            </div>
-            <a class="btn btn--pill" href="verticals/trofi.html">Explore vertical <span class="btn__arrow">→</span></a>
-          </div>
+    <!-- ============ OPEN POSITIONS ============ -->
+    <section class="careers-positions section--cream" style="padding-block: 8rem;">
+      <div class="container grid grid--2" style="align-items: start; gap: 4rem;">
+        
+        <!-- Left Column -->
+        <div class="careers-positions__left stack" data-reveal="up-sm">
+          <h2 class="type-heading" style="font-size: clamp(40px, 5vw, 70px); font-weight: 700; text-transform: uppercase; line-height: 1.1; margin-bottom: 2rem;">
+            Open Positions
+          </h2>
+          <p class="type-body" style="font-size: 1.2rem; max-width: 30ch; color: var(--c-void);">
+            To apply, please click on the link below each job description.
+          </p>
         </div>
-      </article>
 
-      <article class="acc-bar" style="--accent:var(--c-steel);">
-        <span class="acc-bar__accent"></span>
-        <div class="acc-bar__bg"><img src="assets/images/photos/sports/sports-befit-group-class-weights.png" alt="BeFit 360 class" /></div>
-        <div class="acc-bar__inner container">
-          <div class="acc-bar__head">
-            <span class="acc-bar__idx">02</span>
-            <h2 class="acc-bar__name">BeFit 360 · Sports &amp; Wellness</h2>
-            <span class="acc-bar__tag">Well-being as a Lifestyle <span aria-hidden="true">→</span></span>
-          </div>
-          <div class="acc-bar__detail">
-            <p class="type-body u-dim">The leading regional sports community platform, powered by the first-of-its-kind BeFit 360 app with indefinite point validity.</p>
-            <div class="acc-bar__stats">
-              <div class="acc-stat"><span class="num">35+</span><span class="lbl">Locations</span></div>
-              <div class="acc-stat"><span class="num">100K</span><span class="lbl">Members</span></div>
-              <div class="acc-stat"><span class="num">7,000</span><span class="lbl">Classes / yr</span></div>
+        <!-- Right Column (Accordion) -->
+        <div class="careers-positions__right" data-reveal="up-sm" data-reveal-delay="1">
+          
+          <!-- Accordion Item 1 -->
+          <div class="career-accordion" style="border-top: 1px solid rgba(0,0,0,0.8); border-bottom: 1px solid rgba(0,0,0,0.8);">
+            <button class="career-accordion__toggle" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; background: none; border: none; cursor: pointer; text-align: left;">
+              <span class="type-heading" style="font-size: 1.5rem; font-weight: 600;">Architect</span>
+              <span class="career-accordion__icon" style="font-size: 1.5rem; font-weight: 300;">+</span>
+            </button>
+            <div class="career-accordion__content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
+              <div style="padding-bottom: 1.5rem;">
+                <p class="type-body u-dim" style="margin-bottom: 1rem; color: var(--c-void);">We are looking for a visionary Architect to shape the spaces of tomorrow. Job description coming soon.</p>
+                <a class="btn btn--solid btn--small" href="mailto:hr@xtopia.life?subject=Application:%20Architect">Apply Now <span class="btn__arrow">→</span></a>
+              </div>
             </div>
-            <a class="btn btn--pill" href="verticals/befit.html">Explore vertical <span class="btn__arrow">→</span></a>
           </div>
-        </div>
-      </article>
 
-      <article class="acc-bar" style="--accent:var(--c-sage);">
-        <span class="acc-bar__accent"></span>
-        <div class="acc-bar__bg"><img src="assets/images/photos/developments/dev-soho-jeddah-exterior-night-render.png" alt="XTOPIA Developments" /></div>
-        <div class="acc-bar__inner container">
-          <div class="acc-bar__head">
-            <span class="acc-bar__idx">03</span>
-            <h2 class="acc-bar__name">XTOPIA Developments · Real Estate</h2>
-            <span class="acc-bar__tag">From Daily Life to City-Scale Impact <span aria-hidden="true">→</span></span>
-          </div>
-          <div class="acc-bar__detail">
-            <p class="type-body u-dim">Master-planned community developments across Saudi Arabia, where the built environment is wrapped around proven community demand.</p>
-            <div class="acc-bar__stats">
-              <div class="acc-stat"><span class="num">10</span><span class="lbl">Destinations</span></div>
-              <div class="acc-stat"><span class="num">35M+</span><span class="lbl">SQM</span></div>
+          <!-- Accordion Item 2 -->
+          <div class="career-accordion" style="border-bottom: 1px solid rgba(0,0,0,0.8);">
+            <button class="career-accordion__toggle" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; background: none; border: none; cursor: pointer; text-align: left;">
+              <span class="type-heading" style="font-size: 1.5rem; font-weight: 600;">Marketing & Brand Executive</span>
+              <span class="career-accordion__icon" style="font-size: 1.5rem; font-weight: 300;">+</span>
+            </button>
+            <div class="career-accordion__content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
+              <div style="padding-bottom: 1.5rem;">
+                <p class="type-body u-dim" style="margin-bottom: 1rem; color: var(--c-void);">Join us to communicate the XTOPIA vision to the world. Job description coming soon.</p>
+                <a class="btn btn--solid btn--small" href="mailto:hr@xtopia.life?subject=Application:%20Marketing%20and%20Brand%20Executive">Apply Now <span class="btn__arrow">→</span></a>
+              </div>
             </div>
-            <a class="btn btn--pill" href="verticals/developments.html">Explore vertical <span class="btn__arrow">→</span></a>
           </div>
-        </div>
-      </article>
 
-
-      <article class="acc-bar" style="--accent:#b06a76;">
-        <span class="acc-bar__accent"></span>
-        <div class="acc-bar__bg"><img src="assets/images/collages/collage-beyond-destinations-strip.png" alt="BEYOND destinations" /></div>
-        <div class="acc-bar__inner container">
-          <div class="acc-bar__head">
-            <span class="acc-bar__idx">04</span>
-            <h2 class="acc-bar__name">BEYOND · Activations</h2>
-            <span class="acc-bar__tag">Not Events. Social Ignition. <span aria-hidden="true">→</span></span>
-          </div>
-          <div class="acc-bar__detail">
-            <p class="type-body u-dim">The leading activation and destination management platform — turning destinations into living culture across five experience zones.</p>
-            <div class="acc-bar__stats">
-              <div class="acc-stat"><span class="num">650</span><span class="lbl">Tenants</span></div>
-              <div class="acc-stat"><span class="num">2.8M</span><span class="lbl">Footfall</span></div>
-              <div class="acc-stat"><span class="num">5</span><span class="lbl">Zones</span></div>
+          <!-- Accordion Item 3 -->
+          <div class="career-accordion" style="border-bottom: 1px solid rgba(0,0,0,0.8);">
+            <button class="career-accordion__toggle" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; background: none; border: none; cursor: pointer; text-align: left;">
+              <span class="type-heading" style="font-size: 1.5rem; font-weight: 600;">Leasing Executive</span>
+              <span class="career-accordion__icon" style="font-size: 1.5rem; font-weight: 300;">+</span>
+            </button>
+            <div class="career-accordion__content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;">
+              <div style="padding-bottom: 1.5rem;">
+                <p class="type-body u-dim" style="margin-bottom: 1rem; color: var(--c-void);">Drive the commercial heartbeat of our communities. Job description coming soon.</p>
+                <a class="btn btn--solid btn--small" href="mailto:hr@xtopia.life?subject=Application:%20Leasing%20Executive">Apply Now <span class="btn__arrow">→</span></a>
+              </div>
             </div>
-            <a class="btn btn--pill" href="verticals/beyond.html">Explore vertical <span class="btn__arrow">→</span></a>
           </div>
+
         </div>
-      </article>
+      </div>
     </section>
-  </main>
+
+    <script>
+      // Simple accordion script inline for careers page
+      document.addEventListener('DOMContentLoaded', () => {
+        const accordions = document.querySelectorAll('.career-accordion__toggle');
+        accordions.forEach(acc => {
+          acc.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('.career-accordion__icon');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+              content.style.maxHeight = '0px';
+              icon.textContent = '+';
+            } else {
+              content.style.maxHeight = content.scrollHeight + 'px';
+              icon.textContent = '-';
+            }
+          });
+        });
+      });
+    </script>
+</main>
 
   <footer class="footer grid-texture">
     <div class="container">
@@ -289,6 +318,5 @@
   <script src="js/cursor.js?v=62"></script>
   <script src="js/scroll-animations.js?v=62"></script>
   <script src="js/horizontal-scroll.js?v=62"></script>
-  <script type="module" src="js/three-hero.js?v=62"></script>
 </body>
 </html>

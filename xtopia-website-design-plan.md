@@ -182,7 +182,7 @@ Make an immediate, visceral impression. Establish the XTOPIA philosophy in motio
   PLATFORM               ← same, last word fades in last
 
 [Bottom-left]  "SCROLL TO EXPLORE  ↓"  ← Acumin ExtraLight, animated bouncing arrow
-[Bottom-right] "EST. 2026 · SAUDI ARABIA"  ← Acumin label
+[Bottom-right] "SAUDI ARABIA"  ← Acumin label
 ```
 
 **Animations:**
@@ -371,7 +371,7 @@ Row 2 (Partners):   Nike · Lululemon · EMAAR · Emirates · Adidas · Alo
 
 [Below]  [ GET IN TOUCH → ]          ← Large pill button, cream background, dark text
 
-[Tiny below]  "EST. 2026 · COMMUNITY-DRIVEN DESTINATION PLATFORM"
+[Tiny below]  "COMMUNITY-DRIVEN PLATFORM"
 ```
 
 **Animation:** On scroll into view, the `?` animates in last with a bounce, the button pulses once.
@@ -716,7 +716,7 @@ GREAT.
 
 [Below]
 "XTOPIA PLATFORM"
-"COMMUNITY-DRIVEN DESTINATION PLATFORM"
+"COMMUNITY-DRIVEN PLATFORM"
 
 [Very bottom]
 Jeddah, Saudi Arabia
@@ -750,7 +750,7 @@ info@xtopia.com  (placeholder)
 
 ```
 [Top row]
-  [Left]  XTOPIA logo (cream) + "COMMUNITY-DRIVEN DESTINATION PLATFORM" in Acumin label
+  [Left]  XTOPIA logo (cream) + "COMMUNITY-DRIVEN PLATFORM" in Acumin label
 
 [Main grid — 5 columns]
   ABOUT             COMMUNITY         EVENTS            CONTACT           EXPERIENCES
@@ -853,7 +853,7 @@ Use these exact strings from the brand for consistency:
 
 ```
 Brand name:      XTOPIA  (always all-caps)
-Tagline:         COMMUNITY-DRIVEN DESTINATION PLATFORM
+Tagline:         COMMUNITY-DRIVEN PLATFORM
                  or COMMUNITY · DRIVEN · PLATFORM  (with bullets, nav version)
 Hero copy:       "XTOPIA Flips This."
 Closing:         "One Platform. Multiple Expressions of Life."

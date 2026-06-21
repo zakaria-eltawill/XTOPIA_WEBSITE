@@ -111,5 +111,5 @@ delegation, `matchMedia`, ES modules, DOM injection.
 
 ---
 
-*XTOPIA — Community-Driven Destination Platform · Static site built with HTML, CSS,
+*XTOPIA — Community-Driven Platform · Static site built with HTML, CSS,
 vanilla JS, GSAP, Lenis & Three.js · Deployed on GitHub Pages.*

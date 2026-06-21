@@ -96,7 +96,7 @@
     const aWords = flip.querySelectorAll('.flip__a .word');
     const bBlock = flip.querySelector('.flip__b');
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: flip, start: 'top top', end: '+=200%', pin: true, scrub: 0.6 },
+      scrollTrigger: { trigger: flip, start: 'top top', end: '+=80%', pin: true, scrub: 0.1 },
     });
     aWords.forEach((w) => {
       tl.to(w, { opacity: 1, filter: 'blur(0px)', duration: 0.2 });

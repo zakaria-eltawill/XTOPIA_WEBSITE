@@ -389,8 +389,12 @@
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
-.feature__media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); }
-.feature__media.is-in img { animation: spin-slow 0s; transform: scale(1); transition: transform 8s ease-out; }
+.feature__media img,
+.feature__media video { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 0.8s cubic-bezier(0.2, 0, 0, 1); }
+.feature__media.is-in img,
+.feature__media.is-in video { transform: scale(1); transition: transform 8s ease-out; }
+.feature__media:hover video,
+.feature__media:hover img { transform: scale(1.03); transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1); }
 .feature__stats { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
 .feature__stat .num { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: clamp(1.5rem, 2.5vw, 2.4rem); }
 .feature__stat .lbl { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; color: var(--c-cream-dim); }

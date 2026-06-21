@@ -1,6 +1,6 @@
 # XTOPIA — Website
 
-Cinematic, scroll-driven website for XTOPIA, a community-driven destination platform.
+Cinematic, scroll-driven website for XTOPIA, a community-driven platform.
 Static site: **HTML / CSS / vanilla JS**, with GSAP + ScrollTrigger, Lenis smooth scroll,
 and a Three.js 3D grid hero. Built from the brand identity, company profile, and design plan.
 
