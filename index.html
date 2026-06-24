@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/components.css?v=62" />
   <link rel="stylesheet" href="css/sections.css?v=62" />
   <link rel="stylesheet" href="css/animations.css?v=62" />
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon_icon/fav_icon.jpg" />
 </head>
 
 <body>
@@ -91,7 +92,7 @@
     </button>
   </header>
 
-      <!-- ============ MOBILE OVERLAY MENU ============ -->
+  <!-- ============ MOBILE OVERLAY MENU ============ -->
   <div class="nav-overlay" data-overlay>
     <div class="nav-overlay__item-wrap">
       <div class="nav-overlay__header">
@@ -141,18 +142,24 @@
     </div>
   </div>
 
-<main>
+  <main>
     <!-- ============ 1.1 HERO ============ -->
     <section class="hero grain" id="top">
       <div class="hero__canvas"><canvas data-three-grid></canvas></div>
       <div class="hero__media">
-        <img src="assets/images/photos/hero/hero-cover-architectural-abstract.jpg" alt="" />
+        <img src="assets/images/photos/hero/heroSectionHome.png" alt="XTOPIA Team" style="object-position: center;" />
       </div>
-      <div class="hero__veil"></div>
-      <div class="hero__inner mobile-push-up"
-        style="display: flex; align-items: center; justify-content: center; text-align: center; height: 100%;">
-        <h1 class="type-heading" style="font-size: clamp(24px, 2.8vw, 44px); line-height: 1.1;" data-parallax>
-          COMMUNITY-DRIVEN <br class="mobile-break">PLATFORM
+      <div class="hero__veil"
+        style="background: linear-gradient(to bottom, rgba(17,16,16,0.3) 0%, rgba(17,16,16,0.5) 100%);"></div>
+      <div class="hero__inner mobile-push-up stack"
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; height: 100%; gap: 2rem;">
+        <img src="assets/images/logos/brand/logo-xtopia-wordmark-white-outline.png" alt="XTOPIA"
+          style="width: min(70vw, 800px); height: auto; display: block;" data-parallax />
+        <h1 class="type-heading"
+          style="font-size: clamp(13px, 1.8vw, 24px); letter-spacing: 0.35em; font-weight: 300; color: var(--color-cream); white-space: nowrap;"
+          data-parallax>
+          COMMUNITY <span style="font-size: 1.2em; vertical-align: middle; padding: 0 0.2em;">&bull;</span> DRIVEN <span
+            style="font-size: 1.2em; vertical-align: middle; padding: 0 0.2em;">&bull;</span> PLATFORM
         </h1>
       </div>
       <div class="hero__foot">
@@ -164,11 +171,15 @@
     </section>
 
     <!-- ============ 1.2 WHO ARE WE ============ -->
-    <section class="section section--dark u-center" id="intro">
+    <section class="section section--dark u-center" id="intro" style="background-color: #4f5438;">
       <div class="container stack" style="max-width: 1200px; align-items: center;" data-reveal="up-sm">
         <p class="eyebrow type-label" style="justify-content: center;">Who are we?</p>
         <h2 class="type-heading" style="font-size: clamp(18px, 2.2vw, 32px); font-weight: 300; line-height: 1.5;">
-          A next-generation Saudi community development platform building life from the ground up and the system down. Guided by the belief that life needs lifestyle, and lifestyle needs community, we design integrated ecosystems that bring residential, commercial, public space, hospitality, wellness, healthcare, and culture together. We don’t build standalone projects—we create living platforms that evolve with the people they serve. From concept to life, we transform ideas into places that are truly lived.
+          A next-generation Saudi community development platform building life from the ground up and the system down.
+          Guided by the belief that life needs lifestyle, and lifestyle needs community, we design integrated ecosystems
+          that bring residential, commercial, public space, hospitality, wellness, healthcare, and culture together. We
+          don’t build standalone projects—we create living platforms that evolve with the people they serve. From
+          concept to life, we transform ideas into places that are truly lived.
         </h2>
       </div>
     </section>
@@ -177,7 +188,7 @@
     <section class="flip section--dark" id="flip"
       style="flex-direction: column; justify-content: flex-start; padding-top: 12vh; gap: 5vh; background-image: url('assets/images/photos/flip_bg.png'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0,0,0,0.5);">
       <div class="container stack u-center" style="max-width: 800px; z-index: 2;" data-reveal="up-sm">
-        <p class="eyebrow type-label" style="justify-content: center; color: var(--c-cream);">What we do ?</p>
+        <p class="eyebrow type-label" style="justify-content: center; color: var(--color-cream);">What we do ?</p>
       </div>
       <div class="flip__stage">
         <div class="flip__a">
@@ -191,7 +202,8 @@
         </div>
         <div class="flip__b">
           <span class="type-hero">XTOPIA</span>
-          <span class="type-hero"><em style="display:inline-block; transform: rotate(180deg); padding-right: 0.2em; font-style: italic;">flips</em>
+          <span class="type-hero"><em
+              style="display:inline-block; transform: rotate(180deg); padding-right: 0.2em; font-style: italic;">flips</em>
             <span>this.</span></span>
         </div>
       </div>
@@ -277,9 +289,9 @@
     </section>
 
     <!-- ============ 1.5 VERTICALS (asymmetrical grid) ============ -->
-    <section class="verticals-section section--dark grid-texture" id="ecosystem">
+    <section class="verticals-section grid-texture" id="ecosystem" style="background-color: #bfd4dd; color: #111010;">
       <div class="container">
-        <p class="eyebrow type-label" data-reveal="fade">Our Ecosystem</p>
+        <p class="eyebrow type-label" data-reveal="fade" style="color: #111010;">Our Ecosystem</p>
         <h2 class="type-hero" style="margin-block: 1.5rem 3.5rem;" data-reveal="up-sm">One Platform.<br>Multiple
           Expressions of <em>Life.</em></h2>
 
@@ -345,8 +357,8 @@
           </article>
         </div>
         <div class="u-center" style="margin-top: 4.5rem;" data-reveal="fade">
-          <a class="type-label u-dim scroll-hint" href="#featured-project">Launching soon: SOHO Jeddah <span
-              class="scroll-hint__arrow">↓</span></a>
+          <a class="type-label scroll-hint" href="#featured-project" style="color: #111010;">Launching soon: SOHO Jeddah
+            <span class="scroll-hint__arrow">↓</span></a>
         </div>
       </div>
     </section>
@@ -354,7 +366,7 @@
     <!-- ============ 1.6 FEATURED PROJECT ============ -->
     <section class="section section--dark feature grain" id="featured-project">
       <div class="container">
-        <div class="feature__grid">
+        <div class="feature__grid" style="grid-template-columns: 0.85fr 1.15fr; align-items: center;">
           <div class="stack">
             <p class="eyebrow type-label">Launching soon · 2026</p>
             <h2 class="type-display">SOHO<br />JEDDAH</h2>
@@ -374,8 +386,10 @@
               </div>
             </div>
           </div>
-          <div class="feature__media" data-cursor="view">
-            <video src="assets/videos/IMG_0161.MP4" autoplay loop muted playsinline aria-label="SOHO Jeddah Video"></video>
+          <div class="feature__media" data-cursor="view"
+            style="aspect-ratio: 16/11; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.6); overflow: hidden;">
+            <video src="assets/videos/IMG_0161.MP4" autoplay loop muted playsinline aria-label="SOHO Jeddah Video"
+              style="object-position: center; border-radius: 20px;"></video>
           </div>
         </div>
       </div>
@@ -405,7 +419,7 @@
         </div>
         <p class="type-italic u-dim" style="max-width:340px;">From concept to life.</p>
       </div>
-            <div class="footer__grid">
+      <div class="footer__grid">
         <div class="footer__col">
           <h4>About</h4>
           <a href="about.html#story">Our Story</a>

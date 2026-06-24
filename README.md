@@ -15,6 +15,8 @@ python -m http.server 8000
 # then open http://localhost:8000/
 ```
 
+Ready for **Cloudflare Pages** deployment. Just connect the repository or drag-and-drop the folder — no build step required.
+
 Any static server works (`npx serve`, VS Code Live Server, etc.).
 
 ## Pages (11)

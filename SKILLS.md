@@ -61,6 +61,7 @@ delegation, `matchMedia`, ES modules, DOM injection.
 ## 5. Motion & Interaction Design
 
 - Scroll-driven storytelling (pinned "flip" statement, philosophy screens).
+- **Stacking Focus Animation:** Pinned scroll-driven card swapping ("Our Values" section) where glassmorphism cards cross-fade and stack vertically on scroll.
 - Pinned horizontal scrolling with drag fallback + visible "drag/scroll" hints.
 - Infinite marquee tickers (CSS keyframes) and reverse-direction logo walls.
 - Count-up stat animations with locked width (no layout shift).
@@ -81,8 +82,9 @@ delegation, `matchMedia`, ES modules, DOM injection.
 - **Lazy-loading** (`loading="lazy"`) + `<link rel="preload">` for hero/fonts.
 - **Cache-busting** via versioned asset query strings (`?v=N`) + no-cache meta tags.
 - **Reduced-motion** path disables Lenis/Three.js/marquees.
-- **Case-correct asset paths** audited for Linux (GitHub Pages) hosting.
-- Relative paths throughout so the site runs under a subpath (`/XTOPIA_WEBSITE/`).
+- **Case-correct asset paths** fully verified and audited for Linux-based (Cloudflare Pages) hosting.
+- **Production Clean-up**: Python automation scripts used during development were scrubbed prior to deployment.
+- Relative paths throughout so the site runs gracefully from any root.
 
 ---
 
@@ -92,11 +94,10 @@ delegation, `matchMedia`, ES modules, DOM injection.
 |-------|--------|
 | **Git** | Repository init, feature commits, conventional messages, co-author trailers |
 | **GitHub** | Remote hosting at `github.com/zakaria-eltawill/XTOPIA_WEBSITE` |
-| **GitHub Actions** | CI/CD workflow (`deploy-pages.yml`) — auto-build & deploy on push |
-| **GitHub Pages** | Live static hosting; `.nojekyll`; self-enabled via Actions |
-| **PowerShell / Bash** | Local tooling, static preview server (`python -m http.server`) |
+| **Cloudflare Pages** | Live static hosting — directly deploying the static HTML/CSS/JS without build steps |
+| **PowerShell / Bash** | Local tooling, static preview server (`python -m http.server`), custom Python asset validation scripts |
 
-**Live:** https://zakaria-eltawill.github.io/XTOPIA_WEBSITE/
+**Live Deployment:** Ready for Cloudflare Pages drop-in.
 **Repo:** https://github.com/zakaria-eltawill/XTOPIA_WEBSITE
 
 ---
@@ -112,4 +113,4 @@ delegation, `matchMedia`, ES modules, DOM injection.
 ---
 
 *XTOPIA — Community-Driven Platform · Static site built with HTML, CSS,
-vanilla JS, GSAP, Lenis & Three.js · Deployed on GitHub Pages.*
+vanilla JS, GSAP, Lenis & Three.js · Ready for Cloudflare Pages.*

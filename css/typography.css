@@ -80,7 +80,7 @@
 body {
   font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
-  color: var(--c-cream);
+  color: var(--color-cream);
   background: var(--c-void);
   letter-spacing: 0.005em;
 }
@@ -164,6 +164,37 @@ body {
 
 /* Utilities */
 em, i, .u-italic { font-family: 'Book Antiqua', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; }
-.u-dim      { color: var(--c-cream-dim); }
-.u-sage     { color: var(--c-sage); }
+.u-dim      { color: var(--color-cream-dim); }
+.u-sage     { color: var(--color-sage); }
 .u-center   { text-align: center; }
+
+
+/* ============================================================
+   EDITORIAL ITALICS
+   ============================================================ */
+.u-italic, em {
+  font-family: 'Book Antiqua', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-maroon);
+  transition: color 0.3s ease;
+}
+
+/* Dynamic styling for dark backgrounds */
+.section--dark:not(#flip) .u-italic, .section--dark:not(#flip) em,
+.bg-dark-olive .u-italic, .bg-dark-olive em,
+.bg-navy .u-italic, .bg-navy em,
+.bg-split-navy-olive .u-italic, .bg-split-navy-olive em,
+.vhero .u-italic, .vhero em,
+.careers-hero .u-italic, .careers-hero em,
+.story-narrative .u-italic, .story-narrative em,
+.philosophy .u-italic, .philosophy em,
+.footer .u-italic, .footer em,
+.values-section .u-italic, .values-section em,
+.nav-overlay .u-italic, .nav-overlay em {
+  color: var(--color-sage);
+}
+
+#flip .u-italic, #flip em {
+  color: inherit !important;
+}

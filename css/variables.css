@@ -5,16 +5,17 @@
   /* Core */
   --c-void:        #111010;   /* Near-black — primary background */
   --c-charcoal:    #1A1919;   /* Slightly lighter dark panels */
-  --c-cream:       #F0EDE3;   /* Primary text / accent on dark */
-  --c-cream-dim:   #C8C5BC;   /* Secondary text on dark */
+  /* --color-cream moved to brand palette */   /* Primary text / accent on dark */
+  --color-cream-dim:   #C8C5BC;   /* Secondary text on dark */
 
   /* Brand palette */
-  --c-sage:        #C2C7A3;
-  --c-olive:       #4F5438;
-  --c-steel:       #BFD4DE;
-  --c-navy:        #00263D;
-  --c-burgundy:    #360005;
-
+  --color-sage:        #c1c6a3;
+  --color-dark-olive:  #4f5438;
+  --color-light-blue:  #bfd4dd;
+  --color-navy:        #00263e;
+  --color-maroon:      #350004;
+  --color-cream:       #efede3;
+  
   /* UI */
   --c-line:        rgba(240, 237, 227, 0.12);
   --c-line-bright: rgba(240, 237, 227, 0.35);
