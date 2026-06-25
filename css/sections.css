@@ -1277,3 +1277,63 @@ a.contact__detail-value:hover { color: var(--color-sage); }
     top: 0;
   }
 }
+
+/* ============================================================
+   LOGO WALL (Premium White Showcase)
+   ============================================================ */
+.logo-wall-section {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.logo-wall-section .eyebrow {
+  color: rgba(0, 0, 0, 0.5);
+}
+.logo-wall-section .type-heading {
+  color: #000000;
+}
+.logo-wall {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(3rem, 5vw, 6rem);
+  align-items: center;
+  justify-items: center;
+  margin-top: 4rem;
+}
+.logo-wall-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+.logo-wall-item img {
+  max-width: 80%;
+  max-height: 70%;
+  object-fit: contain;
+  filter: brightness(0); /* Default to black for previously white logos */
+  opacity: 0.85;
+  transition: opacity var(--dur-fast);
+}
+.logo-wall-item.logo-wall-item--photo img {
+  filter: none; /* Keep original colors */
+}
+.logo-wall-item:hover img {
+  opacity: 1; /* Very subtle opacity bump, but no color change */
+}
+.logo-wall-item.logo-wall-item--square img {
+  max-height: 90%;
+  max-width: 90%;
+}
+.logo-wall-item.logo-wall-item--big img {
+  max-height: 90%;
+  max-width: 95%;
+}
+@media (max-width: 1024px) {
+  .logo-wall { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+  .logo-wall { grid-template-columns: repeat(3, 1fr); gap: 4rem; }
+}
+@media (max-width: 560px) {
+  .logo-wall { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+}
