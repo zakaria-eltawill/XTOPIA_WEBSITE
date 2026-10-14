@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>XTOPIA — October 2026 Styleguide (internal)</title>
+
+  <link rel="stylesheet" href="../../css/reset.css?v=63" />
+  <link rel="stylesheet" href="../../css/variables.css?v=63" />
+  <link rel="stylesheet" href="../../css/typography.css?v=63" />
+  <link rel="stylesheet" href="../../css/layout.css?v=63" />
+  <link rel="stylesheet" href="../../css/components.css?v=63" />
+  <link rel="stylesheet" href="../../css/sections.css?v=63" />
+
+  <style>
+    /* Styleguide-only scaffolding — not part of the production CSS */
+    body { background: var(--surface-light); }
+    .sg-section { padding-block: 4rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .theme-dark.sg-section { border-bottom-color: rgba(255,255,255,0.1); }
+    .sg-label {
+      font-family: var(--font-heading); font-weight: 700; font-size: 12px;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-taupe-text);
+      margin-bottom: 2rem; display: block;
+    }
+    .theme-dark .sg-label { color: var(--accent-number-dark); }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-end; margin-bottom: 2rem; }
+    .sg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1.5rem; }
+    .sg-swatch { display: flex; flex-direction: column; gap: 0.5rem; }
+    .sg-swatch__chip { height: 72px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.1); }
+    .sg-swatch__name { font-family: var(--font-heading); font-weight: 700; font-size: 12px; letter-spacing: 0.05em; }
+    .sg-swatch__hex { font-family: var(--font-body); font-size: 13px; color: var(--color-taupe-text); }
+    .sg-specimen { margin-bottom: 1.75rem; }
+    .sg-specimen__meta { font-family: var(--font-body); font-size: 13px; color: var(--color-taupe-text); margin-top: 0.4rem; }
+    .sg-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .sg-component { margin-bottom: 4rem; }
+    .sg-component__label { font-family: var(--font-heading); font-weight: 700; font-size: 13px; letter-spacing: 0.1em; margin-bottom: 1.5rem; display: block; opacity: 0.6; }
+    @media (max-width: 860px) { .sg-grid-2 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="theme-light">
+
+  <header class="container" style="padding-block: 3rem;">
+    <span class="sg-label">XTOPIA · Internal — not linked from nav</span>
+    <h1 class="type-display">Styleguide<br><em class="type-italic">October 2026.</em></h1>
+    <p class="type-body" style="max-width: 60ch; margin-top: 1.5rem;">
+      Tokens, type system and reusable components introduced for the October 2026 rebrand (Phase 0).
+      Everything on this page uses the real fonts, colours, logos and photography from
+      <code>assets/images/rebrand-2026/</code> — check DevTools → Computed to confirm each role renders
+      in the correct font family.
+    </p>
+  </header>
+
+  <!-- ============================================================
+       COLOR TOKENS
+       ============================================================ -->
+  <section class="sg-section theme-light container">
+    <span class="sg-label">01 — Colour tokens</span>
+    <div class="sg-swatches">
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--color-cream-warm)"></div><span class="sg-swatch__name">cream-warm</span><span class="sg-swatch__hex">#F6F0E4</span></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--color-sand)"></div><span class="sg-swatch__name">sand</span><span class="sg-swatch__hex">#E4DBCC</span></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--color-taupe)"></div><span class="sg-swatch__name">taupe</span><span class="sg-swatch__hex">#9D8A75</span></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--surface-dark)"></div><span class="sg-swatch__name">surface-dark</span><span class="sg-swatch__hex">#000000</span></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--color-navy)"></div><span class="sg-swatch__name">navy (accent-number)</span><span class="sg-swatch__hex">#00263E</span></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--color-light-blue)"></div><span class="sg-swatch__name">light-blue (accent-number-dark)</span><span class="sg-swatch__hex">#BFD4DD</span></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--color-maroon)"></div><span class="sg-swatch__name">maroon (accent-italic)</span><span class="sg-swatch__hex">#350004</span></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--text-on-light)"></div><span class="sg-swatch__name">text-on-light</span><span class="sg-swatch__hex">#2E2E2E</span></div>
+      <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--text-on-dark)"></div><span class="sg-swatch__name">text-on-dark</span><span class="sg-swatch__hex">#FFFBF7</span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TYPOGRAPHY
+       ============================================================ -->
+  <section class="sg-section theme-light container">
+    <span class="sg-label">02 — Typography</span>
+
+    <div class="sg-specimen">
+      <p class="type-display">The XTOPIA <em class="type-italic">advantage.</em></p>
+      <p class="sg-specimen__meta">.type-display — Montserrat Bold 700 · var(--font-heading)</p>
+    </div>
+    <div class="sg-specimen">
+      <p class="type-heading">One business. <em class="type-italic">Multiple routes to growth.</em></p>
+      <p class="sg-specimen__meta">.type-heading + .type-italic — Montserrat Bold 700 / Book Antiqua Italic · var(--font-heading) / var(--font-accent)</p>
+    </div>
+    <div class="sg-specimen">
+      <p class="type-subhead">XTOPIA is a Jeddah-based, community-focused business-building platform founded by Ali Al Shareef.</p>
+      <p class="sg-specimen__meta">.type-subhead — Montserrat Light 300</p>
+    </div>
+    <div class="sg-specimen">
+      <p class="type-number">74+</p>
+      <p class="sg-specimen__meta">.type-number — Barques ExtraBold 800 · var(--font-number) (numbers only — never a heading)</p>
+    </div>
+    <div class="sg-specimen">
+      <p class="type-label">[ F&amp;B Locations ]</p>
+      <p class="sg-specimen__meta">.type-label — Montserrat Bold 700, tracked uppercase</p>
+    </div>
+    <div class="sg-specimen">
+      <p class="type-body">We start with people: understanding what customers and communities genuinely need and where existing solutions fall short. From there, we bring together entrepreneurs, operators and partners to build, launch and scale new concepts.</p>
+      <p class="sg-specimen__meta">.type-body — Acumin Variable Concept Light 300 · var(--font-body)</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THEME CLASSES — light / dark side by side
+       ============================================================ -->
+  <section class="theme-light sg-section">
+    <div class="container">
+      <span class="sg-label">03 — Theme: .theme-light</span>
+      <p class="type-heading">Places with purpose. <em class="type-italic">Local demand. The right operators.</em></p>
+      <p class="type-number" style="margin-top:1rem;">42.5K</p>
+      <p class="type-label">[ SQM Built-Up Area ]</p>
+    </div>
+  </section>
+  <section class="theme-dark sg-section">
+    <div class="container">
+      <span class="sg-label">03 — Theme: .theme-dark</span>
+      <p class="type-heading">Two arms. <em class="type-italic">One community.</em></p>
+      <p class="type-number" style="margin-top:1rem;">100K</p>
+      <p class="type-label">[ Active Gym Members ]</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPONENTS
+       ============================================================ -->
+  <section class="sg-section theme-light container">
+    <span class="sg-label">04 — Components</span>
+
+    <div class="sg-component">
+      <span class="sg-component__label">.title-split</span>
+      <p class="title-split">
+        <span class="title-split__line1">Taking TROFI</span>
+        <span class="title-split__line2">further.</span>
+      </p>
+    </div>
+
+    <div class="sg-component">
+      <span class="sg-component__label">.stat-row</span>
+      <div class="stat-row">
+        <div class="stat-row__item"><span class="stat-row__num" data-count="74">74+</span><span class="stat-row__label">Locations</span></div>
+        <div class="stat-row__item"><span class="stat-row__num" data-count="29">29+</span><span class="stat-row__label">Brands</span></div>
+        <div class="stat-row__item"><span class="stat-row__num" data-count="12">12</span><span class="stat-row__label">Cities</span></div>
+        <div class="stat-row__item"><span class="stat-row__num" data-count="20">20M+</span><span class="stat-row__label">Meals Served</span></div>
+      </div>
+    </div>
+
+    <div class="sg-grid-2 sg-component">
+      <div>
+        <span class="sg-component__label">.x-mask (--lg)</span>
+        <div class="x-mask x-mask--lg">
+          <img src="../../assets/images/rebrand-2026/photos/trofi/trofi-wood-fired-oven-chef.webp" alt="TROFI wood-fired oven" />
+        </div>
+      </div>
+      <div>
+        <span class="sg-component__label">.x-mask (--card)</span>
+        <div class="x-mask x-mask--card">
+          <img src="../../assets/images/rebrand-2026/photos/xeed/xeed-date-palms.webp" alt="XEED date palms" />
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-component">
+      <span class="sg-component__label">.biz-cover</span>
+      <div class="biz-cover">
+        <div class="biz-cover__media x-mask x-mask--card">
+          <img src="../../assets/images/rebrand-2026/x/x-trofi.webp" alt="TROFI" />
+        </div>
+        <img class="biz-cover__logo" src="../../assets/images/rebrand-2026/logos/logo-trofi-dark.svg" alt="TROFI logo" />
+        <p class="biz-cover__tag">Redefining how food brands grow</p>
+      </div>
+    </div>
+
+    <div class="sg-component">
+      <span class="sg-component__label">.points</span>
+      <div class="points">
+        <div class="points__item">
+          <span class="points__num">01</span>
+          <span class="points__title">Destination partnerships</span>
+          <p class="points__text">Partner with developers and landlords to create distinctive dining experiences and strengthen destinations.</p>
+        </div>
+        <div class="points__item">
+          <span class="points__num">02</span>
+          <span class="points__title">Global brands &amp; franchising</span>
+          <p class="points__text">Bring international brands to Saudi Arabia and expand regionally born brands globally through brand equity, partnerships and franchising.</p>
+        </div>
+        <div class="points__item">
+          <span class="points__num">03</span>
+          <span class="points__title">Cloud-kitchen expansion</span>
+          <p class="points__text">Expand across Saudi Arabia and the region, serving more brands from each kitchen with disciplined investment and consistent quality.</p>
+        </div>
+        <div class="points__item">
+          <span class="points__num">04</span>
+          <span class="points__title">Technology &amp; operating excellence</span>
+          <p class="points__text">Launch our app and continuously develop our existing technology to connect customers, improve kitchen performance and maintain quality at scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       X-WATERMARK (full section demo)
+       ============================================================ -->
+  <section class="theme-light x-watermark sg-section">
+    <div class="container" style="text-align:center;">
+      <span class="sg-label">05 — .x-watermark</span>
+      <p class="title-split" style="align-items:center;">
+        <span class="title-split__line1">A world</span>
+        <span class="title-split__line2">to belong to.</span>
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>

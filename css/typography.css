@@ -5,6 +5,43 @@
    ../assets/Fonts/ path works for top-level and nested pages.
    ============================================================ */
 
+/* ---- MONTSERRAT (headings, labels, lead text — October 2026 profile) ---- */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ---- BARQUES (primary) ---- */
 @font-face {
   font-family: 'Barques';
@@ -75,80 +112,95 @@
 }
 
 /* ============================================================
+   October 2026 profile — font tokens
+   ============================================================ */
+:root {
+  --font-heading: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Acumin Variable Concept', 'Montserrat', sans-serif;
+  --font-accent:  'Book Antiqua', Georgia, serif;
+  --font-number:  'Barques', 'Montserrat', sans-serif;
+}
+
+/* ============================================================
    Type scale
    ============================================================ */
 body {
-  font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   color: var(--color-cream);
   background: var(--c-void);
   letter-spacing: 0.005em;
 }
 
-/* Display — BARQUES ExtraBold / Heavy */
+/* Display — Montserrat, sentence case (profile drops forced uppercase) */
 .type-hero {
-  font-family: 'Gotham', sans-serif;
-  font-weight: 300;
+  font-family: var(--font-heading);
+  font-weight: 400;
   font-size: clamp(36px, 4.9vw, 90px);
   line-height: 0.96;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
 }
 .type-display {
-  font-family: 'Gotham', sans-serif;
-  font-weight: 300;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: clamp(40px, 6.6vw, 110px);
   line-height: 0.95;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
 }
 
-/* Heading — BARQUES Bold */
+/* Heading — Montserrat Bold */
 .type-heading {
-  font-family: 'Gotham', sans-serif;
-  font-weight: 300;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: clamp(28px, 3.8vw, 60px);
   line-height: 1.08;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
 }
 .type-subhead {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 300;
   font-size: clamp(18px, 2vw, 28px);
   line-height: 1.55;
   letter-spacing: 0.02em;
 }
 
-/* Accent — Book Antiqua Italic (used sparingly for warmth) */
+/* Accent — Book Antiqua Italic (used sparingly for warmth; never alone) */
 .type-italic {
-  font-family: 'Book Antiqua', Georgia, 'Times New Roman', serif;
+  font-family: var(--font-accent);
   font-style: italic;
   font-weight: 400;
   font-size: clamp(24px, 3vw, 48px);
   line-height: 1.2;
 }
 
-/* Descriptor / Labels — Acumin ExtraLight, tracked */
+/* Stat numbers — Barques ExtraBold (numbers only, never headings) */
+.type-number {
+  font-family: var(--font-number);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+/* Descriptor / Labels — Montserrat Bold, tracked uppercase */
 .type-label {
-  font-family: 'Gotham', 'Helvetica Neue', sans-serif;
-  font-weight: 300;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 12px;
   line-height: 1;
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
 .type-caption {
-  font-family: 'Gotham', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.15em;
 }
 
-/* Body — BARQUES Regular */
+/* Body — Acumin Concept Light */
 .type-body {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.85;

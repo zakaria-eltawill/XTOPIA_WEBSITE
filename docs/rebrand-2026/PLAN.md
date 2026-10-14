@@ -56,27 +56,20 @@ careers.html · contact.html
 
 ---
 
-## Phase 0 — Design system: the new look  ⬜
+## Phase 0 — Design system: the new look  ✅
 
 **Why first:** every later section depends on it. This phase alone should make the site feel "in colour".
 
-### 0.1 Tokens — `css/variables.css`
-- [ ] Add surface tokens (keep existing brand tokens):
-  ```css
-  --color-cream-warm: #F6F0E4;  /* profile page background (sampled) — main light surface */
-  --color-sand:       #E4DBCC;  /* cards / secondary light surface */
-  --color-taupe:      #9D8A75;  /* labels, rules, secondary text on light */
-  --surface-light:    var(--color-cream-warm);
-  --surface-dark:     #000000;  /* profile uses true black */
-  --text-on-light:    #2E2E2E;  /* profile body text on cream */
-  --text-on-dark:     #FFFBF7;  /* profile text on black */
-  --accent-number:    var(--color-navy);        /* stat numbers on light (profile: #00263E) */
-  --accent-number-dark: var(--color-light-blue);/* stat numbers + small caps labels on dark (profile: #BFD4DD) */
-  --accent-italic:    var(--color-maroon);      /* italic taglines on light */
-  ```
-- [ ] Add theme classes in `css/layout.css`: `.theme-light` (cream bg, #2E2E2E text, navy numbers, maroon italics) and `.theme-dark` (black bg, #FFFBF7 text, light-blue `#BFD4DD` numbers/labels). Every `<section>` must carry exactly one.
+### 0.1 Tokens — `css/variables.css`  ✅
+- [x] Added surface tokens (kept existing brand tokens). Also added `--color-taupe-text: #5C4B3A` (not in the
+  original spec) — `--color-taupe` (`#9D8A75`) on cream fails WCAG AA for text (2.9:1), so it is now reserved
+  for decorative rules/dividers only; label and secondary-text colour uses `--color-taupe-text` (7.3:1 on cream).
+- [x] Added theme classes in `css/layout.css`: `.theme-light` (cream bg, `#2E2E2E` text, navy numbers, maroon
+  italics) and `.theme-dark` (black bg, `#FFFBF7` text, light-blue `#BFD4DD` numbers/labels). Not yet applied to
+  existing page sections (still `.section--dark` / `.bg-cream` etc.) — that lands with each page's content phase
+  (2–7) when its markup is touched.
 
-### 0.2 Typography — `css/typography.css`  ⚠️ client decision: use the **profile's** fonts, not the current website's
+### 0.2 Typography — `css/typography.css`  ✅ ⚠️ client decision: use the **profile's** fonts, not the current website's
 
 Font usage measured directly from the October 2026 PDF (font name + size + colour of every text span):
 
@@ -90,27 +83,34 @@ Font usage measured directly from the October 2026 PDF (font name + size + colou
 | Body copy, card descriptions, list items, top header strip | **Acumin Concept Light 300 / Regular 400** | "Partner with developers and landlords…", "Customer & Sector Insight", "XTOPIA · PRIVATE & CONFIDENTIAL" | `--font-body` |
 
 Tasks:
-- [ ] Add **Montserrat** (300/400/500/600/700, self-hosted woff2, SIL OFL) — files already in `assets/Fonts/Montserrat/` → declare `@font-face` in `typography.css`.
-- [ ] Add tokens: `--font-heading: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;` `--font-body: 'Acumin Variable Concept', 'Montserrat', sans-serif;` `--font-accent: 'Book Antiqua', Georgia, serif;` `--font-number: 'Barques', 'Montserrat', sans-serif;`
-- [ ] Replace **all 59** `'Gotham'` references (never loaded → site currently renders in Arial/Helvetica):
-  - `.type-hero / .type-display / .type-heading` → `--font-heading` (700 for sentence-case titles, 400 for uppercase headlines). Drop forced `text-transform: uppercase` on section titles — the profile uses sentence case ("One business.").
-  - `.type-subhead`, lead paragraphs → `--font-heading` 300
-  - `body`, `.type-body`, `.type-caption`, card text → `--font-body` 300/400
-  - `.type-label` / eyebrows → `--font-heading` 700, uppercase, letter-spacing ≈ 0.3em
-  - All `data-count` / stat numbers / `.ticker__num` / `.feature__stat .num` → `--font-number` 800
-- [ ] `em / .u-italic / .type-italic` stay Book Antiqua Italic — colour `--accent-italic` on light, `--text-on-dark` on dark.
-- [ ] Barques is **no longer** the heading font — only numbers (and nothing else).
-- [ ] Ignore the minor fonts that appear once or twice in the PDF (Open Sans, Lora Italic, Times NR MT Pro Italic, Calibri, Noto Sans, Canva Sans) — map them to the tokens above.
-- [ ] Preload `Montserrat-700.woff2`, `Montserrat-300.woff2`, `Barques-ExtraBold.otf` in every page `<head>` (replace the current Barques-ExtraBold + Acumin preloads).
+- [x] Added **Montserrat** (300/400/500/600/700, self-hosted woff2, SIL OFL, files already in `assets/Fonts/Montserrat/`) `@font-face` in `typography.css`.
+- [x] Added tokens in `typography.css`: `--font-heading`, `--font-body`, `--font-accent`, `--font-number` as specified.
+- [x] Replaced **all 59** `'Gotham'` references across `typography.css` / `sections.css` / `components.css` (0 remain in `css/`):
+  - `.type-hero / .type-display / .type-heading` → `--font-heading` (700 for `.type-display`/`.type-heading`, 400 for `.type-hero`). Dropped forced `text-transform: uppercase` on `.type-hero`/`.type-display`/`.type-heading`.
+  - `.type-subhead` → `--font-heading` 300
+  - `body`, `.type-body`, `.type-caption`, card/body text (`hero-card__desc`, `award-card__accolade`, `proj-mix`, `contact__detail-value`, form inputs) → `--font-body` 300
+  - `.type-label` / eyebrows → `--font-heading` 700, uppercase, letter-spacing 0.3em
+  - All stat numbers (`.feature__stat .num`, `.acc-stat .num`, `.vstat .num`, new `.type-number`/`.stat-row__num`) → `--font-number` 800. (`.ticker__num` / `fw-col__num` left as `--font-heading` — decorative ticker/step digits, not profile "big stat" numbers; the ticker itself is marked for removal in Phase 2.)
+  - All other tracked-caps/heading-style Gotham refs (nav, footer, buttons, cards, tables, filters) → `--font-heading`, weight kept as authored (200/300 — Montserrat's loaded 300 is the nearest match; not fine-tuned to 700 per-selector given Phase 2–7 will rebuild most of this markup anyway).
+- [x] `em / .u-italic / .type-italic` stay Book Antiqua Italic — colour `--accent-italic` on light, `--text-on-dark` on dark (via new `.theme-light`/`.theme-dark` rules).
+- [x] Barques is **no longer** the heading font — only `--font-number` (stat numbers). The `.flip__a .type-display` / `.flip__b .type-hero` Barques override in `sections.css` was deliberately left alone — `#flip` is slated for deletion in Phase 2, not touched here.
+- [x] Minor one-off PDF fonts not implemented as separate faces — body/heading tokens cover them.
+- [x] Preloads: only `index.html` preloaded fonts (other pages had none). Replaced its 2 preloads with `Montserrat-700.woff2`, `Montserrat-300.woff2`, kept `Barques-ExtraBold.otf`; dropped the `AcuminVariableConcept.otf` preload (body text isn't typically above-the-fold-critical on the hero).
 
-### 0.3 New reusable components — `css/components.css` (+ small JS if needed)
-- [ ] **Split title** `.title-split` — line 1 Barques bold, line 2 Book Antiqua italic (e.g. **Taking TROFI** *further.*).
-- [ ] **Stat row** `.stat-row` — big Barques number (navy on light / cream on dark), label in brackets `[ EMPLOYEES ]`, thin vertical dividers; reuse existing `data-count` count-up.
-- [ ] **X-mask media** `.x-mask` — image clipped to the XTOPIA X shape via CSS `mask-image` (inline SVG data URI). Variants: `--lg` (hero/cover), `--card`.
-- [ ] **Watermark X** `.x-watermark` — huge, 6–8% opacity X behind light sections (profile p.4, 7, 16, 22).
-- [ ] **Business cover** `.biz-cover` — light bg, centered X-mask image + business logo + maroon italic line (profile p.6/10/15/21/29). Used at top of each business page.
-- [ ] **Numbered points** `.points` — `01 / 02 / 03 / 04` with title + text (the "Taking X further" blocks).
-- [ ] **Confidential-style header strip** (optional, ask client): tiny `XTOPIA · …   OCTOBER 2026` label row.
+### 0.3 New reusable components — `css/components.css` (+ small JS if needed)  ✅
+- [x] **Split title** `.title-split` — line 1 **Montserrat Bold** (not Barques — see 0.2: Barques is numbers-only per the
+  client's final font decision, which postdates this bullet), line 2 Book Antiqua italic (e.g. **Taking TROFI** *further.*).
+- [x] **Stat row** `.stat-row` — big Barques number (navy on light / light-blue on dark via `--accent-number(-dark)`),
+  label in brackets `[ EMPLOYEES ]` (via CSS `::before`/`::after`), thin vertical dividers; markup leaves `data-count`
+  on `.stat-row__num` for the existing count-up JS to hook into.
+- [x] **X-mask media** `.x-mask` — image clipped to the XTOPIA X shape via CSS `mask-image`, referencing the real
+  `x-monogram-dark.svg` / `x-monogram-white.svg` files directly (not an inlined data URI — simpler to maintain, same
+  result). Variants: `--lg` (hero/cover), `--card`.
+- [x] **Watermark X** `.x-watermark` — 7% opacity X centered behind the section (works on both themes, swaps mask
+  asset on `.theme-dark`).
+- [x] **Business cover** `.biz-cover` — centered X-mask image + business logo + maroon/cream italic line.
+- [x] **Numbered points** `.points` — `01 / 02 / 03 / 04` 2-column grid with title + text.
+- [ ] Confidential-style header strip — skipped (optional, "ask client").
 
 ### 0.4 Assets  ✅ final decisions (2026-10-14)
 > Assets extracted from the PDF are in `assets/images/rebrand-2026/` (see its `README.md` for sizes).
@@ -121,7 +121,10 @@ Tasks:
 - [x] ~~Create `assets/images/rebrand-2026/` and add: ARADA Saudi logo, XEED logo (light + dark), MHYA logo (check existing `logo-mahya-*` matches the new mark), per-business X images, XEED photos, Slovakia park photos, SOHO new renders, 4-country map, leadership photos (Jordana, Khalid Abdelmajeed), co-founder photos (Ahmed Tawfik, Tamer Serour). Source: client originals; fallback = images extracted from the PDF.~~ Done — extracted from the PDF.
 - [ ] Name files semantically like the existing convention (`logo-arada-saudi-dark.png`, `xeed-farm-rows-aerial.jpg`).
 
-**Acceptance:** a test page `docs/rebrand-2026/styleguide.html` (not linked from nav) shows tokens, both themes, all new components, real fonts rendering (DevTools → Computed: titles = Montserrat, numbers = Barques, italics = Book Antiqua, body = Acumin).
+**Acceptance:** ✅ `docs/rebrand-2026/styleguide.html` (not linked from nav) shows tokens, both themes, all new
+components, real fonts/logos/photos from `rebrand-2026`. Verified served locally (`python -m http.server 8000`) —
+all linked CSS/font/image/logo paths return 200. DevTools → Computed should confirm titles = Montserrat, numbers =
+Barques, italics = Book Antiqua, body = Acumin.
 
 ---
 
@@ -277,3 +280,4 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 | 2026-10-14 | — | Plan created from October 2026 profile + codebase audit |
 | 2026-10-14 | 0.2 / 0.4 | Fonts switched to the profile's system (Montserrat added to `assets/Fonts/Montserrat/`); logo/photo decisions D1–D5 recorded |
 | 2026-10-14 | 0.4 | 97 temporary assets extracted from the PDF → `assets/images/rebrand-2026/` |
+| 2026-10-14 | 0 | Phase 0 complete: tokens + `.theme-light`/`.theme-dark` (variables.css/layout.css); Montserrat loaded, all 59 Gotham refs replaced with `--font-heading`/`--font-body`/`--font-number` tokens (typography.css/sections.css/components.css); new components `.title-split`, `.stat-row`, `.x-mask`, `.x-watermark`, `.biz-cover`, `.points`; `docs/rebrand-2026/styleguide.html` created and verified. Added `--color-taupe-text` (not in original spec) to fix a WCAG AA contrast failure on the sampled taupe token. Bumped cache-bust to `?v=63` on all 10 pages; updated index.html's font preloads. Also added a deploy-time strip step to `.github/workflows/deploy-pages.yml` (removes docs/tools/partials/CLAUDE.md/SKILLS.md/xtopia-*.md from the published copy only). No HTML page content/structure touched. |

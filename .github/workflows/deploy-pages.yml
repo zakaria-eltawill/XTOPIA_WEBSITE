@@ -31,11 +31,18 @@ jobs:
         with:
           enablement: true
 
+      - name: Prepare deploy copy (strip internal/dev-only files)
+        run: |
+          rsync -a --exclude='.git' ./ /tmp/deploy/
+          rm -rf /tmp/deploy/docs /tmp/deploy/tools /tmp/deploy/partials
+          rm -f /tmp/deploy/CLAUDE.md /tmp/deploy/SKILLS.md
+          rm -f /tmp/deploy/xtopia-*.md
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # The whole repo IS the static site (no build step)
-          path: "."
+          # Deploy from the stripped copy, not the repo root
+          path: "/tmp/deploy"
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -1,0 +1,32 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-10-14T19:24:24.526Z",
+        "reason": "Client-mandated brand font from October 2026 company profile (PLAN.md decision D4, confirmed by client)"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "docs/rebrand-2026/styleguide.html"
+        ],
+        "createdAt": "2026-10-14T19:24:29.253Z",
+        "reason": "Sampled directly from the October 2026 company profile PDF (PLAN.md decision D5, client-approved cream-warm token), not a generic AI default"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "css/components.css"
+        ],
+        "createdAt": "2026-10-14T19:24:57.231Z",
+        "reason": ".stat-row__item has padding-left:1.5rem (24px) between its border-left and content, well over the 8-16px floor; detector false positive, verified by inspection"
+      }
+    ]
+  }
+}

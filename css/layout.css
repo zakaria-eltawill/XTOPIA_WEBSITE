@@ -74,6 +74,37 @@
 .section--cream .eyebrow { color: rgba(17,16,16,0.6); }
 .section--cream .eyebrow::before { background: rgba(17,16,16,0.3); }
 
+/* ============================================================
+   October 2026 — theme classes
+   Every <section> carries exactly one of these.
+   ============================================================ */
+.theme-light {
+  background: var(--surface-light);
+  color: var(--text-on-light);
+}
+.theme-light .eyebrow { color: var(--color-taupe-text); }
+.theme-light .eyebrow::before { background: var(--color-taupe); }
+.theme-light [data-count],
+.theme-light .stat-row__num,
+.theme-light .type-number { color: var(--accent-number); }
+.theme-light em,
+.theme-light .u-italic,
+.theme-light .type-italic { color: var(--accent-italic); }
+
+.theme-dark {
+  background: var(--surface-dark);
+  color: var(--text-on-dark);
+}
+.theme-dark .eyebrow { color: var(--accent-number-dark); }
+.theme-dark .eyebrow::before { background: var(--accent-number-dark); }
+.theme-dark [data-count],
+.theme-dark .stat-row__num,
+.theme-dark .type-number,
+.theme-dark .type-label { color: var(--accent-number-dark); }
+.theme-dark em,
+.theme-dark .u-italic,
+.theme-dark .type-italic { color: var(--text-on-dark); }
+
 /* Media frames */
 .media {
   position: relative;

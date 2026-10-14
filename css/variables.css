@@ -15,7 +15,20 @@
   --color-navy:        #00263e;
   --color-maroon:      #350004;
   --color-cream:       #efede3;
-  
+
+  /* October 2026 profile — surface tokens */
+  --color-cream-warm:  #F6F0E4;  /* profile page background (sampled) — main light surface */
+  --color-sand:        #E4DBCC;  /* cards / secondary light surface */
+  --color-taupe:        #9D8A75;  /* decorative rules/dividers on light — not for text (fails WCAG AA on cream) */
+  --color-taupe-text:   #5C4B3A;  /* darkened taupe for labels/secondary text on light — passes 4.5:1 on cream */
+  --surface-light:     var(--color-cream-warm);
+  --surface-dark:      #000000;  /* profile uses true black */
+  --text-on-light:     #2E2E2E;  /* profile body text on cream */
+  --text-on-dark:      #FFFBF7;  /* profile text on black */
+  --accent-number:        var(--color-navy);        /* stat numbers on light (profile: #00263E) */
+  --accent-number-dark:   var(--color-light-blue);  /* stat numbers + small caps labels on dark (profile: #BFD4DD) */
+  --accent-italic:        var(--color-maroon);      /* italic taglines on light */
+
   /* UI */
   --c-line:        rgba(240, 237, 227, 0.12);
   --c-line-bright: rgba(240, 237, 227, 0.35);

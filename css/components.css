@@ -74,7 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-size: 9px;
   letter-spacing: 0.2em;
   color: var(--color-cream);
@@ -173,7 +173,7 @@
   position: absolute;
   top: clamp(1.5rem, 4vw, 3rem);
   right: clamp(1.5rem, 4vw, 3rem);
-  font-family: 'Gotham', sans-serif, monospace;
+  font-family: var(--font-heading), monospace;
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.2em;
@@ -333,7 +333,7 @@
 
 .nav__link {
   position: relative;
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.25em;
@@ -361,7 +361,7 @@
 }
 
 .nav__cta {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.2em;
@@ -480,7 +480,7 @@
 }
 
 .dropdown__sub-link {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -549,7 +549,7 @@
 }
 
 .nav-overlay__link {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 300;
   font-size: clamp(1.8rem, 6vw, 3rem);
   color: var(--color-cream);
@@ -600,7 +600,7 @@
 }
 
 .nav-overlay__sub a {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.15em;
@@ -619,7 +619,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   font-size: 13px;
   letter-spacing: 0.22em;
@@ -707,14 +707,14 @@
 }
 
 .ticker__num {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 300;
   font-size: clamp(28px, 3.5vw, 46px);
   line-height: 1;
 }
 
 .ticker__label {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.2em;
@@ -787,7 +787,7 @@
 }
 
 .footer__col h4 {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   font-size: 12px;
   letter-spacing: 0.25em;
@@ -798,7 +798,7 @@
 
 .footer__col a {
   display: block;
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-size: 15px;
   color: var(--color-cream-dim);
   padding-block: 0.4rem;
@@ -925,4 +925,175 @@ textarea:focus {
   border-color: var(--color-sage);
   box-shadow: 0 0 0 2px rgba(193, 198, 163, 0.2);
   /* color-sage with opacity */
+}
+
+/* ============================================================
+   October 2026 — new reusable components (Phase 0.3)
+   ============================================================ */
+
+/* ---------- Split title: sentence-case line + italic second line ---------- */
+.title-split {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+.title-split__line1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.title-split__line2 {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  line-height: 1.05;
+  color: var(--accent-italic);
+}
+.theme-dark .title-split__line2 { color: var(--text-on-dark); }
+
+/* ---------- Stat row: big number · bracketed label · thin dividers ---------- */
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.stat-row__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: clamp(1.5rem, 3vw, 3rem);
+  border-left: 1px solid var(--color-taupe);
+}
+.stat-row__item:first-child { padding-left: 0; border-left: none; }
+.theme-dark .stat-row__item { border-left-color: var(--c-line-bright); }
+.stat-row__num {
+  font-family: var(--font-number);
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1;
+  color: var(--accent-number);
+}
+.theme-dark .stat-row__num { color: var(--accent-number-dark); }
+.stat-row__label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-taupe-text);
+}
+.stat-row__label::before { content: '[ '; }
+.stat-row__label::after { content: ' ]'; }
+.theme-dark .stat-row__label { color: var(--accent-number-dark); }
+
+/* ---------- X-mask media: image clipped to the XTOPIA X shape ---------- */
+.x-mask {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  -webkit-mask-image: url('../assets/images/rebrand-2026/logos/x-monogram-dark.svg');
+  mask-image: url('../assets/images/rebrand-2026/logos/x-monogram-dark.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+.x-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.x-mask--lg { max-width: 760px; margin-inline: auto; }
+.x-mask--card { max-width: 340px; }
+.theme-dark .x-mask {
+  -webkit-mask-image: url('../assets/images/rebrand-2026/logos/x-monogram-white.svg');
+  mask-image: url('../assets/images/rebrand-2026/logos/x-monogram-white.svg');
+}
+
+/* ---------- X-watermark: huge low-opacity X behind light sections ---------- */
+.x-watermark { position: relative; overflow: hidden; }
+.x-watermark::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(90vw, 1400px);
+  height: min(90vw, 1400px);
+  transform: translate(-50%, -50%);
+  background-color: currentColor;
+  opacity: 0.07;
+  -webkit-mask-image: url('../assets/images/rebrand-2026/logos/x-monogram-dark.svg');
+  mask-image: url('../assets/images/rebrand-2026/logos/x-monogram-dark.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+.x-watermark > * { position: relative; z-index: 1; }
+.theme-dark.x-watermark::before {
+  -webkit-mask-image: url('../assets/images/rebrand-2026/logos/x-monogram-white.svg');
+  mask-image: url('../assets/images/rebrand-2026/logos/x-monogram-white.svg');
+}
+
+/* ---------- Business cover: light bg, X-mask image + logo + italic line ---------- */
+.biz-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding-block: clamp(4rem, 10vh, 7rem);
+}
+.biz-cover__media { width: min(60vw, 420px); }
+.biz-cover__logo { height: clamp(36px, 5vw, 56px); width: auto; }
+.biz-cover__tag {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  color: var(--accent-italic);
+  max-width: 28ch;
+}
+
+/* ---------- Numbered points: 01 / 02 / 03 / 04 ---------- */
+.points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+.points__item { display: flex; flex-direction: column; gap: 0.75rem; }
+.points__num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--color-taupe-text);
+}
+.theme-dark .points__num { color: var(--accent-number-dark); }
+.points__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  line-height: 1.25;
+}
+.points__text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--color-taupe-text);
+}
+.theme-dark .points__text { color: var(--color-cream-dim); }
+@media (max-width: 767px) {
+  .points { grid-template-columns: 1fr; }
 }

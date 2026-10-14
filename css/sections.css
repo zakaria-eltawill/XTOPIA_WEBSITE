@@ -94,7 +94,7 @@
 }
 
 .hero-card__title {
-  font-family: 'Gotham', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 300;
   font-size: 11px;
   line-height: 1;
@@ -116,7 +116,7 @@
 }
 
 .hero-card__desc {
-  font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: clamp(16px, 1.2vw, 19px);
   line-height: 1.8;
@@ -226,7 +226,7 @@
 .framework__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 4vw, 4rem); }
 .fw-col { padding-top: 2rem; transition: background var(--dur-med) var(--ease-out); border-radius: 4px; }
 .fw-col__num {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   font-size: clamp(3rem, 7vw, 6.5rem);
   line-height: 1;
@@ -234,7 +234,7 @@
 }
 .fw-col__icon { width: 64px; height: 64px; object-fit: contain; margin: 1.5rem 0; opacity: 0.9; }
 .fw-col__title {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -313,7 +313,7 @@
   position: absolute;
   left: 2rem;
   top: 1rem;
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   font-size: 8vw;
   line-height: 0.8;
@@ -341,7 +341,7 @@
 }
 
 .v-card__meta {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -396,8 +396,8 @@
 .feature__media:hover video,
 .feature__media:hover img { transform: scale(1.03); transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1); }
 .feature__stats { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
-.feature__stat .num { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: clamp(1.5rem, 2.5vw, 2.4rem); }
-.feature__stat .lbl { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; color: var(--color-cream-dim); }
+.feature__stat .num { font-family: var(--font-number); font-weight: 800; font-size: clamp(1.5rem, 2.5vw, 2.4rem); }
+.feature__stat .lbl { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; color: var(--color-cream-dim); }
 
 /* Dynamic styling for light backgrounds */
 .bg-cream .feature__stat .num { color: var(--color-navy); font-weight: 400; }
@@ -522,7 +522,7 @@
 .map-dot--hq::before { border-color: var(--color-cream); animation-duration: 2s; }
 .map-dot__label {
   position: absolute; bottom: 140%; left: 50%; transform: translateX(-50%);
-  font-family: 'Gotham', sans-serif; font-weight: 200; font-size: 11px; letter-spacing: 0.18em;
+  font-family: var(--font-heading); font-weight: 200; font-size: 11px; letter-spacing: 0.18em;
   text-transform: uppercase; white-space: nowrap; color: var(--color-cream);
   opacity: 0; transition: opacity var(--dur-fast); pointer-events: none;
 }
@@ -581,14 +581,14 @@
 }
 
 .compact-card__name {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 300;
   font-size: clamp(14px, 1.2vw, 16px);
   color: var(--color-cream);
 }
 
 .compact-card__role {
-  font-family: 'Gotham', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 200;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -642,11 +642,11 @@
 .acc-bar__inner { position: relative; z-index: 2; width: 100%; padding-block: 1.5rem; }
 .acc-bar__head { display: flex; align-items: baseline; gap: clamp(1rem, 2vw, 2rem); }
 .acc-bar__idx {
-  font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.24em;
+  font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.24em;
   font-size: 13px; color: var(--accent, var(--color-cream-dim)); flex-shrink: 0;
 }
 .acc-bar__name {
-  font-family: 'Gotham', sans-serif; font-weight: 300;
+  font-family: var(--font-heading); font-weight: 300;
   font-size: clamp(1.5rem, 3.2vw, 3rem); line-height: 1; letter-spacing: -0.01em;
 }
 .acc-bar__tag {
@@ -663,8 +663,8 @@
 .acc-bar__detail .type-body { margin-bottom: 1.5rem; }
 .acc-bar__stats { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin-bottom: 1.75rem; }
 .acc-stat { display: flex; flex-direction: column; gap: 0.3rem; }
-.acc-stat .num { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: clamp(1.4rem, 2.2vw, 2.1rem); line-height: 1; color: var(--accent, var(--color-cream)); }
-.acc-stat .lbl { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; color: var(--color-cream-dim); }
+.acc-stat .num { font-family: var(--font-number); font-weight: 800; font-size: clamp(1.4rem, 2.2vw, 2.1rem); line-height: 1; color: var(--accent, var(--color-cream)); }
+.acc-stat .lbl { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; color: var(--color-cream-dim); }
 
 /* Open / hovered state — reveals image + full information */
 .acc-bar.is-open { min-height: clamp(440px, 60vh, 620px); }
@@ -701,8 +701,8 @@
 .vhero__accent { color: var(--accent, var(--color-sage)); }
 
 .vstats { display: flex; flex-wrap: wrap; gap: 2rem 3.5rem; }
-.vstat .num { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1; color: var(--accent, var(--color-cream)); }
-.vstat .lbl { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; color: var(--color-cream-dim); margin-top: 0.6rem; }
+.vstat .num { font-family: var(--font-number); font-weight: 800; font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1; color: var(--accent, var(--color-cream)); }
+.vstat .lbl { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; color: var(--color-cream-dim); margin-top: 0.6rem; }
 .bg-cream .vstat .lbl { color: rgba(0, 38, 62, 0.65); font-weight: 400; }
 
 .brand-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--c-line); border: 1px solid var(--c-line); }
@@ -750,8 +750,8 @@
 }
 .award-card__logo { height: clamp(40px, 4.6vw, 58px); width: auto; max-width: 90%; object-fit: contain; }
 .award-card__accolade {
-  font-family: 'Gotham', sans-serif;
-  font-weight: 200;
+  font-family: var(--font-body);
+  font-weight: 300;
   letter-spacing: 0.06em;
   font-size: 13px;
   line-height: 1.7;
@@ -779,8 +779,8 @@
   opacity: 0; transition: opacity var(--dur-fast);
 }
 .brand-cell:hover .brand-cell__info { opacity: 1; }
-.brand-cell__name { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: 15px; }
-.brand-cell__desc { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.12em; font-size: 11px; text-transform: uppercase; }
+.brand-cell__name { font-family: var(--font-heading); font-weight: 300; font-size: 15px; }
+.brand-cell__desc { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.12em; font-size: 11px; text-transform: uppercase; }
 
 .next-vertical { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: clamp(3rem, 7vw, 6rem); border-top: 1px solid var(--c-line); }
 .next-vertical .type-display { font-size: clamp(2rem, 5.5vw, 4rem); line-height: 0.95; }
@@ -791,7 +791,7 @@
    ============================================================ */
 .proj-filter { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 3rem; }
 .proj-filter__btn {
-  font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.2em; text-transform: uppercase; font-size: 12px;
+  font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.2em; text-transform: uppercase; font-size: 12px;
   border: 1px solid var(--c-line-bright); border-radius: 100px; padding: 0.7rem 1.5rem; color: var(--color-cream-dim);
   transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
 }
@@ -807,8 +807,8 @@
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 1.75rem;
   background: linear-gradient(to top, rgba(17,16,16,0.9), transparent);
 }
-.proj-card__name { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: clamp(1.1rem, 1.6vw, 1.6rem); }
-.proj-card__loc { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.2em; text-transform: uppercase; font-size: 11px; color: var(--color-cream-dim); margin-top: 0.4rem; }
+.proj-card__name { font-family: var(--font-heading); font-weight: 300; font-size: clamp(1.1rem, 1.6vw, 1.6rem); }
+.proj-card__loc { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.2em; text-transform: uppercase; font-size: 11px; color: var(--color-cream-dim); margin-top: 0.4rem; }
 .proj-card__hover {
   position: absolute; inset: 0; z-index: 3; padding: 1.75rem;
   display: flex; flex-direction: column; justify-content: flex-end; gap: 1rem;
@@ -816,7 +816,7 @@
   opacity: 0; transform: translateY(12%); transition: opacity var(--dur-med), transform var(--dur-med) var(--ease-out);
 }
 .proj-card:hover .proj-card__hover { opacity: 1; transform: translateY(0); }
-.proj-card__stat { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.12em; font-size: 13px; color: var(--color-cream); }
+.proj-card__stat { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.12em; font-size: 13px; color: var(--color-cream); }
 
 /* Project detail sections */
 .proj-detail { scroll-margin-top: 96px; }
@@ -827,7 +827,7 @@
 .proj-logo--xl { height: auto; width: clamp(360px, 48vw, 620px); max-height: 300px; }
 .proj-detail .type-italic { font-size: clamp(20px, 2.4vw, 32px); }
 .proj-mix {
-  font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.12em;
+  font-family: var(--font-body); font-weight: 300; letter-spacing: 0.12em;
   line-height: 1.9; font-size: 13px; color: var(--color-cream-dim);
 }
 .section--panel .proj-mix { color: var(--color-cream-dim); }
@@ -844,12 +844,12 @@
   transform: translateX(-30px); opacity: 0;
 }
 .floor.is-in { transform: none; opacity: 1; transition: transform 0.6s var(--ease-out), opacity 0.6s var(--ease-out); }
-.floor__lvl { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: 1.15rem; }
-.floor__use { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; color: var(--color-cream-dim); }
+.floor__lvl { font-family: var(--font-heading); font-weight: 300; font-size: 1.15rem; }
+.floor__use { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; color: var(--color-cream-dim); }
 .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 2.5rem; }
 .spec-table td { padding: 1.6rem 0; border-bottom: 1px solid var(--c-line); }
-.spec-table td:first-child { font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; color: var(--color-cream-dim); }
-.spec-table td:last-child { text-align: right; font-family: 'Gotham', sans-serif; font-weight: 300; }
+.spec-table td:first-child { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; color: var(--color-cream-dim); }
+.spec-table td:last-child { text-align: right; font-family: var(--font-heading); font-weight: 300; }
 
 /* ============================================================
    COMMUNITY
@@ -879,8 +879,8 @@
   transition: opacity var(--dur-fast), transform var(--dur-fast);
 }
 .hotspot:hover .hotspot__tip { opacity: 1; transform: translateX(-50%) translateY(0); }
-.hotspot__tip strong { font-family: 'Gotham', sans-serif; font-weight: 300; font-size: 13px; display: block; }
-.hotspot__tip span { font-family: 'Gotham', sans-serif; font-weight: 200; font-size: 11px; letter-spacing: 0.08em; }
+.hotspot__tip strong { font-family: var(--font-heading); font-weight: 300; font-size: 13px; display: block; }
+.hotspot__tip span { font-family: var(--font-heading); font-weight: 200; font-size: 11px; letter-spacing: 0.08em; }
 
 /* Experiences drag carousel */
 .carousel { overflow: hidden; cursor: grab; }
@@ -890,7 +890,7 @@
 .exp-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease-out); }
 .exp-card:hover img { transform: scale(1.05); }
 .exp-card__veil { position: absolute; inset: 0; background: linear-gradient(to top, rgba(17,16,16,0.85), transparent 60%); }
-.exp-card__name { position: absolute; left: 1.5rem; bottom: 1.5rem; z-index: 2; font-family: 'Gotham', sans-serif; font-weight: 300; font-size: 1.4rem; }
+.exp-card__name { position: absolute; left: 1.5rem; bottom: 1.5rem; z-index: 2; font-family: var(--font-heading); font-weight: 300; font-size: 1.4rem; }
 /* Higher specificity than ".exp-card img" so the logo shows fully (contain),
    not cropped by the background image's object-fit:cover. Size unchanged. */
 .exp-card img.exp-card__logo {
@@ -915,7 +915,7 @@
 .contact__logo { height: 30px; width: auto; }
 
 .contact__title {
-  font-family: 'Gotham', sans-serif; font-weight: 300;
+  font-family: var(--font-heading); font-weight: 300;
   font-size: clamp(2.75rem, 6.2vw, 6.25rem); line-height: 0.92; letter-spacing: -0.02em;
 }
 .contact__title .u-italic { font-weight: 300; }
@@ -928,11 +928,11 @@
 }
 .contact__details li:last-child { border-bottom: 1px solid var(--c-line); }
 .contact__detail-label {
-  font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.22em; text-transform: uppercase;
+  font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.22em; text-transform: uppercase;
   font-size: 11px; color: var(--color-cream-dim); white-space: nowrap;
 }
 .contact__detail-value {
-  font-family: 'Gotham', sans-serif; font-size: clamp(15px, 1.2vw, 18px); color: var(--color-cream);
+  font-family: var(--font-body); font-size: clamp(15px, 1.2vw, 18px); color: var(--color-cream);
   text-align: right; transition: color var(--dur-fast);
 }
 a.contact__detail-value { position: relative; }
@@ -946,7 +946,7 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 }
 .contact__form-wrap { width: 100%; max-width: 580px; }
 .contact__form-title {
-  font-family: 'Gotham', sans-serif; font-weight: 300; font-size: clamp(1.9rem, 3.2vw, 3rem);
+  font-family: var(--font-heading); font-weight: 300; font-size: clamp(1.9rem, 3.2vw, 3rem);
   line-height: 1.05; margin: 0.85rem 0 clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em;
 }
 .contact__form { display: flex; flex-direction: column; }
@@ -956,7 +956,7 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 .field input,
 .field textarea {
   width: 100%; padding: 0.9rem 0; border-bottom: 1px solid rgba(17,16,16,0.22);
-  font-family: 'Gotham', sans-serif; font-size: clamp(17px, 1.3vw, 20px); color: var(--c-void); background: transparent;
+  font-family: var(--font-body); font-size: clamp(17px, 1.3vw, 20px); color: var(--c-void); background: transparent;
 }
 .field textarea { resize: none; min-height: 120px; }
 .field::after {
@@ -967,7 +967,7 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 .field:focus-within::after { transform: scaleX(1); }
 .field label {
   position: absolute; left: 0; top: 0.9rem; pointer-events: none;
-  font-family: 'Gotham', sans-serif; font-weight: 200; letter-spacing: 0.2em; text-transform: uppercase;
+  font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.2em; text-transform: uppercase;
   font-size: 13px; color: rgba(17,16,16,0.5); transition: all var(--dur-fast) var(--ease-out);
 }
 .field input:focus ~ label,
@@ -979,7 +979,7 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 .contact__submit {
   align-self: flex-start; display: inline-flex; align-items: center; gap: 0.85rem; margin-top: 1rem;
   background: var(--c-void); color: var(--color-cream); border-radius: 100px;
-  padding: 1.2rem 2.85rem; font-family: 'Gotham', sans-serif; font-weight: 200;
+  padding: 1.2rem 2.85rem; font-family: var(--font-heading); font-weight: 200;
   letter-spacing: 0.22em; text-transform: uppercase; font-size: 13px;
   transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast), background var(--dur-fast);
 }
