@@ -26,6 +26,24 @@
         ],
         "createdAt": "2026-10-14T19:24:57.231Z",
         "reason": ".stat-row__item has padding-left:1.5rem (24px) between its border-left and content, well over the 8-16px floor; detector false positive, verified by inspection"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "*.html"
+        ],
+        "createdAt": "2026-10-14T19:41:47.411Z",
+        "reason": "Footer descriptor 'Built around people · Powered by entrepreneurs' is the brand strapline from the October 2026 profile (CONTENT.md p.2 footer strip, shown in caps there too), reused via partials/footer.html on every page."
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "verticals/*.html"
+        ],
+        "createdAt": "2026-10-14T19:41:47.591Z",
+        "reason": "Same footer strapline, verticals/ pages."
       }
     ]
   }

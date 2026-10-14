@@ -128,20 +128,59 @@ Barques, italics = Book Antiqua, body = Acumin.
 
 ---
 
-## Phase 1 — Structure: nav, footer, sitemap, redirects  ⬜
+## Phase 1 — Structure: nav, footer, sitemap, redirects  ✅
 
-- [ ] **Partials sync:** create `partials/nav.html`, `partials/nav-overlay.html`, `partials/footer.html` and `tools/sync-partials.py` that replaces content between `<!-- @nav:start -->…<!-- @nav:end -->` (etc.) in all pages and rewrites paths for `verticals/` (prefix `../`). Wrap the existing blocks in all 11 pages with these markers.
-- [ ] **Nav (desktop dropdown + mobile overlay):**
-  - About → Our Story · The XTOPIA Advantage · Our Footprint
-  - Our Ecosystem → TROFI · BEYOND · MHYA · **ARADA Saudi** (small "Partnership" tag) · XEED — each item: logo + sector label (mega-menu)
-  - Careers · People · Contact (unchanged sub-items)
-- [ ] **Footer:** tagline → **A world** *to belong to.*; descriptor "Community-Driven Platform" → "Built around people · Powered by entrepreneurs"; ecosystem column = 5 businesses; replace "From concept to life."; socials → real URLs ⚠️ CONFIRM (hide icons until provided); Careers "Join the Team" → `careers.html#positions`; email ⚠️ CONFIRM `info@xtopia.com` vs `@xtopia.life`.
-- [ ] **Meta** on every page: `<title>` and `description` drop "Community-Driven Platform" → e.g. `XTOPIA — Community-focused business-building platform`.
-- [ ] Create skeleton pages `verticals/mhya.html`, `verticals/arada.html`, `verticals/xeed.html` (copy the vertical template: vhero + sections) so links don't 404.
-- [ ] Turn `verticals/befit.html` and `verticals/developments.html` into redirect stubs (`<meta http-equiv="refresh">` + `<link rel="canonical">` + visible link).
-- [ ] Loader + favicon: keep.
+- [x] **Partials sync:** created `partials/nav.html`, `partials/nav-overlay.html`, `partials/footer.html` and
+  `tools/sync-partials.py`. Markers (`<!-- @nav:start -->…<!-- @nav:end -->`, same for `nav-overlay`/`footer`)
+  wrapped around the existing blocks in all 10 production pages (11 was a miscount — there are 10: the 6 root
+  pages + `verticals/{trofi,beyond,befit,developments}.html`; `verticals/{mhya,arada,xeed}.html` added below
+  also get markers). `verticals/befit.html` / `developments.html` were turned into redirect stubs (no nav/footer
+  shell) and are intentionally excluded from the sync list. The script auto-rewrites every local `href`/`src` in
+  the partial with a `../` prefix for pages under `verticals/`; this fixed a pre-existing dead link
+  (`verticals/trofi.html` footer linked `../community.html` instead of `../about.html#story`).
+  `nav.js` now sets `.is-active` from `location.pathname` instead of it being hand-written per page — required
+  to keep the three partials byte-identical across every page (including treating any `verticals/*` subpage as
+  "Our Ecosystem" active).
+- [x] **Nav (desktop dropdown + mobile overlay):** About → Our Story · The XTOPIA Advantage · Our Footprint.
+  Our Ecosystem is now a mega-menu (`.dropdown__menu--mega` in `components.css`) with one logo (SVG, white-on-dark)
+  + sector label per business: TROFI · BEYOND · MHYA · **ARADA Saudi** (`.dropdown__mega-tag` "Partnership" badge) ·
+  XEED. Mobile overlay keeps the five as plain name-only text links (ARADA Saudi gets a "(Partnership)" suffix)
+  — sector labels were dropped from the overlay after the design-quality check flagged the full "BEYOND — Sports
+  & Active Living" style strings as long uppercase passages (`.nav-overlay__sub a` is uppercase); the desktop
+  mega-menu already shows the sector clearly. Careers · People · Contact unchanged.
+- [x] **Footer:** tagline → **A world** *to belong to.* (`to belong to.` as an `<em>`, which already renders Book
+  Antiqua Italic site-wide via the existing global rule); descriptor → "Built around people · Powered by
+  entrepreneurs"; Ecosystem column lists the 5 businesses; Careers → `careers.html#positions` (added
+  `id="positions"` to careers.html's Open Positions section — no other content on that page touched); social
+  icons wrapped `hidden` with `data-confirm="social-links"` + `<!-- CONFIRM -->` comment (no URLs yet); email
+  stays `info@xtopia.com` with `data-confirm="email-domain"` + `<!-- CONFIRM -->` comment (domain still open per
+  PLAN "Still open" §5).
+- [x] **Meta:** `<title>`/`description` updated on all 6 root pages to drop "Community-Driven Platform" /
+  old-positioning language, sourced from `CONTENT.md` §1 and §4 where applicable. Also fixed a pre-existing bug:
+  `people.html` had `about.html`'s exact title/description (copy-paste leftover). `verticals/trofi.html` and
+  `beyond.html` meta already had no deprecated text, so left untouched (out of scope, their rewrite is Phase 4).
+- [x] Created `verticals/mhya.html`, `arada.html`, `xeed.html` — nav/overlay/footer via partials, a `.biz-cover`
+  hero (Phase 0 component) with the real logo + CONTENT.md italic line, and a next-vertical link
+  (MHYA→ARADA→XEED→TROFI, continuing the existing TROFI→BEYOND chain). No other sections — full content is
+  Phase 4.
+- [x] `verticals/befit.html` → redirects to `beyond.html#sports`; `verticals/developments.html` → redirects to
+  `mhya.html`. Both use `<meta http-equiv="refresh">` + `<link rel="canonical">` (absolute `xtopia.life` URL) +
+  a visible link, `noindex`, no nav/footer/CSS/JS shell (they're transient pointers, not real pages).
+- [x] Loader + favicon: unchanged.
+- [x] Preloaded `Montserrat-700.woff2` / `Montserrat-300.woff2` / `Barques-ExtraBold.otf` in every page's
+  `<head>` (previously only `index.html` had any font preload). Bumped `?v=63` → `?v=64` on all CSS/JS links
+  everywhere (including the styleguide).
 
-**Acceptance:** every nav/footer link resolves on every page (root and `verticals/`); `python tools/sync-partials.py` is idempotent.
+**Acceptance:** ✅ Verified via a local server (`python -m http.server`) + a script that extracts every
+`href`/`src` inside the nav/overlay/footer markers on all 11 pages (10 production + the 3 new vertical pages)
+and resolves each one relative to its page — all returned 200. `python tools/sync-partials.py` run twice in a
+row: first run reports `updated` for all 11 pages, second run reports `unchanged` for all 11 — confirmed
+idempotent.
+
+**Not done in this phase (deliberately, per scope):** `partials/nav.html`'s new "The XTOPIA Advantage" link
+points to `about.html#advantage`, which doesn't exist until Phase 5 — acceptable, an anchor to a missing id just
+scrolls to top, it doesn't 404. `#flip`/old positioning copy inside page `<main>` content (e.g. index.html's CTA
+section still says "Community-Driven Platform") was left alone — that's Phase 2+ content, not nav/footer/meta.
 
 ---
 
@@ -281,3 +320,4 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 | 2026-10-14 | 0.2 / 0.4 | Fonts switched to the profile's system (Montserrat added to `assets/Fonts/Montserrat/`); logo/photo decisions D1–D5 recorded |
 | 2026-10-14 | 0.4 | 97 temporary assets extracted from the PDF → `assets/images/rebrand-2026/` |
 | 2026-10-14 | 0 | Phase 0 complete: tokens + `.theme-light`/`.theme-dark` (variables.css/layout.css); Montserrat loaded, all 59 Gotham refs replaced with `--font-heading`/`--font-body`/`--font-number` tokens (typography.css/sections.css/components.css); new components `.title-split`, `.stat-row`, `.x-mask`, `.x-watermark`, `.biz-cover`, `.points`; `docs/rebrand-2026/styleguide.html` created and verified. Added `--color-taupe-text` (not in original spec) to fix a WCAG AA contrast failure on the sampled taupe token. Bumped cache-bust to `?v=63` on all 10 pages; updated index.html's font preloads. Also added a deploy-time strip step to `.github/workflows/deploy-pages.yml` (removes docs/tools/partials/CLAUDE.md/SKILLS.md/xtopia-*.md from the published copy only). No HTML page content/structure touched. |
+| 2026-10-14 | 1 | Phase 1 complete: `partials/{nav,nav-overlay,footer}.html` + `tools/sync-partials.py` (idempotent, verified by running twice); Ecosystem nav is now a mega-menu with the 5 business logos/sectors + ARADA "Partnership" tag (new `.dropdown__menu--mega` styles); footer tagline/descriptor/Ecosystem column/Careers link updated per CONTENT.md, socials hidden + email flagged `data-confirm`; `nav.js` now computes `.is-active` from the URL instead of it being hardcoded per page (required for identical partials); created `verticals/{mhya,arada,xeed}.html` skeletons (biz-cover hero only, full content is Phase 4) and turned `befit.html`/`developments.html` into redirect stubs; meta title/description cleaned up on all 6 root pages (also fixed a pre-existing bug — people.html was duplicating about.html's meta); font preloads added to every page, cache-bust → `?v=64`. All nav/overlay/footer links verified 200 via a local server. |
