@@ -13,7 +13,8 @@ Deploy: GitHub Actions → GitHub Pages on every push to `main` (live at xtopia.
 - One phase per session; stop and summarise for review at the end of each phase.
 - Nav/footer exist in every HTML file: change all pages (root uses `verticals/x.html`, `verticals/*` uses `../`). After Phase 1, edit `partials/` and run `python tools/sync-partials.py`.
 - Bump the `?v=N` cache-busting query on CSS/JS links when CSS/JS changes.
-- Fonts: Barques (display), Book Antiqua italic (accent, never alone), Acumin Variable Concept (body/labels). Do not use Gotham.
+- Fonts = the October profile's system (client decision, see PLAN Phase 0.2): **Montserrat** (titles, headlines, labels, lead text) · **Book Antiqua Italic** (italic second lines, never alone) · **Barques** (stat numbers only) · **Acumin Variable Concept** (body copy). Never use Gotham; Barques is not a heading font any more.
+- Logos: the SVGs in `assets/images/rebrand-2026/logos/` are final (no originals exist). People photos: use what's in the repo. See PLAN → "Decisions already taken" before asking anything.
 - Every section gets `.theme-light` or `.theme-dark`; avoid new inline styles.
 - Items marked ⚠️ CONFIRM in CONTENT.md: implement, but mark with `data-confirm` + `<!-- CONFIRM: … -->`.
 - Preview: `python -m http.server 8000`.

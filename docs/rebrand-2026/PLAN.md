@@ -29,7 +29,7 @@
 | Area | Current state | Problem vs new profile |
 |---|---|---|
 | Pages | `index, about, verticals, careers, people, contact` + `verticals/{trofi,befit,developments,beyond}.html` | No ARADA / XEED / MHYA pages; BeFit is a separate vertical; "Developments" name is gone |
-| Fonts | `typography.css` declares **Barques / Book Antiqua / Acumin** via @font-face, but every type class uses `font-family: 'Gotham'` — **Gotham is not loaded**, so the site falls back to Helvetica/Arial | Brand font never actually renders |
+| Fonts | `typography.css` declares **Barques / Book Antiqua / Acumin** via @font-face, but every type class uses `font-family: 'Gotham'` — **Gotham is not loaded**, so the site falls back to Helvetica/Arial | No brand font renders; and the October profile uses **Montserrat** for titles, which the site doesn't have |
 | Colors | `variables.css` has the full brand palette (navy `#00263e`, maroon `#350004`, cream `#efede3`, sage, olive, light-blue) but pages are ~90% `--c-void #111010`, a few one-off inline hex colors | Reads black & white |
 | Home | Hero (COMMUNITY•DRIVEN•PLATFORM) → Who are we → Flip "Most destinations…" → Framework Anchor/Develop/Activate → stats ticker (old numbers) → 4 vertical cards → SOHO (Sept 2026) → CTA "Ready to build something great?" | Positioning, framework, numbers, verticals, SOHO date all outdated |
 | About | Story/values written around the old "anchor first" model; footprint = 5 countries incl. Kuwait | Needs new story + 4 countries |
@@ -68,17 +68,40 @@ careers.html · contact.html
   --color-taupe:      #9D8A75;  /* labels, rules, secondary text on light */
   --surface-light:    var(--color-cream-warm);
   --surface-dark:     #000000;  /* profile uses true black */
-  --text-on-light:    #111010;
-  --accent-number:    var(--color-navy);    /* all stat numbers on light */
-  --accent-italic:    var(--color-maroon);  /* italic taglines on light */
+  --text-on-light:    #2E2E2E;  /* profile body text on cream */
+  --text-on-dark:     #FFFBF7;  /* profile text on black */
+  --accent-number:    var(--color-navy);        /* stat numbers on light (profile: #00263E) */
+  --accent-number-dark: var(--color-light-blue);/* stat numbers + small caps labels on dark (profile: #BFD4DD) */
+  --accent-italic:    var(--color-maroon);      /* italic taglines on light */
   ```
-- [ ] Add theme classes in `css/layout.css`: `.theme-light` (cream bg, dark text, navy numbers, maroon italics) and `.theme-dark` (black bg, cream text). Every `<section>` must carry exactly one.
+- [ ] Add theme classes in `css/layout.css`: `.theme-light` (cream bg, #2E2E2E text, navy numbers, maroon italics) and `.theme-dark` (black bg, #FFFBF7 text, light-blue `#BFD4DD` numbers/labels). Every `<section>` must carry exactly one.
 
-### 0.2 Typography — `css/typography.css`
-- [ ] Replace every `'Gotham'` with `'Barques'` (headings/display/numbers) — weights: display 700/800, heading 700, light lines 300.
-- [ ] Body + labels → `'Acumin Variable Concept'` (300–400), labels uppercase with wide tracking.
-- [ ] Keep Book Antiqua italic for `em / .u-italic` — on `.theme-light` color = `--accent-italic`.
-- [ ] Add `--font-display / --font-body / --font-accent` tokens and use them instead of literal names.
+### 0.2 Typography — `css/typography.css`  ⚠️ client decision: use the **profile's** fonts, not the current website's
+
+Font usage measured directly from the October 2026 PDF (font name + size + colour of every text span):
+
+| Role in the profile | Font | Example text in the profile | Web token |
+|---|---|---|---|
+| Section titles (sentence case, bold) | **Montserrat Bold 700** | "The platform", "One business.", "Two arms.", "The XTOPIA advantage" | `--font-heading` |
+| Uppercase headlines, subheads, tracked caps labels | **Montserrat Regular 400** (Bold 700 for spaced labels) | "WE SEE CHALLENGES AS", "Dine-in builds", "OUR THREE-YEAR AMBITION", "T H E  E N T R E P R E N E U R  B R I N G S" | `--font-heading` |
+| Intro / lead paragraphs | **Montserrat Light 300** | "XTOPIA is a Jeddah-based, community-focused…" | `--font-heading` |
+| Italic second line of every title, names, taglines | **Book Antiqua Italic** | "*build better.*", "*in numbers*", "*Multiple routes to growth.*", co-founder names | `--font-accent` |
+| Big stat numbers | **Barques ExtraBold 800 / Bold 700** — navy `#00263E` on light, light-blue `#BFD4DD` on dark | "6K+", "70M+", "74+", "200K" | `--font-number` |
+| Body copy, card descriptions, list items, top header strip | **Acumin Concept Light 300 / Regular 400** | "Partner with developers and landlords…", "Customer & Sector Insight", "XTOPIA · PRIVATE & CONFIDENTIAL" | `--font-body` |
+
+Tasks:
+- [ ] Add **Montserrat** (300/400/500/600/700, self-hosted woff2, SIL OFL) — files already in `assets/Fonts/Montserrat/` → declare `@font-face` in `typography.css`.
+- [ ] Add tokens: `--font-heading: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;` `--font-body: 'Acumin Variable Concept', 'Montserrat', sans-serif;` `--font-accent: 'Book Antiqua', Georgia, serif;` `--font-number: 'Barques', 'Montserrat', sans-serif;`
+- [ ] Replace **all 59** `'Gotham'` references (never loaded → site currently renders in Arial/Helvetica):
+  - `.type-hero / .type-display / .type-heading` → `--font-heading` (700 for sentence-case titles, 400 for uppercase headlines). Drop forced `text-transform: uppercase` on section titles — the profile uses sentence case ("One business.").
+  - `.type-subhead`, lead paragraphs → `--font-heading` 300
+  - `body`, `.type-body`, `.type-caption`, card text → `--font-body` 300/400
+  - `.type-label` / eyebrows → `--font-heading` 700, uppercase, letter-spacing ≈ 0.3em
+  - All `data-count` / stat numbers / `.ticker__num` / `.feature__stat .num` → `--font-number` 800
+- [ ] `em / .u-italic / .type-italic` stay Book Antiqua Italic — colour `--accent-italic` on light, `--text-on-dark` on dark.
+- [ ] Barques is **no longer** the heading font — only numbers (and nothing else).
+- [ ] Ignore the minor fonts that appear once or twice in the PDF (Open Sans, Lora Italic, Times NR MT Pro Italic, Calibri, Noto Sans, Canva Sans) — map them to the tokens above.
+- [ ] Preload `Montserrat-700.woff2`, `Montserrat-300.woff2`, `Barques-ExtraBold.otf` in every page `<head>` (replace the current Barques-ExtraBold + Acumin preloads).
 
 ### 0.3 New reusable components — `css/components.css` (+ small JS if needed)
 - [ ] **Split title** `.title-split` — line 1 Barques bold, line 2 Book Antiqua italic (e.g. **Taking TROFI** *further.*).
@@ -89,12 +112,16 @@ careers.html · contact.html
 - [ ] **Numbered points** `.points` — `01 / 02 / 03 / 04` with title + text (the "Taking X further" blocks).
 - [ ] **Confidential-style header strip** (optional, ask client): tiny `XTOPIA · …   OCTOBER 2026` label row.
 
-### 0.4 Assets
-> ✅ 2026-10-14: temporary assets extracted from the PDF into `assets/images/rebrand-2026/` (vector logos, X images, photos, people). See its `README.md` for quality tiers — use SVG logos; 🔴 small images are card-only until the client sends originals.
-- [ ] Create `assets/images/rebrand-2026/` and add: ARADA Saudi logo, XEED logo (light + dark), MHYA logo (check existing `logo-mahya-*` matches the new mark), per-business X images, XEED photos, Slovakia park photos, SOHO new renders, 4-country map, leadership photos (Jordana, Khalid Abdelmajeed), co-founder photos (Ahmed Tawfik, Tamer Serour). Source: client originals; fallback = images extracted from the PDF.
+### 0.4 Assets  ✅ final decisions (2026-10-14)
+> Assets extracted from the PDF are in `assets/images/rebrand-2026/` (see its `README.md` for sizes).
+> - **Logos: there are no original files — the SVGs in `assets/images/rebrand-2026/logos/` ARE the final logos.** Always use the `.svg` (white on dark, dark on light); never the old PNG logos for TROFI/BEYOND/MHYA/ARADA/XEED.
+> - **People photos: use what exists now.** For each person pick the larger file between `assets/images/photos/team/` (existing) and `assets/images/rebrand-2026/people/` (from profile). Display them at card size (≤ 240px wide), grayscale, as in the profile.
+> - **Co-founder / leadership file names are verified correct** (incl. AlHassan vs Abdulrahman Al Shareef).
+> - Small photos (🔴 in the README) → cards/thumbnails only, never full-width.
+- [x] ~~Create `assets/images/rebrand-2026/` and add: ARADA Saudi logo, XEED logo (light + dark), MHYA logo (check existing `logo-mahya-*` matches the new mark), per-business X images, XEED photos, Slovakia park photos, SOHO new renders, 4-country map, leadership photos (Jordana, Khalid Abdelmajeed), co-founder photos (Ahmed Tawfik, Tamer Serour). Source: client originals; fallback = images extracted from the PDF.~~ Done — extracted from the PDF.
 - [ ] Name files semantically like the existing convention (`logo-arada-saudi-dark.png`, `xeed-farm-rows-aerial.jpg`).
 
-**Acceptance:** a test page `docs/rebrand-2026/styleguide.html` (not linked from nav) shows tokens, both themes, all new components, real fonts rendering (check DevTools → Computed → font-family = Barques).
+**Acceptance:** a test page `docs/rebrand-2026/styleguide.html` (not linked from nav) shows tokens, both themes, all new components, real fonts rendering (DevTools → Computed: titles = Montserrat, numbers = Barques, italics = Book Antiqua, body = Acumin).
 
 ---
 
@@ -227,17 +254,26 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 
 ---
 
-## Open questions for the client
-1. Official HEX values for the new look (profile cream ≈ `#F6F0E4` vs guide `#F0EDE3`) and original logo files (ARADA Saudi, XEED, MHYA, BEYOND).
-2. Publication approval for confidential items: Arada financials, "Taking X further" targets, proposed projects.
-3. Leadership list: Jordana Semaan (CPO), Khalid Abdelmajeed vs Nomaan Yunus (CFO), Alaa Saad.
-4. Taif and Al Jawhara projects — keep or remove?
-5. BeFit 360 app + points program, fund partners, real-estate partners — still current?
-6. Social media URLs and official email domain.
-7. Separate "Partnerships" item in the main nav, or is ARADA in Ecosystem + home section enough?
+## Decisions already taken (do not ask again)
+| # | Topic | Decision |
+|---|---|---|
+| D1 | Original logo files | None exist → use the traced SVGs in `assets/images/rebrand-2026/logos/` as final |
+| D2 | High-res people photos | None → use the photos available in the repo (best of `photos/team/` vs `rebrand-2026/people/`) |
+| D3 | Photo ↔ name mapping | Verified correct by Zakaria |
+| D4 | Fonts | Use the profile's type system (Montserrat + Book Antiqua Italic + Barques numbers + Acumin body), not the current website fonts — see Phase 0.2 |
+| D5 | Colours | Default: use the values sampled from the profile (replace only if the client sends official HEX) (cream `#F6F0E4`, text `#2E2E2E`, navy `#00263E`, light-blue `#BFD4DD`, maroon `#350004`) |
+
+## Still open — ask the client
+1. Publication approval for confidential items: Arada financials, "Taking X further" targets, proposed projects.
+2. Leadership list: Jordana Semaan (CPO), Khalid Abdelmajeed vs Nomaan Yunus (CFO), Alaa Saad.
+3. Taif and Al Jawhara projects — keep or remove?
+4. BeFit 360 app + points program, fund partners, real-estate partners — still current?
+5. Social media URLs and official email domain.
+6. Separate "Partnerships" item in the main nav, or is ARADA in Ecosystem + home section enough?
 
 ## Progress log
 | Date | Phase | Notes |
 |---|---|---|
 | 2026-10-14 | — | Plan created from October 2026 profile + codebase audit |
+| 2026-10-14 | 0.2 / 0.4 | Fonts switched to the profile's system (Montserrat added to `assets/Fonts/Montserrat/`); logo/photo decisions D1–D5 recorded |
 | 2026-10-14 | 0.4 | 97 temporary assets extracted from the PDF → `assets/images/rebrand-2026/` |
