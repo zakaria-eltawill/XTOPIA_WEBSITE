@@ -90,6 +90,7 @@ careers.html · contact.html
 - [ ] **Confidential-style header strip** (optional, ask client): tiny `XTOPIA · …   OCTOBER 2026` label row.
 
 ### 0.4 Assets
+> ✅ 2026-10-14: temporary assets extracted from the PDF into `assets/images/rebrand-2026/` (vector logos, X images, photos, people). See its `README.md` for quality tiers — use SVG logos; 🔴 small images are card-only until the client sends originals.
 - [ ] Create `assets/images/rebrand-2026/` and add: ARADA Saudi logo, XEED logo (light + dark), MHYA logo (check existing `logo-mahya-*` matches the new mark), per-business X images, XEED photos, Slovakia park photos, SOHO new renders, 4-country map, leadership photos (Jordana, Khalid Abdelmajeed), co-founder photos (Ahmed Tawfik, Tamer Serour). Source: client originals; fallback = images extracted from the PDF.
 - [ ] Name files semantically like the existing convention (`logo-arada-saudi-dark.png`, `xeed-farm-rows-aerial.jpg`).
 
@@ -239,3 +240,4 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 | Date | Phase | Notes |
 |---|---|---|
 | 2026-10-14 | — | Plan created from October 2026 profile + codebase audit |
+| 2026-10-14 | 0.4 | 97 temporary assets extracted from the PDF → `assets/images/rebrand-2026/` |
