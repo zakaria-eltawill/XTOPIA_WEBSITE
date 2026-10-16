@@ -10,6 +10,21 @@
 
 ---
 
+## ★ Client direction (Khadija, 2026-10-16) — read first
+> *"The profile is the baseline to build a site — it's not meant to be an exact copy."*
+> *"We can copy right and paraphrase here and there to make it website friendly, which is the main objective."*
+> *"Profile is a teaser."*
+> *"Ideally the website would have the other companies — you click TROFI and get more info and full team. You click BEYOND, etc."*
+
+What this means for every phase:
+1. **Home = teaser hub.** Short, scannable sections that introduce XTOPIA and each company, and push the visitor to click into the company pages. No long blocks of profile text on the home page.
+2. **Company pages = the depth.** Each of TROFI · BEYOND · MHYA · ARADA Saudi · XEED gets more info than the profile **and its full team**.
+3. **Copy is web-friendly, not copy-paste.** CONTENT.md is the source of **facts** (names, numbers, dates, project data — keep these exact). The wording can be shortened, split, re-ordered and paraphrased for the web; headlines may stay verbatim where they work (e.g. *"A world to belong to."*). Existing site copy can be reused where it is still true.
+4. **Publishing approved** — profile figures, future targets and proposed projects can go live (no `data-confirm` needed for these).
+5. **Arada's own global numbers are not needed.** The ARADA section/page is about the **Saudi partnership (ARADA KSA)** only.
+
+---
+
 ## 0. Ground rules (read before every phase)
 
 1. **Branch:** all work on `rebrand-oct-2026`. Never commit to `main` — a push to `main`
@@ -20,7 +35,9 @@
 5. **No new inline styles.** Many sections use `style="…"` today; when touching a section, move its styles into `css/sections.css` classes.
 6. **Preview:** `python -m http.server 8000` → check desktop 1440, tablet 1024, mobile 390, and `prefers-reduced-motion`.
 7. **Commit per phase** with message `rebrand(phase-N): …`.
-8. Anything marked ⚠️ CONFIRM in CONTENT.md: build it, but wrap it in `data-confirm` attribute + HTML comment `<!-- CONFIRM: … -->` so it can be found and pulled before launch.
+8. Only items still marked ⚠️ CONFIRM in CONTENT.md get a `data-confirm` attribute + `<!-- CONFIRM: … -->`. Items the client approved (D8) are built normally.
+9. **Copy rule (D7):** facts from CONTENT.md stay exact; wording is rewritten to be short and web-friendly. Never paste long profile paragraphs.
+10. **People photos:** the existing files in `assets/images/photos/team/` have **wrong file names** (e.g. `team-trofi-hassan-alshareef-md.png` shows Tariq Altuwaijri, `team-dev-robert-hanka.png` shows Nadim Kayyali). Always take the name ↔ photo pairing from what `people.html` currently displays (or from `assets/images/rebrand-2026/people/`, which is correctly named) — never from the old file name.
 
 ---
 
@@ -50,7 +67,8 @@ verticals.html             Ecosystem hub (5 businesses)
   verticals/xeed.html      XEED — Agriculture & Food           (NEW)
   verticals/befit.html        → redirect to beyond.html#sports
   verticals/developments.html → redirect to mhya.html
-people.html                Leadership · Co-founders · Board · business teams
+people.html                Board · Group leadership · links to each company's team
+(each company page has its own full team section — client request)
 careers.html · contact.html
 ```
 
@@ -192,8 +210,9 @@ Order and theme of the new home (L = light cream, D = black):
 |---|---|---|---|
 | 1.1 | Hero | D | **Update** |
 | 1.2 | Who we are + 5-business strip | L | **Rewrite** (replaces "Who are we?") |
+| 1.2b | What we do — "Most destinations are built first… XTOPIA flips this." (`#flip`) | D | **KEEP AS IS** (decision D6) |
 | 1.3 | Platform in numbers + map | D | **Rewrite** (replaces ticker) |
-| 1.4 | The XTOPIA Advantage | L | **New** (replaces Flip + Framework) |
+| 1.4 | The XTOPIA Advantage | L | **New** (replaces Framework only) |
 | 1.5 | Our Ecosystem — 5 businesses | D | **Rebuild** (was 4 cards on light-blue) |
 | 1.6 | ARADA × XTOPIA partnership | L | **New** — client priority |
 | 1.7 | Featured: SOHO Jeddah | D | **Fix data** |
@@ -202,17 +221,17 @@ Order and theme of the new home (L = light cream, D = black):
 | 1.10 | Closing CTA "A world to belong to." | D (X image bg) | **Rewrite** |
 
 - [ ] **1.1 Hero** — keep video/Three.js grid; replace `COMMUNITY • DRIVEN • PLATFORM` with **WE SEE CHALLENGES AS OPPORTUNITIES TO** *build better.*; bottom strip `BUILT AROUND PEOPLE · POWERED BY ENTREPRENEURS · DESIGNED TO SCALE`; location label → `Jeddah, Saudi Arabia`. Optional: hero image inside `.x-mask--lg` (profile cover).
-- [ ] **1.2 Who we are** — 3 paragraphs from CONTENT §1; side title **One platform.** *Multiple ways to build.*; below: 5 tall image tiles (logo + sector) linking to each business (profile p.2). Remove olive inline bg.
+- [ ] **1.2 Who we are** — a short web-friendly version of CONTENT §1 (2–3 short sentences, not the full 3 paragraphs — D7); side title **One platform.** *Multiple ways to build.*; below: 5 tall image tiles (logo + sector) linking to each business (profile p.2). Remove olive inline bg.
 - [ ] **1.3 Numbers** — `.stat-row` with 6 stats from CONTENT §2 + 4-country map (new asset; old `map-global-presence-5-countries.png` is wrong). Delete old ticker markup (or keep ticker with new numbers as a thin band — decide in review).
-- [ ] **1.4 The XTOPIA Advantage** — two columns (entrepreneur brings / XTOPIA brings) meeting at a central `.x-mask` image; caption line. GSAP: items slide in from each side. Delete `#flip` and `#framework` sections + `flip_bg.png` / framework icons usage (keep files until final cleanup).
-- [ ] **1.5 Ecosystem** — intro *Co-founded by Ali Al Shareef alongside entrepreneurs who know their sectors from within.*; 5 cards (TROFI, BEYOND, MHYA, ARADA Saudi, XEED): X image + logo + sector + maroon/cream italic line + 2 key stats + Explore →. Optional hover: co-founder names.
-- [ ] **1.6 ARADA × XTOPIA** — **Complete communities.** *Built around Saudi life.*; two-column ARADA vs XTOPIA capability list; *Fully integrated ecosystem.*; Arada proof numbers ⚠️; 3 project cards (Al Remal, Marasem, Bawabat Makkah) with renders already in `assets/images/photos/developments/` → link `verticals/arada.html`.
+- [ ] **1.4 The XTOPIA Advantage** — two columns (entrepreneur brings / XTOPIA brings) meeting at a central `.x-mask` image; caption line. GSAP: items slide in from each side. Delete the `#framework` section only + framework icons usage (keep files until final cleanup). **Do NOT touch `#flip` (What we do)** — keep its markup, copy, styles, `flip_bg.png` and animation exactly as they are. Only change: its bottom link "The XTOPIA Framework ↓" (`href="#framework"`) → "The XTOPIA Advantage ↓" (`href="#advantage"`).
+- [ ] **1.5 Ecosystem** — intro *Co-founded by Ali Al Shareef alongside entrepreneurs who know their sectors from within.*; 5 cards (TROFI, BEYOND, MHYA, ARADA Saudi, XEED): X image + logo + sector + maroon/cream italic line + 2 key stats + Explore →. This is the main gateway of the home page — each card must clearly lead to the company page (D11). Optional hover: co-founder names.
+- [ ] **1.6 ARADA × XTOPIA (Saudi partnership)** — **Complete communities.** *Built around Saudi life.*; two-column ARADA vs XTOPIA capability list; *Fully integrated ecosystem.*; 3 project cards (Al Remal, Marasem, Bawabat Makkah) with renders from `assets/images/rebrand-2026/photos/arada/` → link `verticals/arada.html`. **No Arada global numbers** (17,000+ homes, US$10.9BN, US$42BN, 66,000) — decision D9. Projects approved for publishing (D8).
 - [ ] **1.7 SOHO Jeddah** — label "A MHYA destination · Opening January 2027"; title **A destination shaped around** *everyday life.*; stats 42.5K built-up · 14K commercial · 13.5K administrative · 75 units; keep video.
 - [ ] **1.8 One group** — 3 steps (build the place → bring it to life → will supply it) with logos and connecting arrows/line animated on scroll.
-- [ ] **1.9 Leadership teaser** — 5 portraits (grayscale) + names/titles ⚠️ CONFIRM list → `people.html`.
+- [ ] **1.9 Leadership teaser** — 5 portraits (grayscale) + names/titles: Ali Al Shareef (Founder & Group CEO), Tariq Altuwaijri (Co-Founder, Group CBDO), Jordana Semaan (Group CPO), Nadim Kayyali (Group General Counsel), Khalid Abdelmajeed (Group CFO) — confirmed (D10) → `people.html`.
 - [ ] **1.10 Closing** — **A world** *to belong to.* + 3 lines (Community is the reason…) + `Get in touch →` (and secondary `Partner with us →`).
 
-**Acceptance:** no text from the old positioning remains (`grep -i "flips this\|anchor\|community-driven\|From concept to life" index.html` returns nothing); light/dark rhythm alternates; mobile layout OK.
+**Acceptance:** no text from the old positioning remains (`grep -i "anchor\|community-driven\|From concept to life\|xtopia framework" index.html` returns nothing); light/dark rhythm alternates; mobile layout OK.
 
 ---
 
@@ -225,7 +244,7 @@ Order and theme of the new home (L = light cream, D = black):
 
 ## Phase 4 — Business pages (shared template)  ⬜
 
-Template order for each page: **A** `.biz-cover` (light) → **B** what it is + `.stat-row` → **C** formats/portfolio → **D** projects/places → **E** **Taking X further** (`.points` + big target number, ⚠️) → **F** co-founders → **G** next business link (cycle TROFI → BEYOND → MHYA → ARADA → XEED → TROFI) + forward-looking disclaimer.
+Template order for each page: **A** `.biz-cover` (light) → **B** what it is + `.stat-row` → **C** formats/portfolio → **D** projects/places → **E** **Taking X further** (`.points` + big target number, ⚠️) → **F** **Full team** `#team` (co-founders first, then the company's management team — see CONTENT §11; client request D11) → **G** next business link (cycle TROFI → BEYOND → MHYA → ARADA → XEED → TROFI) + forward-looking disclaimer.
 
 ### 4.1 TROFI — `verticals/trofi.html` ⬜
 - [ ] Cover: *Redefining how food brands grow*
@@ -233,7 +252,7 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 - [ ] C: portfolio heading "30+ brands" → "29+ brands"; keep logo wall + Innovation Lab (relabel "Opening 2026–2027")
 - [ ] Keep Awards section (already matches)
 - [ ] E: Taking TROFI further (50+ / 90% + 4 points)
-- [ ] F: co-founders AlHassan & Abdulrahman Al Shareef · G: next → BEYOND
+- [ ] F: Full team — AlHassan Al Shareef & Abdulrahman Al Shareef (co-founders), Ahmed Al Bader (Co-Founder & CCO) · G: next → BEYOND
 
 ### 4.2 BEYOND — `verticals/beyond.html` (rebuild) ⬜
 - [ ] Cover: *Movement becomes a way of life* (new BEYOND logo variant)
@@ -241,7 +260,7 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 - [ ] C: **A family of formats** — 5 formats with logos from `assets/images/logos/sports-brands/` + Seasonal beach gyms band
 - [ ] Move useful BeFit content (app points program, real-estate partner logos) here ⚠️ CONFIRM still current
 - [ ] D: **Places brought to life** — destination logos/photos (Boulevard, Lake District, My Park, AKTI, SOHO *Opening 2027*, Marassi Water World, Seasonal activations)
-- [ ] E: Taking BEYOND further (200K, 2x + 4 points) · F: Aly Mazhar · G: next → MHYA
+- [ ] E: Taking BEYOND further (200K, 2x + 4 points) · F: Full team — Aly Mazhar (Founder), Hala Hashim (Co-Founder), Adham Garatly (MD), Khalid Ali (MD) · G: next → MHYA
 
 ### 4.3 MHYA — `verticals/mhya.html` (new) ⬜
 - [ ] Cover: *Thoughtfully developed, distinctively lived* (logo `logo-mahya-*` — verify vs new mark)
@@ -250,22 +269,22 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 - [ ] D2: Neighbourhood Destinations — reuse `assets/images/photos/parks/park-mahya-*`
 - [ ] D3: Industrial & Logistics, Slovakia — Sihot Park + Ferovo Park cards
 - [ ] Fund partners strip (SNB Capital, SEDCO, Al Rajhi) from old developments page ⚠️ CONFIRM
-- [ ] E: Taking MHYA further (3 points) · F: Ayoub Buhdeima · G: next → ARADA
+- [ ] E: Taking MHYA further (3 points) · F: Full team — Ayoub Buhdeima (MD), Jason Margetts, Robert Hanka · G: next → ARADA
 
 ### 4.4 ARADA Saudi — `verticals/arada.html` (new, priority) ⬜
 - [ ] Cover: ARADA Saudi logo + *A partnership for Saudi communities*
 - [ ] **Complete communities.** *Built around Saudi life.* + ARADA | XTOPIA columns + *Fully integrated ecosystem.*
-- [ ] **Proven delivery.** *Global ambition.* 4 stats + 3 selected projects (Aljada, Thameside West, Masaar) ⚠️
+- [x] ~~**Proven delivery.** *Global ambition.* 4 stats + 3 selected projects (Aljada, Thameside West, Masaar)~~ — **removed** (D9: Arada global numbers not needed; page focuses on ARADA KSA).
 - [ ] **The capability to deliver at scale.** 4 numbered points
 - [ ] **Taking ARADA Saudi further** — full-bleed landscape image, then 3 project sections (Al Remal, Marasem, Bawabat Makkah) each: city, tagline, 2 stats, proposed mix, render, location map (`assets/images/maps/map-al-remal-…` exists)
-- [ ] G: next → XEED
+- [ ] F: Team — XTOPIA side of the partnership (Ali Al Shareef, Tariq Altuwaijri) unless the client provides an ARADA KSA team · G: next → XEED
 
 ### 4.5 XEED — `verticals/xeed.html` (new) ⬜
 - [ ] Cover: *From seed to xeed* (logo: start from `logos/partners/logo-xeed-corporation.png`, replace with new)
 - [ ] **Rooted in farming.** *Connected to markets.* + 3 capabilities with icons + stats 53M+ / 3,000+ / 50K / 3M+
 - [ ] **We grow. We manage. We source.** 3 photo cards + "one shared route to market" flow line
 - [ ] E: Taking XEED further — *Built in Egypt. Growing in Saudi Arabia.* 4 steps
-- [ ] F: Ahmed Tawfik & Tamer Serour · G: next → TROFI
+- [ ] F: Full team — Ahmed Tawfik & Tamer Serour (co-founders) · G: next → TROFI
 
 ---
 
@@ -278,9 +297,9 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 
 ## Phase 6 — People (`people.html`)  ⬜
 - [ ] Hero: **THE PEOPLE** *behind the platform*; subtitle drops "future of destinations".
-- [ ] XTOPIA Leadership Team per CONTENT §11 ⚠️ (Jordana, Khalid Abdelmajeed, Nomaan, Alaa).
-- [ ] New "Co-founders" row: one card per business (logo + founder photos).
-- [ ] Rename team sections → TROFI · BEYOND · MHYA · add XEED. Board unchanged.
+- [ ] XTOPIA Leadership Team = Ali Al Shareef, Tariq Altuwaijri, Jordana Semaan, Nadim Kayyali, Khalid Abdelmajeed (D10). Remove Nomaan Yunus and Alaa Saad from this section.
+- [ ] Board of Directors unchanged.
+- [ ] Replace the per-company team sections with a **"Our companies"** row: 5 cards (logo + co-founder photos + "Meet the team →") linking to each company page `#team`. The full teams now live on the company pages (D11) — don't duplicate them here.
 
 ## Phase 7 — Careers, Contact & cleanup  ⬜
 - [ ] Careers copy: "shaping the built environment" → "building businesses around people"; add `id="positions"`.
@@ -304,14 +323,18 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 | D3 | Photo ↔ name mapping | Verified correct by Zakaria |
 | D4 | Fonts | Use the profile's type system (Montserrat + Book Antiqua Italic + Barques numbers + Acumin body), not the current website fonts — see Phase 0.2 |
 | D5 | Colours | Default: use the values sampled from the profile (replace only if the client sends official HEX) (cream `#F6F0E4`, text `#2E2E2E`, navy `#00263E`, light-blue `#BFD4DD`, maroon `#350004`) |
+| D6 | Home "What we do" section (`#flip`) | Keep exactly as it is — do not redesign, rewrite or delete (only retarget its bottom link to `#advantage`) |
+| D7 | Copy approach | Profile = baseline/teaser, not copy-paste. Keep facts exact, paraphrase wording to be web-friendly (client, 2026-10-16) |
+| D8 | Publishing | Approved: profile figures, "Taking X further" targets and proposed Saudi projects can go live |
+| D9 | Arada global numbers | Not needed (17,000+ homes, US$10.9BN, US$42BN, 66,000, Aljada/Thameside/Masaar). ARADA content = Saudi partnership only |
+| D10 | Group leadership | Profile list confirmed: Ali Al Shareef, Tariq Altuwaijri, Jordana Semaan, Nadim Kayyali, Khalid Abdelmajeed |
+| D11 | Site structure | Home introduces every company; clicking a company opens its page with more info **and its full team** |
 
 ## Still open — ask the client
-1. Publication approval for confidential items: Arada financials, "Taking X further" targets, proposed projects.
-2. Leadership list: Jordana Semaan (CPO), Khalid Abdelmajeed vs Nomaan Yunus (CFO), Alaa Saad.
-3. Taif and Al Jawhara projects — keep or remove?
-4. BeFit 360 app + points program, fund partners, real-estate partners — still current?
-5. Social media URLs and official email domain.
-6. Separate "Partnerships" item in the main nav, or is ARADA in Ecosystem + home section enough?
+1. Taif and Al Jawhara projects — keep or remove?
+2. BeFit 360 app + points program, fund partners, real-estate partners — still current?
+3. Social media URLs and official email domain.
+4. Separate "Partnerships" item in the main nav, or is ARADA in Ecosystem + home section enough?
 
 ## Progress log
 | Date | Phase | Notes |
@@ -321,3 +344,4 @@ Template order for each page: **A** `.biz-cover` (light) → **B** what it is + 
 | 2026-10-14 | 0.4 | 97 temporary assets extracted from the PDF → `assets/images/rebrand-2026/` |
 | 2026-10-14 | 0 | Phase 0 complete: tokens + `.theme-light`/`.theme-dark` (variables.css/layout.css); Montserrat loaded, all 59 Gotham refs replaced with `--font-heading`/`--font-body`/`--font-number` tokens (typography.css/sections.css/components.css); new components `.title-split`, `.stat-row`, `.x-mask`, `.x-watermark`, `.biz-cover`, `.points`; `docs/rebrand-2026/styleguide.html` created and verified. Added `--color-taupe-text` (not in original spec) to fix a WCAG AA contrast failure on the sampled taupe token. Bumped cache-bust to `?v=63` on all 10 pages; updated index.html's font preloads. Also added a deploy-time strip step to `.github/workflows/deploy-pages.yml` (removes docs/tools/partials/CLAUDE.md/SKILLS.md/xtopia-*.md from the published copy only). No HTML page content/structure touched. |
 | 2026-10-14 | 1 | Phase 1 complete: `partials/{nav,nav-overlay,footer}.html` + `tools/sync-partials.py` (idempotent, verified by running twice); Ecosystem nav is now a mega-menu with the 5 business logos/sectors + ARADA "Partnership" tag (new `.dropdown__menu--mega` styles); footer tagline/descriptor/Ecosystem column/Careers link updated per CONTENT.md, socials hidden + email flagged `data-confirm`; `nav.js` now computes `.is-active` from the URL instead of it being hardcoded per page (required for identical partials); created `verticals/{mhya,arada,xeed}.html` skeletons (biz-cover hero only, full content is Phase 4) and turned `befit.html`/`developments.html` into redirect stubs; meta title/description cleaned up on all 6 root pages (also fixed a pre-existing bug — people.html was duplicating about.html's meta); font preloads added to every page, cache-bust → `?v=64`. All nav/overlay/footer links verified 200 via a local server. |
+| 2026-10-16 | — | Client feedback (Khadija) applied: decisions D6 (restored) – D11; Home = teaser hub, full team on each company page, web-friendly copy, Arada global numbers dropped, publishing approved |

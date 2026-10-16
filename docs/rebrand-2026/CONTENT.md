@@ -1,8 +1,9 @@
 # XTOPIA — Content Source of Truth (Company Profile, October 2026)
 
-> Every piece of copy and every number on the website must come from this file.
-> Source: `COMPANY_PROFILE_OCTOBER.pdf` (36 pages, marked *Private & Confidential*).
-> Items marked ⚠️ **CONFIRM** must be approved by the client before going live.
+> Every **fact** on the website (names, numbers, dates, project data) must come from this file and stay exact.
+> **Wording is not copy-paste (client, 2026-10-16):** *"The profile is the baseline… not meant to be an exact copy. We can copy right and paraphrase here and there to make it website friendly."* Shorten, split and paraphrase for the web; keep strong headlines verbatim where they work.
+> Source: `COMPANY_PROFILE_OCTOBER.pdf` (36 pages). Publishing of its content is **approved by the client** (✅ below), except what is marked ❌ not used.
+> Items still marked ⚠️ **CONFIRM** need client approval before going live.
 > This file supersedes `xtopia-company-profile.md` (old, pre-October positioning).
 
 ---
@@ -93,7 +94,7 @@ Intro line (p.5): *Co-founded by Ali Al Shareef alongside entrepreneurs who know
 - Brand portfolio: existing logos + new concepts (Opening 2026 ×1, Opening 2027 ×5) — reuse the "Innovation Lab" block.
 - Awards (p.8): Top 50 Best Discovery · Best Croissant – UK · Best Bakery – Riyadh · Best Patisserie – Riyadh · Best Thai Casual Dining of the Year · Best Breakfast · Top 50 MENA · Best Burger · Highly Recommended · 2026 Hot List "The Best New Restaurants in the World" (existing awards section already matches — keep).
 
-**Taking TROFI further.** *Stronger destinations. Wider reach. Global growth.* ⚠️ CONFIRM (forward-looking)
+**Taking TROFI further.** *Stronger destinations. Wider reach. Global growth.* ✅ approved
 - Big numbers: **50+** brands (target by end of 2027) · **90%** target population coverage across Saudi Arabia
 - 01 Destination partnerships — Partner with developers and landlords to create distinctive dining experiences and strengthen destinations.
 - 02 Global brands & franchising — Bring international brands to Saudi Arabia and expand regionally born brands globally through brand equity, partnerships and franchising.
@@ -125,7 +126,7 @@ Intro line (p.5): *Co-founded by Ali Al Shareef alongside entrepreneurs who know
 - Destinations: Boulevard · The Lake District · My Park · AKTI · SOHO (Opening 2027) · Marassi Water World · Seasonal activations
 - *The experience beyond the place* — Programming · Experiences · Ongoing activation
 
-**Taking BEYOND further.** *A larger community. A wider footprint.* ⚠️ CONFIRM
+**Taking BEYOND further.** *A larger community. A wider footprint.* ✅ approved
 - **200K** active members (from 100K today) · **2x** membership growth — three-year ambition
 - 01 Saudi expansion — Bring our sports formats and destination-management capabilities to Saudi Arabia through local partnerships.
 - 02 Growth across formats — Expand gyms, studios, sports programmes, races and seasonal beach gyms around each community's needs.
@@ -160,7 +161,7 @@ Intro line (p.5): *Co-founded by Ali Al Shareef alongside entrepreneurs who know
 - A repeatable approach — A consistent format, adapted to each community.
 - (Existing `assets/images/photos/parks/park-mahya-*` renders fit here.)
 
-**Taking MHYA further.** *More opportunity. Lasting local value.* ⚠️ CONFIRM
+**Taking MHYA further.** *More opportunity. Lasting local value.* ✅ approved
 - 01 Selective destination development — Grow through carefully selected projects shaped around local demand.
 - 02 A repeatable neighbourhood format — Adapt the concept to more communities while preserving its local relevance.
 - 03 Landowner & operator partnerships — Bring together the land, businesses and delivery capabilities each destination needs.
@@ -182,7 +183,7 @@ Intro line (p.5): *Co-founded by Ali Al Shareef alongside entrepreneurs who know
 | | Destination management |
 - *Fully integrated ecosystem.*
 
-**Proven delivery.** *Global ambition.* ⚠️ CONFIRM (Arada financials)
+**Proven delivery.** *Global ambition.* ❌ **NOT USED** — client: Arada's own numbers aren't needed for the ARADA KSA content (D9). Kept here for reference only
 - **17,000+** homes delivered · **US$10.9BN** UAE sales since inception · **US$42BN** projects under development · **66,000** homes across the portfolio
 - Selected projects: Aljada / Sharjah (US$9.5BN total sales value, 25,000 homes planned, delivery in progress) · Thameside West / London (US$3.4BN, 5,000+ homes, masterplan by Foster + Partners) · Masaar / Sharjah (US$2.6BN, 3,000 homes, 50,000 trees, first homes delivered 2023)
 
@@ -192,7 +193,7 @@ Intro line (p.5): *Co-founded by Ali Al Shareef alongside entrepreneurs who know
 - 03 Essential services — Education, healthcare, retail and hospitality integrated into the community.
 - 04 Saudi market insight — Shaped around local demand, lifestyles and community needs.
 
-**Taking ARADA Saudi further** — Saudi projects (all "proposed") ⚠️ CONFIRM
+**Taking ARADA Saudi further** — Saudi projects (all "proposed") ✅ approved
 | Project | City | Tagline | Numbers | Proposed mix |
 |---|---|---|---|---|
 | **Al Remal** | Riyadh | A residential destination bringing homes, landscape and community facilities together — a deliberate shift from conventional gated compounds toward an experience-led community designed for the next generation of Saudi lifestyles, with XTOPIA's food and active-living businesses in the masterplan from day one. | 3.5K+ units · 2.5M SQM | Villas and townhouses · Schools, community and sports facilities · Retail |
@@ -220,7 +221,7 @@ Taif and Al Jawhara are **not in the October profile** ⚠️ CONFIRM keep or re
   - We source — Sourcing from a wide network of growers
   - One shared route to market: Sorting & packaging · Logistics & distribution · Supermarkets & wholesalers
   - *Market demand informs what we grow and source.*
-- **Taking XEED further.** *Built in Egypt. Growing in Saudi Arabia.* ⚠️ CONFIRM
+- **Taking XEED further.** *Built in Egypt. Growing in Saudi Arabia.* ✅ approved
   - Three-year ambition: Build a substantial Saudi business across farming, farm management and sourcing.
   - Establish in Saudi — Adapt our accumulated farming expertise to local conditions and market needs.
   - Grow with farm owners — Build farm-management and sourcing partnerships that connect more growers to buyers.
@@ -244,18 +245,30 @@ Taif and Al Jawhara are **not in the October profile** ⚠️ CONFIRM keep or re
 
 **THE PEOPLE** *behind the platform*
 
-XTOPIA Leadership Team (profile):
-| Name | Title | Current site |
+### XTOPIA Group Leadership — ✅ confirmed by client (2026-10-16)
+| Name | Title | Photo |
 |---|---|---|
-| Ali Al Shareef | Founder & Group CEO | ✅ same |
-| Tariq Altuwaijri | Co-Founder, Group CBDO | ✅ same |
-| Jordana Semaan | Group CPO | ⚠️ was removed from site in Sept (commit "Remove Jordana Semaan") — CONFIRM |
-| Nadim Kayyali | Group General Counsel | ✅ same |
-| Khalid Abdelmajeed | Group CFO | ⚠️ site shows Nomaan Yunus as CFO — CONFIRM + need photo |
-| — | — | Alaa Saad (Group Creative Strategist) is on site but not in profile — CONFIRM |
+| Ali Al Shareef | Founder & Group CEO | as shown today on people.html / `rebrand-2026/people/leadership-ali-al-shareef.webp` |
+| Tariq Altuwaijri | Co-Founder, Group CBDO | as shown today on people.html (file is misnamed `team-trofi-hassan-alshareef-md.png`) |
+| Jordana Semaan | Group CPO | `photos/team/team-exec-jordana-semaan-cpo.png` |
+| Nadim Kayyali | Group General Counsel | as shown today on people.html (file is misnamed `team-dev-robert-hanka.png`) |
+| Khalid Abdelmajeed | Group CFO | `rebrand-2026/people/leadership-khalid-abdelmajeed.webp` |
 
-Board of Directors: not in profile → keep as is unless client says otherwise.
-Sub-team headings to rename: "XTOPIA Developments Leadership Team" → **MHYA**, "BeFit & Beyond Leadership Team" → **BEYOND**, add **XEED** (Ahmed Tawfik, Tamer Serour — photos needed).
+Removed from group leadership: Nomaan Yunus, Alaa Saad.
+Board of Directors: unchanged (Mohammad Dahban – Chairman, Ali Alshareef, Anas Alsairafy, Abdullah Alsayed, Amr Sulaiman).
+
+### Company teams — shown on each company page `#team` (client: *"you click TROFI and get more info and full team"*)
+> ⚠️ Photo files in `assets/images/photos/team/` are **misnamed** — take each person's photo from what people.html currently displays next to their name, or from `rebrand-2026/people/` (correctly named).
+
+| Company | Team (co-founders first) |
+|---|---|
+| **TROFI** | AlHassan Al Shareef — Co-Founder & MD · Abdulrahman Al Shareef — Co-Founder & MD · Ahmed Al Bader — Co-Founder & CCO |
+| **BEYOND** | Aly Mazhar — Founder · Hala Hashim — Co-Founder · Adham Garatly — MD · Khalid Ali — MD |
+| **MHYA** | Ayoub Buhdeima — Co-Founder & MD · Jason Margetts · Robert Hanka (titles as on current site: "XTOPIA Developments" → change to "MHYA") |
+| **ARADA Saudi** | Partnership — no separate team in the profile. Show XTOPIA side (Ali Al Shareef, Tariq Altuwaijri) unless the client provides ARADA KSA names |
+| **XEED** | Ahmed Tawfik — Co-Founder · Tamer Serour — Co-Founder |
+
+Spelling: use the profile spelling everywhere — "Al Shareef", "AlHassan", "Buhdeima" (current site has "Alshareef", "Hassan", "Budheima").
 
 ---
 
