@@ -46,6 +46,7 @@
   gap: clamp(2rem, 6vw, 7rem);
 }
 .split--reverse > :first-child { order: 2; }
+.split--top { align-items: start; }
 
 /* Stack helpers */
 .stack > * + * { margin-top: var(--space-md); }

@@ -147,6 +147,7 @@ body {
   line-height: 0.95;
   letter-spacing: -0.01em;
 }
+.type-display--sm { font-size: clamp(2.4rem, 5vw, 4.25rem); line-height: 0.95; }
 
 /* Heading — Montserrat Bold */
 .type-heading {
@@ -219,6 +220,7 @@ em, i, .u-italic { font-family: 'Book Antiqua', Georgia, serif; font-style: ital
 .u-dim      { color: var(--color-cream-dim); }
 .u-sage     { color: var(--color-sage); }
 .u-center   { text-align: center; }
+.u-fluid-img { display: block; width: 100%; height: auto; }
 
 
 /* ============================================================

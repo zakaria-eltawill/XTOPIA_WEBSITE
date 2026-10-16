@@ -1073,19 +1073,24 @@
 
 /* Dynamic styling for light backgrounds */
 .bg-cream .compact-card__name,
-.section--cream .compact-card__name {
+.section--cream .compact-card__name,
+.theme-light .compact-card__name {
   color: var(--color-navy);
   font-weight: 400;
 }
 
 .bg-cream .compact-card__role,
-.section--cream .compact-card__role {
+.section--cream .compact-card__role,
+.theme-light .compact-card__role {
   color: rgba(0, 38, 62, 0.65); /* Faded Navy */
   font-weight: 400;
 }
 
+#team .compact-card__role { font-size: 11px; }
+
 .bg-cream .compact-card__media,
-.section--cream .compact-card__media {
+.section--cream .compact-card__media,
+.theme-light .compact-card__media {
   border-color: rgba(0, 38, 62, 0.15);
   background: transparent;
 }
@@ -1180,13 +1185,54 @@
 .vhero__layer img { width: 100%; height: 100%; object-fit: cover; }
 .vhero__veil { position: absolute; inset: 0; background: linear-gradient(to top, rgba(17,16,16,0.9), rgba(17,16,16,0.5)); }
 .vhero__inner { position: relative; z-index: 3; padding-inline: var(--gutter); }
-.vhero__logo { height: clamp(54px, 8vw, 110px); width: auto; margin-inline: auto; margin-bottom: 2rem; }
+.vhero__logo { height: clamp(54px, 8vw, 110px); width: auto; max-width: min(520px, 70vw); margin-inline: auto; margin-bottom: 2rem; }
 .vhero__accent { color: var(--accent, var(--color-sage)); }
+.vhero__hint { margin-top: 2.5rem; }
 
 .vstats { display: flex; flex-wrap: wrap; gap: 2rem 3.5rem; }
 .vstat .num { font-family: var(--font-number); font-weight: 800; font-size: clamp(2.2rem, 5vw, 4.5rem); line-height: 1; color: var(--accent, var(--color-cream)); }
 .vstat .lbl { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; color: var(--color-cream-dim); margin-top: 0.6rem; }
 .bg-cream .vstat .lbl { color: rgba(0, 38, 62, 0.65); font-weight: 400; }
+
+/* Two-format split (e.g. "Dine-in builds the experience. / Cloud kitchens extend the reach.") */
+.format-split { display: flex; flex-wrap: wrap; gap: clamp(1.5rem, 4vw, 3rem); margin: 1.75rem 0; }
+.format-split__item { flex: 1 1 200px; }
+.format-split__name { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.1rem, 2vw, 1.5rem); line-height: 1.2; }
+.format-split__tag { font-family: var(--font-accent); font-style: italic; font-weight: 400; font-size: clamp(1.1rem, 2vw, 1.5rem); line-height: 1.2; color: var(--accent-italic); }
+.theme-dark .format-split__tag { color: var(--text-on-dark); }
+
+/* Small forward-looking-statements line (company pages, "Taking X further" sections) */
+.fine-print { font-family: var(--font-body); font-weight: 300; font-size: 12px; line-height: 1.5; color: var(--color-taupe-text); max-width: 60ch; margin-top: 1.5rem; }
+.theme-dark .fine-print,
+.section--dark .fine-print { color: var(--color-cream-dim); }
+
+/* Format cards (e.g. BEYOND "A family of formats") — photo + small logo badge + label */
+.format-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(1rem, 2vw, 1.5rem); }
+.format-card__media { position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; }
+.format-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.format-card__logo-badge { position: absolute; left: 0.65rem; bottom: 0.65rem; background: var(--color-cream); border-radius: 4px; padding: 0.3rem 0.55rem; display: inline-flex; align-items: center; }
+.format-card__logo-badge img { height: 16px; width: auto; max-width: 78px; object-fit: contain; display: block; }
+.format-card__label { font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; margin-top: 0.75rem; }
+@media (max-width: 1024px) { .format-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px)  { .format-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Small feature band (e.g. "Seasonal beach gyms") — thumbnail-size image, text beside it */
+.feature-band { display: flex; align-items: center; gap: clamp(1.5rem, 4vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); flex-wrap: wrap; }
+.feature-band__media { width: min(100%, 220px); aspect-ratio: 1/1; border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+.feature-band__media img { width: 100%; height: 100%; object-fit: cover; }
+.feature-band__text { flex: 1 1 320px; }
+
+/* Destination cards (e.g. BEYOND "Places brought to life") — small thumbnail + optional logo + name */
+.dest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2vw, 1.75rem); }
+.dest-card__media { position: relative; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; }
+.dest-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.dest-card__logo-badge { position: absolute; left: 0.6rem; bottom: 0.6rem; background: var(--color-cream); border-radius: 4px; padding: 0.25rem 0.5rem; display: inline-flex; align-items: center; }
+.dest-card__logo-badge img { height: 14px; width: auto; max-width: 64px; object-fit: contain; display: block; filter: brightness(0); }
+.dest-card__name { font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; margin-top: 0.6rem; }
+.dest-card__tag { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; color: var(--color-taupe-text); margin-left: 0.5em; }
+.theme-dark .dest-card__tag { color: var(--accent-number-dark); }
+@media (max-width: 1024px) { .dest-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px)  { .dest-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .brand-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--c-line); border: 1px solid var(--c-line); }
 .brand-cell {
@@ -1773,7 +1819,9 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 }
 .logo-wall-section .type-heading {
   color: #000000;
+  margin: 1rem 0 2.5rem;
 }
+.logo-wall-section em { color: var(--color-maroon); }
 .logo-wall {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

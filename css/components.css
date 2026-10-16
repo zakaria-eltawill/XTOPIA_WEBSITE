@@ -1038,6 +1038,8 @@ textarea:focus {
   color: var(--accent-number);
 }
 .theme-dark .stat-row__num { color: var(--accent-number-dark); }
+/* Barques (--font-number) has no usable '%' glyph — render that character in the heading font instead */
+.stat-row__num--suffix { font-family: var(--font-heading); font-weight: 700; }
 .stat-row__label {
   font-family: var(--font-heading);
   font-weight: 700;
