@@ -180,7 +180,9 @@
 /* Centered hero variant (verticals hub) */
 .hero--center { align-items: center; text-align: center; }
 .hero--center .hero__inner { padding-top: calc(var(--nav-height) + 1.5rem); padding-bottom: 0; }
-.hero--center .hero__headline { align-items: center; }
+.hero--center .hero__headline,
+.hero--center .title-split { align-items: center; }
+.hero__sub { margin-top: 2rem; }
 
 /* ============================================================
    FLIP STATEMENT (pinned)
@@ -1103,7 +1105,15 @@
   transition: min-height 0.65s var(--ease-in-out);
 }
 .acc-bar:last-child { border-bottom: 1px solid var(--c-line); }
+.acc-bar--trofi  { --accent: var(--color-sage); }
+.acc-bar--beyond { --accent: var(--color-light-blue); }
+.acc-bar--mhya   { --accent: var(--color-cream); }
+.acc-bar--arada  { --accent: var(--color-light-blue); }
+.acc-bar--xeed   { --accent: var(--color-sage); }
 .acc-bar__accent { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--accent, var(--color-cream)); z-index: 3; }
+.acc-bar__logo-wrap { --logo-scale: 0.55; display: flex; align-items: center; flex-shrink: 0; align-self: center; }
+.acc-bar__cities { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.1em; font-size: 13px; color: var(--color-cream-dim); margin-top: -1.25rem; margin-bottom: 1.75rem; }
+.acc-bar__name .dropdown__mega-tag { font-size: 11px; padding: 0.25rem 0.6rem; }
 
 .acc-bar__bg { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s var(--ease-out); }
 .acc-bar__bg img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 1.4s var(--ease-out); }

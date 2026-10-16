@@ -718,13 +718,15 @@
 }
 
 .section--cream .btn--pill,
-.bg-cream .btn--pill {
+.bg-cream .btn--pill,
+.theme-light .btn--pill {
   border-color: rgba(17, 16, 16, 0.25);
   color: var(--c-void);
 }
 
 .section--cream .btn--pill:hover,
-.bg-cream .btn--pill:hover {
+.bg-cream .btn--pill:hover,
+.theme-light .btn--pill:hover {
   background: var(--c-void);
   color: var(--color-cream);
 }
