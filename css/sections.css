@@ -664,7 +664,7 @@
   border-radius: 4px;
 }
 .eco-card__media { width: 100%; max-width: 160px; }
-.eco-card__logo { height: 24px; width: auto; }
+.eco-card__logo { --logo-scale: 0.55; }
 .eco-card__sector {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -737,6 +737,144 @@
 /* Dynamic styling for light backgrounds */
 .bg-cream .feature__stat .num { color: var(--color-navy); font-weight: 400; }
 .bg-cream .feature__stat .lbl { color: rgba(0, 38, 62, 0.65); font-weight: 400; }
+
+/* ============================================================
+   HOME — Phase 2 (1.6–1.10): ARADA × XTOPIA, SOHO, One group,
+   leadership teaser, closing
+   ============================================================ */
+
+/* ---------- 1.6 ARADA × XTOPIA ---------- */
+.arada-x-logos { --logo-scale: 1; gap: 28px; }
+.arada-x-logos__sign {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 28px;
+  color: var(--color-taupe-text);
+}
+@media (min-width: 1025px) {
+  .arada-grid .advantage-col__center { min-width: 280px; }
+}
+@media (max-width: 1024px) {
+  .arada-x-logos { --logo-scale: 0.85; }
+}
+@media (max-width: 600px) {
+  .arada-x-logos { --logo-scale: 0.8; }
+}
+.arada-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+}
+.arada-project-card { display: flex; flex-direction: column; gap: 0.6rem; }
+.arada-project-card__media { aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; }
+.arada-project-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.arada-project-card__name { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.1rem, 1.5vw, 1.35rem); margin-top: 0.4rem; }
+.arada-project-card__city {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-taupe-text);
+}
+.arada-project-card__stats { display: flex; gap: 1.5rem; font-family: var(--font-body); font-size: 13px; color: var(--color-taupe-text); }
+.arada-project-card__stats strong { font-family: var(--font-number); font-weight: 800; color: var(--accent-number); font-size: 1.1rem; margin-right: 0.3em; }
+.arada-project-card__line { font-family: var(--font-body); font-weight: 300; font-size: 0.95rem; line-height: 1.6; color: var(--color-taupe-text); }
+
+@media (max-width: 1023px) {
+  .arada-projects { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .arada-projects { grid-template-columns: 1fr; }
+}
+
+/* ---------- 1.8 One group — steps + scroll-drawn connecting line ---------- */
+.one-group { margin-top: clamp(3rem, 5vw, 4.5rem); position: relative; }
+.one-group__line {
+  position: relative;
+  height: 1px;
+  background: var(--color-taupe);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.one-group__line-fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 0%;
+  background: var(--color-navy);
+}
+.one-group__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+.one-group__step { display: flex; flex-direction: column; gap: 0.75rem; }
+.one-group__num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--color-taupe-text);
+}
+.one-group__title { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.1rem, 1.6vw, 1.4rem); }
+.one-group__logos {
+  --logo-scale: 0.68;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 50px;
+  margin-top: 0.5rem;
+}
+.one-group__logos a { opacity: 0.85; transition: opacity var(--dur-med); }
+.one-group__logos a:hover { opacity: 1; }
+@media (max-width: 767px) {
+  .one-group__steps { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 1024px) {
+  .one-group__logos { --logo-scale: 0.578; }
+}
+@media (max-width: 600px) {
+  .one-group__logos { --logo-scale: 0.55; }
+}
+
+/* ---------- 1.9 Leadership teaser ---------- */
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(1.25rem, 2vw, 2rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.leader-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; }
+.leader-card__media { width: 100%; aspect-ratio: 3/4; border-radius: 4px; overflow: hidden; }
+.leader-card__media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+.leader-card__name { font-family: var(--font-heading); font-weight: 700; font-size: clamp(0.95rem, 1.1vw, 1.1rem); margin-top: 0.3rem; }
+.leader-card__title { font-family: var(--font-accent); font-style: italic; font-size: 0.9rem; color: var(--text-on-dark); }
+@media (max-width: 1023px) {
+  .leader-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .leader-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- 1.10 Closing ---------- */
+.closing-cta {
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(10, 9, 8, 0.55), rgba(10, 9, 8, 0.8)), url('../assets/images/rebrand-2026/x/x-closing-bw.webp');
+  background-size: cover;
+  background-position: center;
+}
+.closing-lines {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: var(--color-cream-dim);
+}
+.closing-cta__actions { display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: center; margin-top: 2.5rem; }
 
 /* ============================================================
    QUOTE BREAK

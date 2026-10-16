@@ -89,6 +89,19 @@
     }
   }
 
+  /* ---------- One group — connecting line (home 1.8) ---------- */
+  const oneGroupLine = document.querySelector('.one-group__line-fill');
+  if (oneGroupLine) {
+    if (reduceMotion) {
+      oneGroupLine.style.width = '100%';
+    } else {
+      gsap.fromTo(oneGroupLine, { width: '0%' }, {
+        width: '100%', ease: 'none',
+        scrollTrigger: { trigger: '.one-group', start: 'top 70%', end: 'bottom 65%', scrub: true },
+      });
+    }
+  }
+
   /* ---------- Floor stack (SOHO deep-dive) ---------- */
   gsap.utils.toArray('.floor').forEach((f, i) => {
     ScrollTrigger.create({
@@ -236,6 +249,7 @@ function initFlipFallback() {
   document.querySelectorAll('.floor').forEach((f) => f.classList.add('is-in'));
   document.querySelectorAll('.feature__media').forEach((m) => m.classList.add('is-in'));
   document.querySelectorAll('.numbers-map__pin').forEach((p) => p.classList.add('is-in'));
+  document.querySelectorAll('.one-group__line-fill').forEach((l) => (l.style.width = '100%'));
   if (b) {
     // Reveal flip B once the flip section scrolls into view.
     if ('IntersectionObserver' in window) {
