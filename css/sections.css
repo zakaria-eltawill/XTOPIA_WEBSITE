@@ -2003,3 +2003,25 @@ a.contact__detail-value:hover { color: var(--color-sage); }
   .mhya-points--3col.points { grid-template-columns: 1fr; }
 }
 
+/* ============================================================
+   ARADA SAUDI company page (verticals/arada.html)
+   ============================================================ */
+/* D — "Taking ARADA Saudi further" full-bleed intro, overlay baked into background-image */
+.arada-further-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('../assets/images/rebrand-2026/photos/arada/arada-saudi-further-landscape.webp');
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+/* .proj-mix is cream-dim by default (dark-only); make it work on light sections too */
+.theme-light .proj-mix { color: var(--color-taupe-text); }
+
+/* Al Remal location map card */
+.arada-map-card { max-width: 560px; aspect-ratio: 4/3; margin: clamp(2.5rem, 5vw, 4rem) auto 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--c-line-bright); }
+.arada-map-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Centered eyebrow (used above the full-bleed "Taking ARADA Saudi further" title) */
+.arada-further-bg .eyebrow { justify-content: center; }
+
