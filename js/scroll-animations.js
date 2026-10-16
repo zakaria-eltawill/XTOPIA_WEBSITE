@@ -102,6 +102,15 @@
     }
   }
 
+  /* ---------- MHYA neighbourhood band parallax (verticals/mhya.html only) ---------- */
+  const mhyaBand = document.querySelector('.mhya-neigh__band img');
+  if (mhyaBand && hasST && !reduceMotion) {
+    gsap.fromTo(mhyaBand, { yPercent: -10 }, {
+      yPercent: 10, ease: 'none',
+      scrollTrigger: { trigger: mhyaBand.closest('.mhya-neigh__band'), start: 'top bottom', end: 'bottom top', scrub: true },
+    });
+  }
+
   /* ---------- Floor stack (SOHO deep-dive) ---------- */
   gsap.utils.toArray('.floor').forEach((f, i) => {
     ScrollTrigger.create({

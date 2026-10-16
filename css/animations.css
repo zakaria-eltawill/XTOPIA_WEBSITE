@@ -110,4 +110,8 @@
   .flip__a .word { opacity: 1 !important; filter: none !important; }
   .flip__b { position: static; opacity: 1 !important; filter: none !important; }
   .hero__headline .line > span { opacity: 1 !important; transform: none !important; filter: none !important; }
+
+  /* MHYA page (verticals/mhya.html only): no hover zoom, no parallax */
+  .mhya-format-card:hover img { transform: none !important; }
+  .mhya-neigh__band img { transform: none !important; top: 0 !important; height: 100% !important; }
 }

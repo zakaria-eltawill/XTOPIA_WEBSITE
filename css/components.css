@@ -1147,6 +1147,7 @@ textarea:focus {
 .logo--trofi   { --logo-h: 41px; }
 .logo--beyond  { --logo-h: 36px; }
 .logo--xeed    { --logo-h: 58px; }
+.logo--soho    { --logo-h: 42px; }
 
 /* ---------- Numbered points: 01 / 02 / 03 / 04 ---------- */
 .points {

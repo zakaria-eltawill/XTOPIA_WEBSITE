@@ -735,6 +735,7 @@
 .feature__stats { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
 .feature__stat .num { font-family: var(--font-number); font-weight: 800; font-size: clamp(1.5rem, 2.5vw, 2.4rem); }
 .feature__stat .lbl { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; color: var(--color-cream-dim); }
+.feature__media--wide { aspect-ratio: 16/11; clip-path: none; border-radius: 20px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6); }
 
 /* Dynamic styling for light backgrounds */
 .bg-cream .feature__stat .num { color: var(--color-navy); font-weight: 400; }
@@ -783,6 +784,10 @@
 .arada-project-card__stats { display: flex; gap: 1.5rem; font-family: var(--font-body); font-size: 13px; color: var(--color-taupe-text); }
 .arada-project-card__stats strong { font-family: var(--font-number); font-weight: 800; color: var(--accent-number); font-size: 1.1rem; margin-right: 0.3em; }
 .arada-project-card__line { font-family: var(--font-body); font-weight: 300; font-size: 0.95rem; line-height: 1.6; color: var(--color-taupe-text); }
+.theme-dark .arada-project-card__city,
+.theme-dark .arada-project-card__stats,
+.theme-dark .arada-project-card__line { color: var(--color-cream-dim); }
+.theme-dark .arada-project-card__stats strong { color: var(--accent-number-dark); }
 
 @media (max-width: 1023px) {
   .arada-projects { grid-template-columns: repeat(2, 1fr); }
@@ -1215,6 +1220,13 @@
 .format-card__label { font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; margin-top: 0.75rem; }
 @media (max-width: 1024px) { .format-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 600px)  { .format-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Short labelled list (e.g. MHYA's 3 development formats) — numbered label, no body text */
+.format-list { display: flex; flex-wrap: wrap; gap: 1.25rem 3rem; margin: 1.5rem 0; }
+.format-list__item { display: flex; align-items: baseline; gap: 0.6rem; }
+.format-list__num { font-family: var(--font-heading); font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: var(--color-taupe-text); }
+.theme-dark .format-list__num { color: var(--accent-number-dark); }
+.format-list__name { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; }
 
 /* Small feature band (e.g. "Seasonal beach gyms") — thumbnail-size image, text beside it */
 .feature-band { display: flex; align-items: center; gap: clamp(1.5rem, 4vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); flex-wrap: wrap; }
@@ -1868,3 +1880,126 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 @media (max-width: 560px) {
   .logo-wall { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
 }
+
+/* ============================================================
+   MHYA PAGE REDESIGN (verticals/mhya.html only)
+   All classes are .mhya- prefixed on purpose — scoped to this one
+   page so nothing here can affect any other page's layout.
+   ============================================================ */
+
+/* A — Cover */
+.mhya-cover-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  padding-block: calc(var(--nav-height) + 3rem) 3rem;
+  padding-inline: var(--gutter);
+}
+.mhya-cover__media {
+  width: min(55vh, 85vw);
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+.mhya-cover__logo { height: 110px; width: auto; max-width: 70vw; }
+.mhya-cover__tag { font-size: clamp(24px, 2.4vw, 36px); }
+.mhya-cover-section .u-dim { color: var(--color-taupe-text); }
+@media (max-width: 600px) {
+  .mhya-cover__logo { height: 64px; }
+}
+
+/* B — Places with purpose: text + 3 vertical format cards */
+.mhya-formats { display: grid; grid-template-columns: minmax(260px, 0.85fr) 2fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.mhya-formats__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.mhya-format-card { position: relative; display: block; aspect-ratio: 3/4; border-radius: 4px; overflow: hidden; }
+.mhya-format-card img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-med) var(--ease-out); }
+.mhya-format-card:hover img { transform: scale(1.06); }
+.mhya-format-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(17,16,16,0.92) 0%, rgba(17,16,16,0.1) 55%, transparent 100%);
+}
+.mhya-format-card__overlay { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; z-index: 1; }
+.mhya-format-card__num { display: block; font-family: var(--font-heading); font-weight: 700; font-size: 12px; letter-spacing: 0.2em; color: var(--color-light-blue); margin-bottom: 0.4rem; }
+.mhya-format-card__name { font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; color: var(--color-cream); line-height: 1.25; }
+@media (max-width: 1024px) {
+  .mhya-formats { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .mhya-formats__cards { grid-template-columns: 1fr; }
+}
+
+/* C — What MHYA brings: 3 equal columns, thin dividers, big Barques numbers */
+.mhya-brings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.mhya-brings__col { padding: 1rem clamp(1.25rem, 2.5vw, 2.5rem); border-left: 1px solid var(--c-line-bright); }
+.mhya-brings__col:first-child { padding-left: 0; border-left: none; }
+.mhya-brings__num { display: block; font-family: var(--font-number); font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1; color: var(--color-light-blue); margin-bottom: 1rem; }
+.mhya-brings__title { display: block; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.05rem, 1.6vw, 1.3rem); margin-bottom: 0.5rem; }
+.mhya-brings__text { font-family: var(--font-body); font-weight: 300; font-size: 0.95rem; line-height: 1.7; color: var(--color-cream-dim); }
+@media (max-width: 767px) {
+  .mhya-brings { grid-template-columns: 1fr; gap: 2rem; }
+  .mhya-brings__col { padding: 0; border-left: none; padding-top: 2rem; border-top: 1px solid var(--c-line-bright); }
+  .mhya-brings__col:first-child { padding-top: 0; border-top: none; }
+}
+
+/* D1 — SOHO Jeddah: 50/50 split + full-width map card below */
+.mhya-soho__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.mhya-soho__logo { height: 48px; width: auto; margin-bottom: 0.5rem; }
+.mhya-soho__badge { margin-top: 1rem; cursor: default; }
+.mhya-soho__media { position: relative; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; }
+.mhya-soho__media video { width: 100%; height: 100%; object-fit: cover; }
+.mhya-soho__map { max-width: 340px; aspect-ratio: 4/5; margin: clamp(2.5rem, 5vw, 4rem) auto 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--c-line-bright); }
+.mhya-soho__map img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 1024px) {
+  .mhya-soho__grid { grid-template-columns: 1fr; }
+}
+
+/* D2 — Neighbourhood destinations: 60/40 split + full-bleed parallax band */
+.mhya-neigh__grid { display: grid; grid-template-columns: 3fr 2fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.mhya-neigh__media { aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; }
+.mhya-neigh__media img { width: 100%; height: 100%; object-fit: cover; }
+.mhya-neigh__points { display: flex; flex-direction: column; gap: 48px; }
+.mhya-neigh__point-num { display: block; font-family: var(--font-heading); font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: var(--color-taupe-text); margin-bottom: 0.6rem; }
+.mhya-neigh__point-title { display: block; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.1rem, 1.6vw, 1.4rem); margin-bottom: 0.4rem; }
+.mhya-neigh__point-text { font-family: var(--font-body); font-weight: 300; font-size: 0.95rem; line-height: 1.7; color: var(--color-taupe-text); }
+.mhya-neigh__band { position: relative; height: 60vh; overflow: hidden; margin-top: clamp(3rem, 6vw, 5rem); }
+.mhya-neigh__band img { position: absolute; top: -12%; left: 0; width: 100%; height: 124%; object-fit: cover; will-change: transform; }
+@media (max-width: 1024px) {
+  .mhya-neigh__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .mhya-neigh__band { height: 40vh; }
+}
+
+/* D3 — Industrial & logistics, Slovakia: park cards with a 2x2 number grid */
+.mhya-park-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(2rem, 4vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4rem); }
+.mhya-park-card__media { aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; }
+.mhya-park-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.mhya-park-card__name { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.2rem, 2vw, 1.6rem); margin-top: 1.25rem; }
+.mhya-park-card__loc { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; color: var(--accent-number-dark); margin-top: 0.35rem; }
+.mhya-park-card__stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem 1.5rem; margin-top: 1.25rem; }
+.mhya-park-stat__num { display: block; font-family: var(--font-number); font-weight: 800; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1; color: var(--color-light-blue); }
+.mhya-park-stat__lbl { font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; color: var(--color-cream-dim); margin-top: 0.3rem; }
+@media (max-width: 640px) {
+  .mhya-park-grid { grid-template-columns: 1fr; }
+}
+
+/* E — Fund management partners: thin strip, equal visual height, monochrome -> colour on hover */
+.mhya-partners { display: flex; flex-wrap: wrap; justify-content: space-evenly; align-items: center; gap: clamp(2rem, 6vw, 5rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.mhya-partners__logo { --logo-h: 44px; filter: grayscale(1); opacity: 0.65; transition: opacity var(--dur-fast) var(--ease-out), filter var(--dur-fast) var(--ease-out); }
+.mhya-partners__logo:hover { filter: grayscale(0); opacity: 1; }
+
+/* F — Taking MHYA further: full-bleed photo background + dark overlay (baked into
+   the same background-image so it composites correctly, not a separate ::before) */
+.mhya-further {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)), url('../assets/images/rebrand-2026/photos/mhya/mhya-destination-plaza-aerial.webp');
+  background-size: cover;
+  background-position: center;
+}
+.mhya-points--3col.points { grid-template-columns: repeat(3, 1fr); margin-top: clamp(2.5rem, 5vw, 4rem); }
+@media (max-width: 767px) {
+  .mhya-points--3col.points { grid-template-columns: 1fr; }
+}
+
