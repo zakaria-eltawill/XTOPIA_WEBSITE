@@ -13,13 +13,13 @@
   <link rel="preload" href="../assets/Fonts/Montserrat/Montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/Fonts/Barques-ExtraBold.otf" as="font" type="font/otf" crossorigin />
 
-  <link rel="stylesheet" href="../css/reset.css?v=80" />
-  <link rel="stylesheet" href="../css/variables.css?v=80" />
-  <link rel="stylesheet" href="../css/typography.css?v=80" />
-  <link rel="stylesheet" href="../css/layout.css?v=80" />
-  <link rel="stylesheet" href="../css/components.css?v=80" />
-  <link rel="stylesheet" href="../css/sections.css?v=80" />
-  <link rel="stylesheet" href="../css/animations.css?v=80" />
+  <link rel="stylesheet" href="../css/reset.css?v=82" />
+  <link rel="stylesheet" href="../css/variables.css?v=82" />
+  <link rel="stylesheet" href="../css/typography.css?v=82" />
+  <link rel="stylesheet" href="../css/layout.css?v=82" />
+  <link rel="stylesheet" href="../css/components.css?v=82" />
+  <link rel="stylesheet" href="../css/sections.css?v=82" />
+  <link rel="stylesheet" href="../css/animations.css?v=82" />
   <style>:root { --accent: var(--color-sage); }</style>
   <link rel="icon" type="image/jpeg" href="../assets/images/favicon_icon/fav_icon.jpg" />
 </head>
@@ -155,22 +155,177 @@
 <!-- @nav-overlay:end -->
 
   <main>
-    <!-- A — COVER (full content arrives in Phase 4) -->
-    <section class="theme-light biz-cover-section" style="padding-top: calc(var(--nav-height) + 2rem);">
-      <div class="biz-cover">
-        <div class="biz-cover__media x-mask x-mask--lg">
+    <!-- A — HERO -->
+    <section class="biz-hero theme-dark grain x-watermark">
+      <div class="container biz-hero__grid">
+        <div class="biz-hero__text">
+          <p class="eyebrow type-label biz-hero__eyebrow">XTOPIA &middot; Agriculture &amp; Food</p>
+          <img class="logo-optical logo--xeed biz-hero__logo" src="../assets/images/rebrand-2026/logos/logo-xeed-mark-white.svg" alt="XEED" />
+          <p class="biz-hero__tag">From seed to xeed</p>
+          <div class="biz-hero__stats">
+            <div class="biz-hero__stat"><span class="biz-hero__stat-num" data-count="53" data-suffix="M+">0</span><span class="biz-hero__stat-lbl">SQM farmland</span></div>
+            <div class="biz-hero__stat"><span class="biz-hero__stat-num" data-count="3" data-suffix="M+">0</span><span class="biz-hero__stat-lbl">Trees</span></div>
+          </div>
+          <a class="scroll-hint type-label u-dim biz-hero__discover" href="#">Discover <span class="scroll-hint__arrow" aria-hidden="true">↓</span></a>
+        </div>
+        <div class="biz-hero__x x-mask x-mask--lg">
           <img src="../assets/images/rebrand-2026/x/x-xeed.webp" alt="XEED" />
         </div>
-        <img class="biz-cover__logo" src="../assets/images/rebrand-2026/logos/logo-xeed-dark.svg" alt="XEED" />
-        <p class="biz-cover__tag">From seed to xeed</p>
       </div>
     </section>
 
-    <!-- F — NEXT VERTICAL -->
+    <!-- B — ROOTED IN FARMING -->
+    <section class="section theme-light x-watermark">
+      <div class="container stack">
+        <p class="eyebrow type-label" data-reveal="fade">Agriculture &amp; Food</p>
+        <p class="title-split" data-reveal="up-sm">
+          <span class="title-split__line1">Rooted in farming.</span>
+          <span class="title-split__line2">Connected to markets.</span>
+        </p>
+        <p class="type-body" data-reveal="up-sm">An integrated agriculture business connecting farming, farm management and sourcing with market access.</p>
+
+        <div class="points" data-reveal="up-sm">
+          <div class="points__item">
+            <span class="points__num">01</span>
+            <span class="points__title">Farming expertise</span>
+            <p class="points__text">Growing capability from nursery to harvest.</p>
+          </div>
+          <div class="points__item">
+            <span class="points__num">02</span>
+            <span class="points__title">Management &amp; sourcing</span>
+            <p class="points__text">Our farms, managed farms and a wider grower network.</p>
+          </div>
+          <div class="points__item">
+            <span class="points__num">03</span>
+            <span class="points__title">Market access</span>
+            <p class="points__text">Connecting supply to supermarkets and wholesale buyers.</p>
+          </div>
+        </div>
+
+        <div class="stat-row" data-reveal="fade">
+          <div class="stat-row__item"><span class="stat-row__num" data-count="53" data-suffix="M+">0</span><span class="stat-row__label">SQM farmland</span></div>
+          <div class="stat-row__item"><span class="stat-row__num" data-count="3000" data-suffix="+">0</span><span class="stat-row__label">Employees</span></div>
+          <div class="stat-row__item"><span class="stat-row__num" data-count="50" data-suffix="K">0</span><span class="stat-row__label">Tons of produce / year</span></div>
+          <div class="stat-row__item"><span class="stat-row__num" data-count="3" data-suffix="M+">0</span><span class="stat-row__label">Trees</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- C — WE GROW. WE MANAGE. WE SOURCE. -->
+    <section class="section theme-dark">
+      <div class="container">
+        <p class="eyebrow type-label" data-reveal="fade">Our Model</p>
+        <p class="title-split" data-reveal="up-sm">
+          <span class="title-split__line1">We grow. We manage.</span>
+          <span class="title-split__line2">We source.</span>
+        </p>
+        <p class="type-body u-dim" data-reveal="up-sm">Three ways to build supply. One connected route to market.</p>
+
+        <div class="grid grid--3" data-reveal="fade">
+          <article class="arada-project-card">
+            <div class="arada-project-card__media"><img src="../assets/images/rebrand-2026/photos/xeed/xeed-we-grow-orchard-aerial.webp" alt="We grow" loading="lazy" /></div>
+            <h4 class="arada-project-card__name">We grow</h4>
+            <p class="arada-project-card__line">From nursery to harvest through our own farms.</p>
+          </article>
+          <article class="arada-project-card">
+            <div class="arada-project-card__media"><img src="../assets/images/rebrand-2026/photos/xeed/xeed-we-manage-farm-inspection.webp" alt="We manage" loading="lazy" /></div>
+            <h4 class="arada-project-card__name">We manage</h4>
+            <p class="arada-project-card__line">Operating farms for other owners.</p>
+          </article>
+          <article class="arada-project-card">
+            <div class="arada-project-card__media"><img src="../assets/images/rebrand-2026/photos/xeed/xeed-we-source-harvest-crates.webp" alt="We source" loading="lazy" /></div>
+            <h4 class="arada-project-card__name">We source</h4>
+            <p class="arada-project-card__line">Sourcing from a wide network of growers.</p>
+          </article>
+        </div>
+
+        <p class="eyebrow type-label" data-reveal="fade">One shared route to market</p>
+        <div class="xeed-flow" data-reveal="fade">
+          <span class="xeed-flow__step">Sorting &amp; packaging</span>
+          <span class="xeed-flow__arrow" aria-hidden="true">&rarr;</span>
+          <span class="xeed-flow__step">Logistics &amp; distribution</span>
+          <span class="xeed-flow__arrow" aria-hidden="true">&rarr;</span>
+          <span class="xeed-flow__step">Supermarkets &amp; wholesalers</span>
+        </div>
+        <p class="type-italic" data-reveal="fade">Market demand informs what we grow and source.</p>
+      </div>
+    </section>
+
+    <!-- D — FULL-BLEED -->
+    <div class="xeed-fullbleed">
+      <img src="../assets/images/rebrand-2026/photos/xeed/xeed-date-palms.webp" alt="XEED date palms" loading="lazy" />
+    </div>
+
+    <!-- E — TAKING XEED FURTHER -->
+    <section class="section theme-light" id="further">
+      <div class="container stack">
+        <p class="eyebrow type-label" data-reveal="fade">Taking XEED further</p>
+        <p class="title-split" data-reveal="up-sm">
+          <span class="title-split__line1">Built in Egypt.</span>
+          <span class="title-split__line2">Growing in Saudi Arabia.</span>
+        </p>
+        <p class="type-body" data-reveal="up-sm">Three-year ambition: build a substantial Saudi business across farming, farm management and sourcing.</p>
+
+        <div class="points" data-reveal="up-sm">
+          <div class="points__item">
+            <span class="points__num">01</span>
+            <span class="points__title">Establish in Saudi</span>
+            <p class="points__text">Adapt our accumulated farming expertise to local conditions and market needs.</p>
+          </div>
+          <div class="points__item">
+            <span class="points__num">02</span>
+            <span class="points__title">Grow with farm owners</span>
+            <p class="points__text">Build farm-management and sourcing partnerships that connect more growers to buyers.</p>
+          </div>
+          <div class="points__item">
+            <span class="points__num">03</span>
+            <span class="points__title">Expand the offering</span>
+            <p class="points__text">Broaden the product range and develop value-added processing capabilities.</p>
+          </div>
+          <div class="points__item">
+            <span class="points__num">04</span>
+            <span class="points__title">Connect to customers</span>
+            <p class="points__text">Strengthen logistics, distribution and supermarket relationships to support scale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- F — FULL TEAM -->
+    <section class="section theme-dark" id="team">
+      <div class="container stack">
+        <p class="eyebrow type-label" data-reveal="fade">The Team</p>
+        <p class="title-split" data-reveal="up-sm">
+          <span class="title-split__line1">Full team.</span>
+          <span class="title-split__line2">Co-founders first.</span>
+        </p>
+        <div class="team-grid" data-reveal="fade">
+          <div class="compact-card" data-reveal data-cursor="view">
+            <div class="compact-card__media"><img src="../assets/images/rebrand-2026/people/cofounder-xeed-ahmed-tawfik.webp" alt="Ahmed Tawfik" /></div>
+            <div class="compact-card__info">
+              <div class="compact-card__name">Ahmed Tawfik</div>
+              <div class="compact-card__role">Co-Founder</div>
+            </div>
+          </div>
+          <div class="compact-card" data-reveal data-reveal-delay="1" data-cursor="view">
+            <div class="compact-card__media"><img src="../assets/images/rebrand-2026/people/cofounder-xeed-tamer-serour.webp" alt="Tamer Serour" /></div>
+            <div class="compact-card__info">
+              <div class="compact-card__name">Tamer Serour</div>
+              <div class="compact-card__role">Co-Founder</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- G — NEXT VERTICAL -->
     <section class="section--dark">
       <div class="container next-vertical">
         <div><p class="type-label u-dim">Next Vertical</p><h2 class="type-display">TROFI</h2></div>
         <a class="btn btn--pill" href="trofi.html">Next: TROFI <span class="btn__arrow">→</span></a>
+      </div>
+      <div class="container">
+        <p class="fine-print">This page contains forward-looking statements reflecting current plans; outcomes may differ.</p>
       </div>
     </section>
   </main>
@@ -234,11 +389,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="../js/main.js?v=80"></script>
-  <script src="../js/loader.js?v=80"></script>
-  <script src="../js/nav.js?v=80"></script>
-  <script src="../js/cursor.js?v=80"></script>
-  <script src="../js/scroll-animations.js?v=80"></script>
-  <script src="../js/horizontal-scroll.js?v=80"></script>
+  <script src="../js/main.js?v=82"></script>
+  <script src="../js/loader.js?v=82"></script>
+  <script src="../js/nav.js?v=82"></script>
+  <script src="../js/cursor.js?v=82"></script>
+  <script src="../js/scroll-animations.js?v=82"></script>
+  <script src="../js/horizontal-scroll.js?v=82"></script>
 </body>
 </html>

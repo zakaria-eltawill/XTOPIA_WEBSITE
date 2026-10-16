@@ -13,13 +13,13 @@
   <link rel="preload" href="../assets/Fonts/Montserrat/Montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/Fonts/Barques-ExtraBold.otf" as="font" type="font/otf" crossorigin />
 
-  <link rel="stylesheet" href="../css/reset.css?v=80" />
-  <link rel="stylesheet" href="../css/variables.css?v=80" />
-  <link rel="stylesheet" href="../css/typography.css?v=80" />
-  <link rel="stylesheet" href="../css/layout.css?v=80" />
-  <link rel="stylesheet" href="../css/components.css?v=80" />
-  <link rel="stylesheet" href="../css/sections.css?v=80" />
-  <link rel="stylesheet" href="../css/animations.css?v=80" />
+  <link rel="stylesheet" href="../css/reset.css?v=82" />
+  <link rel="stylesheet" href="../css/variables.css?v=82" />
+  <link rel="stylesheet" href="../css/typography.css?v=82" />
+  <link rel="stylesheet" href="../css/layout.css?v=82" />
+  <link rel="stylesheet" href="../css/components.css?v=82" />
+  <link rel="stylesheet" href="../css/sections.css?v=83" />
+  <link rel="stylesheet" href="../css/animations.css?v=82" />
   <style>:root { --accent: var(--color-light-blue); }</style>
   <link rel="icon" type="image/jpeg" href="../assets/images/favicon_icon/fav_icon.jpg" />
 </head>
@@ -158,13 +158,21 @@
 
 <main>
     <!-- A — HERO -->
-    <section class="vhero grain">
-      <div class="vhero__layer"><img src="../assets/images/collages/collage-beyond-waterworld-summer-events.png" alt="" /></div>
-      <div class="vhero__veil"></div>
-      <div class="vhero__inner">
-        <img class="vhero__logo" src="../assets/images/rebrand-2026/logos/logo-beyond-white.svg" alt="BEYOND" />
-        <p class="type-italic">Movement becomes a way of life</p>
-        <p class="type-label u-dim vhero__hint">Discover ↓</p>
+    <section class="biz-hero theme-dark grain x-watermark">
+      <div class="container biz-hero__grid">
+        <div class="biz-hero__text">
+          <p class="eyebrow type-label biz-hero__eyebrow">XTOPIA &middot; Sports &amp; Active Living</p>
+          <img class="logo-optical logo--beyond biz-hero__logo" src="../assets/images/rebrand-2026/logos/logo-beyond-white.svg" alt="BEYOND" />
+          <p class="biz-hero__tag">Movement becomes a way of life</p>
+          <div class="biz-hero__stats">
+            <div class="biz-hero__stat"><span class="biz-hero__stat-num" data-count="100" data-suffix="K">0</span><span class="biz-hero__stat-lbl">Active members</span></div>
+            <div class="biz-hero__stat"><span class="biz-hero__stat-num" data-count="2.8" data-decimals="1" data-suffix="M">0</span><span class="biz-hero__stat-lbl">Annual footfall</span></div>
+          </div>
+          <a class="scroll-hint type-label u-dim biz-hero__discover" href="#">Discover <span class="scroll-hint__arrow" aria-hidden="true">↓</span></a>
+        </div>
+        <div class="biz-hero__x x-mask x-mask--lg">
+          <img src="../assets/images/rebrand-2026/x/x-beyond-gym.webp" alt="BEYOND" />
+        </div>
       </div>
     </section>
 
@@ -274,7 +282,7 @@
           </div>
         </div>
         <div class="u-center" data-reveal data-cursor="view">
-          <img class="u-fluid-img" src="../assets/images/photos/sports/sports-befit360-app-mockup.png" alt="BeFit 360 app" loading="lazy" />
+          <img class="befit-app-mockup" src="../assets/images/rebrand-2026/photos/beyond/befit-app-mockup.webp" srcset="../assets/images/rebrand-2026/photos/beyond/befit-app-mockup.webp 1x, ../assets/images/rebrand-2026/photos/beyond/befit-app-mockup@2x.webp 2x" width="358" height="719" alt="BeFit 360 app" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -517,11 +525,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="../js/main.js?v=80"></script>
-  <script src="../js/loader.js?v=80"></script>
-  <script src="../js/nav.js?v=80"></script>
-  <script src="../js/cursor.js?v=80"></script>
-  <script src="../js/scroll-animations.js?v=80"></script>
-  <script src="../js/horizontal-scroll.js?v=80"></script>
+  <script src="../js/main.js?v=82"></script>
+  <script src="../js/loader.js?v=82"></script>
+  <script src="../js/nav.js?v=82"></script>
+  <script src="../js/cursor.js?v=82"></script>
+  <script src="../js/scroll-animations.js?v=82"></script>
+  <script src="../js/horizontal-scroll.js?v=82"></script>
 </body>
 </html>

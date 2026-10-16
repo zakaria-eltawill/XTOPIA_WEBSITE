@@ -13,13 +13,13 @@
   <link rel="preload" href="../assets/Fonts/Montserrat/Montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/Fonts/Barques-ExtraBold.otf" as="font" type="font/otf" crossorigin />
 
-  <link rel="stylesheet" href="../css/reset.css?v=80" />
-  <link rel="stylesheet" href="../css/variables.css?v=80" />
-  <link rel="stylesheet" href="../css/typography.css?v=80" />
-  <link rel="stylesheet" href="../css/layout.css?v=80" />
-  <link rel="stylesheet" href="../css/components.css?v=80" />
-  <link rel="stylesheet" href="../css/sections.css?v=80" />
-  <link rel="stylesheet" href="../css/animations.css?v=80" />
+  <link rel="stylesheet" href="../css/reset.css?v=82" />
+  <link rel="stylesheet" href="../css/variables.css?v=82" />
+  <link rel="stylesheet" href="../css/typography.css?v=82" />
+  <link rel="stylesheet" href="../css/layout.css?v=82" />
+  <link rel="stylesheet" href="../css/components.css?v=82" />
+  <link rel="stylesheet" href="../css/sections.css?v=84" />
+  <link rel="stylesheet" href="../css/animations.css?v=82" />
   <style>:root { --accent: var(--color-navy); }</style>
   <link rel="icon" type="image/jpeg" href="../assets/images/favicon_icon/fav_icon.jpg" />
 </head>
@@ -155,16 +155,23 @@
 <!-- @nav-overlay:end -->
 
   <main>
-    <!-- A — COVER -->
-    <section class="theme-light mhya-cover-section x-watermark">
-      <div class="mhya-cover__media x-mask x-mask--lg">
-        <img src="../assets/images/rebrand-2026/x/x-mhya.webp" alt="MHYA" />
+    <!-- A — HERO -->
+    <section class="biz-hero theme-dark grain x-watermark">
+      <div class="container biz-hero__grid">
+        <div class="biz-hero__text">
+          <p class="eyebrow type-label biz-hero__eyebrow">XTOPIA &middot; Development &amp; Places</p>
+          <img class="logo-optical logo--mhya biz-hero__logo" src="../assets/images/rebrand-2026/logos/logo-mhya-white.svg" alt="MHYA" />
+          <p class="biz-hero__tag">Thoughtfully developed, distinctively lived</p>
+          <div class="biz-hero__stats">
+            <div class="biz-hero__stat"><span class="biz-hero__stat-num" data-count="42.5" data-decimals="1" data-suffix="K">0</span><span class="biz-hero__stat-lbl">SQM SOHO Jeddah</span></div>
+            <div class="biz-hero__stat"><span class="biz-hero__stat-num biz-hero__stat-num--text">Jan 2027</span><span class="biz-hero__stat-lbl">Opening</span></div>
+          </div>
+          <a class="scroll-hint type-label u-dim biz-hero__discover" href="#">Discover <span class="scroll-hint__arrow" aria-hidden="true">↓</span></a>
+        </div>
+        <div class="biz-hero__x x-mask x-mask--lg">
+          <img src="../assets/images/rebrand-2026/x/x-mhya.webp" alt="MHYA" />
+        </div>
       </div>
-      <img class="mhya-cover__logo" src="../assets/images/rebrand-2026/logos/logo-mhya-dark.svg" alt="MHYA" />
-      <p class="type-italic mhya-cover__tag">Thoughtfully developed, distinctively lived</p>
-      <a class="scroll-hint type-label u-dim" href="#places">
-        Scroll to explore <span class="scroll-hint__arrow" aria-hidden="true">↓</span>
-      </a>
     </section>
 
     <!-- B — PLACES WITH PURPOSE -->
@@ -235,31 +242,45 @@
     </section>
 
     <!-- D1 — SOHO JEDDAH -->
-    <section class="section theme-dark grain" id="soho">
+    <section class="section theme-dark grain soho-feature" id="soho">
       <div class="container">
-        <div class="mhya-soho__grid">
-          <div class="stack">
-            <img class="mhya-soho__logo" src="../assets/images/rebrand-2026/logos/logo-soho-jeddah-white.svg" alt="SOHO Jeddah" />
+        <div class="soho-feature__grid">
+          <div class="soho-feature__text">
+            <img class="soho-feature__logo" src="../assets/images/rebrand-2026/logos/logo-soho-jeddah-white.svg" alt="SOHO Jeddah" data-reveal="fade" />
             <p class="eyebrow type-label" data-reveal="fade">A MHYA destination</p>
-            <p class="title-split" data-reveal="up-sm">
-              <span class="title-split__line1">A destination shaped around</span>
-              <span class="title-split__line2">everyday life.</span>
-            </p>
-            <p class="type-body u-dim" data-reveal="up-sm">Dining, sports, wellness and workspace, brought together in one destination.</p>
-            <div class="stat-row" data-reveal="fade">
-              <div class="stat-row__item"><span class="stat-row__num" data-count="42500">0</span><span class="stat-row__label">SQM built-up</span></div>
-              <div class="stat-row__item"><span class="stat-row__num" data-count="14000">0</span><span class="stat-row__label">SQM commercial</span></div>
-              <div class="stat-row__item"><span class="stat-row__num" data-count="13500">0</span><span class="stat-row__label">SQM administrative</span></div>
-              <div class="stat-row__item"><span class="stat-row__num" data-count="75">0</span><span class="stat-row__label">Units</span></div>
+            <h2 class="soho-feature__title" data-reveal="up-sm">A destination shaped around everyday life.</h2>
+            <p class="soho-feature__desc" data-reveal="up-sm">Dining, sports, wellness and workspace, brought together in one destination.</p>
+            <div class="soho-feature__stats" data-reveal="fade">
+              <div class="soho-feature__stat"><span class="soho-feature__num" data-count="42.5" data-decimals="1" data-suffix="K">42.5K</span><span class="soho-feature__label">SQM built-up area</span></div>
+              <div class="soho-feature__stat"><span class="soho-feature__num" data-count="14" data-suffix="K">14K</span><span class="soho-feature__label">SQM commercial space</span></div>
+              <div class="soho-feature__stat"><span class="soho-feature__num" data-count="13.5" data-decimals="1" data-suffix="K">13.5K</span><span class="soho-feature__label">SQM administrative space</span></div>
+              <div class="soho-feature__stat"><span class="soho-feature__num" data-count="75">75</span><span class="soho-feature__label">Units</span></div>
             </div>
-            <span class="btn btn--pill mhya-soho__badge" data-reveal="fade">Opening January 2027</span>
           </div>
-          <div class="mhya-soho__media" data-cursor="view">
-            <video src="../assets/videos/IMG_0161.MP4" poster="../assets/images/rebrand-2026/photos/mhya/mhya-soho-jeddah-exterior.webp" autoplay loop muted playsinline aria-label="SOHO Jeddah video"></video>
-          </div>
+          <figure class="soho-feature__media" data-reveal="fade" data-cursor="view">
+            <div class="soho-feature__img"><img src="../assets/images/rebrand-2026/photos/mhya/mhya-soho-jeddah-exterior.webp" width="1225" height="822" alt="SOHO Jeddah exterior" loading="lazy" decoding="async" /></div>
+            <figcaption class="soho-feature__caption">Target opening: January 2027</figcaption>
+          </figure>
         </div>
-        <div class="mhya-soho__map" data-reveal="fade">
-          <img src="../assets/images/maps/map-soho-jeddah-location-dark.png" alt="SOHO Jeddah location map" loading="lazy" />
+        <div class="mhya-soho__location">
+          <div class="mhya-soho__location-text" data-reveal="up-sm">
+            <p class="eyebrow type-label">Location</p>
+            <p class="title-split">
+              <span class="title-split__line1">On the Jeddah</span>
+              <span class="title-split__line2">Corniche, by the sea.</span>
+            </p>
+            <p class="mhya-soho__landmarks-label type-label">Nearby landmarks</p>
+            <ul class="mhya-soho__landmarks">
+              <li>Trump Tower</li>
+              <li>Damac Towers</li>
+              <li>Rosewood Hotel</li>
+              <li>Raffles Residence</li>
+              <li>Four Seasons</li>
+            </ul>
+          </div>
+          <figure class="mhya-soho__map" data-reveal="fade">
+            <img src="../assets/images/maps/map-soho-jeddah-location-dark.png" width="446" height="800" alt="SOHO Jeddah location on the Jeddah Corniche" loading="lazy" decoding="async" />
+          </figure>
         </div>
       </div>
     </section>
@@ -485,11 +506,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="../js/main.js?v=80"></script>
-  <script src="../js/loader.js?v=80"></script>
-  <script src="../js/nav.js?v=80"></script>
-  <script src="../js/cursor.js?v=80"></script>
-  <script src="../js/scroll-animations.js?v=80"></script>
-  <script src="../js/horizontal-scroll.js?v=80"></script>
+  <script src="../js/main.js?v=82"></script>
+  <script src="../js/loader.js?v=82"></script>
+  <script src="../js/nav.js?v=82"></script>
+  <script src="../js/cursor.js?v=82"></script>
+  <script src="../js/scroll-animations.js?v=82"></script>
+  <script src="../js/horizontal-scroll.js?v=82"></script>
 </body>
 </html>

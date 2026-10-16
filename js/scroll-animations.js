@@ -102,6 +102,16 @@
     }
   }
 
+  /* ---------- Biz-hero X: load-in scale + scroll parallax (the 5 company pages) ---------- */
+  const bizHeroX = document.querySelector('.biz-hero__x img');
+  if (bizHeroX && hasST && !reduceMotion) {
+    gsap.fromTo(bizHeroX, { scale: 1.08 }, { scale: 1, duration: 1.3, ease: 'power3.out' });
+    gsap.fromTo(bizHeroX, { yPercent: -6 }, {
+      yPercent: 6, ease: 'none',
+      scrollTrigger: { trigger: '.biz-hero', start: 'top top', end: 'bottom top', scrub: true },
+    });
+  }
+
   /* ---------- MHYA neighbourhood band parallax (verticals/mhya.html only) ---------- */
   const mhyaBand = document.querySelector('.mhya-neigh__band img');
   if (mhyaBand && hasST && !reduceMotion) {

@@ -47,7 +47,7 @@
   function finish() {
     document.documentElement.classList.add('is-loaded');
     loader.classList.add('is-done');
-    const hero = document.querySelector('.hero');
+    const hero = document.querySelector('.hero, .biz-hero');
     if (hero) hero.classList.add('is-ready');
     window.dispatchEvent(new CustomEvent('xtopia:loaded'));
   }

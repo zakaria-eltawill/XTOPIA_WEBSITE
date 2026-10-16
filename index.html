@@ -17,13 +17,13 @@
 
   <link rel="preload" href="assets/images/photos/hero/hero-cover-architectural-abstract.jpg" as="image" />
 
-  <link rel="stylesheet" href="css/reset.css?v=80" />
-  <link rel="stylesheet" href="css/variables.css?v=80" />
-  <link rel="stylesheet" href="css/typography.css?v=80" />
-  <link rel="stylesheet" href="css/layout.css?v=80" />
-  <link rel="stylesheet" href="css/components.css?v=80" />
-  <link rel="stylesheet" href="css/sections.css?v=80" />
-  <link rel="stylesheet" href="css/animations.css?v=80" />
+  <link rel="stylesheet" href="css/reset.css?v=82" />
+  <link rel="stylesheet" href="css/variables.css?v=82" />
+  <link rel="stylesheet" href="css/typography.css?v=82" />
+  <link rel="stylesheet" href="css/layout.css?v=82" />
+  <link rel="stylesheet" href="css/components.css?v=82" />
+  <link rel="stylesheet" href="css/sections.css?v=83" />
+  <link rel="stylesheet" href="css/animations.css?v=82" />
   <link rel="icon" type="image/jpeg" href="assets/images/favicon_icon/fav_icon.jpg" />
 </head>
 
@@ -449,7 +449,7 @@
           </article>
         </div>
         <div class="u-center" style="margin-top: 4.5rem;" data-reveal="fade">
-          <a class="type-label scroll-hint" href="#featured-project">Launching soon: SOHO Jeddah
+          <a class="type-label scroll-hint" href="#soho">Launching soon: SOHO Jeddah
             <span class="scroll-hint__arrow">↓</span></a>
         </div>
       </div>
@@ -543,42 +543,27 @@
       </div>
     </section>
 
-    <!-- ============ 1.7 SOHO JEDDAH ============ -->
-    <section class="section theme-dark feature grain" id="soho">
+    <!-- ============ 1.7 SOHO JEDDAH (layout mirrors profile p.17) ============ -->
+    <section class="section theme-dark grain soho-feature" id="soho">
       <div class="container">
-        <div class="feature__grid" style="grid-template-columns: 0.85fr 1.15fr; align-items: center;">
-          <div class="stack">
-            <p class="eyebrow type-label" data-reveal="fade">A MHYA destination · Opening January 2027</p>
-            <p class="title-split" data-reveal="up-sm">
-              <span class="title-split__line1">A destination shaped around</span>
-              <span class="title-split__line2">everyday life.</span>
-            </p>
-            <div class="feature__stats">
-              <div class="feature__stat">
-                <div class="num"><span data-count="42500" data-suffix=" SQM">0</span></div>
-                <div class="lbl">Built-up Area</div>
-              </div>
-              <div class="feature__stat">
-                <div class="num"><span data-count="14000" data-suffix=" SQM">0</span></div>
-                <div class="lbl">Commercial</div>
-              </div>
-              <div class="feature__stat">
-                <div class="num"><span data-count="13500" data-suffix=" SQM">0</span></div>
-                <div class="lbl">Administrative</div>
-              </div>
-              <div class="feature__stat">
-                <div class="num"><span data-count="75">0</span></div>
-                <div class="lbl">Units</div>
-              </div>
+        <div class="soho-feature__grid">
+          <div class="soho-feature__text">
+            <img class="soho-feature__logo" src="assets/images/rebrand-2026/logos/logo-soho-jeddah-white.svg" alt="SOHO Jeddah" data-reveal="fade" />
+            <p class="eyebrow type-label" data-reveal="fade">A MHYA destination</p>
+            <h2 class="soho-feature__title" data-reveal="up-sm">A destination shaped around everyday life.</h2>
+            <p class="soho-feature__desc" data-reveal="up-sm">Dining, sports, wellness and workspace, brought together in one destination.</p>
+            <div class="soho-feature__stats" data-reveal="fade">
+              <div class="soho-feature__stat"><span class="soho-feature__num" data-count="42.5" data-decimals="1" data-suffix="K">42.5K</span><span class="soho-feature__label">SQM built-up area</span></div>
+              <div class="soho-feature__stat"><span class="soho-feature__num" data-count="14" data-suffix="K">14K</span><span class="soho-feature__label">SQM commercial space</span></div>
+              <div class="soho-feature__stat"><span class="soho-feature__num" data-count="13.5" data-decimals="1" data-suffix="K">13.5K</span><span class="soho-feature__label">SQM administrative space</span></div>
+              <div class="soho-feature__stat"><span class="soho-feature__num" data-count="75">75</span><span class="soho-feature__label">Units</span></div>
             </div>
-            <a class="btn btn--pill" href="verticals/mhya.html" style="margin-top: 1.5rem;" data-reveal="fade">Explore
-              MHYA <span class="btn__arrow">→</span></a>
+            <a class="btn btn--pill soho-feature__btn" href="verticals/mhya.html#soho" data-reveal="fade">Explore MHYA <span class="btn__arrow">→</span></a>
           </div>
-          <div class="feature__media" data-cursor="view"
-            style="aspect-ratio: 16/11; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.6); overflow: hidden;">
-            <video src="assets/videos/IMG_0161.MP4" autoplay loop muted playsinline aria-label="SOHO Jeddah Video"
-              style="object-position: center; border-radius: 20px;"></video>
-          </div>
+          <figure class="soho-feature__media" data-reveal="fade" data-cursor="view">
+            <div class="soho-feature__img"><img src="assets/images/rebrand-2026/photos/mhya/mhya-soho-jeddah-exterior.webp" width="1225" height="822" alt="SOHO Jeddah exterior" loading="lazy" decoding="async" /></div>
+            <figcaption class="soho-feature__caption">Target opening: January 2027</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -642,21 +627,21 @@
         <div class="leader-grid">
           <article class="leader-card" data-reveal="up-sm">
             <div class="leader-card__media"><img
-                src="assets/images/rebrand-2026/people/leadership-ali-al-shareef.webp" alt="Ali Al Shareef"
+                src="assets/images/rebrand-2026/people/leadership-ali-al-shareef-hd.webp" alt="Ali Al Shareef"
                 loading="lazy" /></div>
             <h3 class="leader-card__name">Ali Al Shareef</h3>
             <p class="leader-card__title">Founder &amp; Group CEO</p>
           </article>
           <article class="leader-card" data-reveal="up-sm" data-reveal-delay="1">
             <div class="leader-card__media"><img
-                src="assets/images/rebrand-2026/people/leadership-tariq-altuwaijri.webp" alt="Tariq Altuwaijri"
+                src="assets/images/rebrand-2026/people/leadership-tariq-altuwaijri-hd.webp" alt="Tariq Altuwaijri"
                 loading="lazy" /></div>
             <h3 class="leader-card__name">Tariq Altuwaijri</h3>
             <p class="leader-card__title">Co-Founder, Group CBDO</p>
           </article>
           <article class="leader-card" data-reveal="up-sm" data-reveal-delay="2">
             <div class="leader-card__media"><img
-                src="assets/images/rebrand-2026/people/leadership-jordana-semaan.webp" alt="Jordana Semaan"
+                src="assets/images/rebrand-2026/people/leadership-jordana-semaan-hd.webp" alt="Jordana Semaan"
                 loading="lazy" /></div>
             <h3 class="leader-card__name">Jordana Semaan</h3>
             <p class="leader-card__title">Group CPO</p>
@@ -764,13 +749,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="js/main.js?v=80"></script>
-  <script src="js/loader.js?v=80"></script>
-  <script src="js/nav.js?v=80"></script>
-  <script src="js/cursor.js?v=80"></script>
-  <script src="js/scroll-animations.js?v=80"></script>
-  <script src="js/horizontal-scroll.js?v=80"></script>
-  <script type="module" src="js/three-hero.js?v=80"></script>
+  <script src="js/main.js?v=82"></script>
+  <script src="js/loader.js?v=82"></script>
+  <script src="js/nav.js?v=82"></script>
+  <script src="js/cursor.js?v=82"></script>
+  <script src="js/scroll-animations.js?v=82"></script>
+  <script src="js/horizontal-scroll.js?v=82"></script>
+  <script type="module" src="js/three-hero.js?v=82"></script>
 </body>
 
 </html>

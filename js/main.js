@@ -101,6 +101,17 @@
     }
   }
 
+  /* ---------- Biz-hero "Discover" — scroll to the section right after the hero ---------- */
+  document.querySelectorAll('.biz-hero__discover').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const hero = a.closest('.biz-hero');
+      const next = hero && hero.nextElementSibling;
+      if (!next) return;
+      e.preventDefault();
+      next.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  });
+
   /* ---------- Graceful image load-in (blur-up / soft fade) ---------- */
   if (!reduceMotion) {
     const blurSel = [
