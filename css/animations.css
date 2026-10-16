@@ -52,6 +52,8 @@
 [data-reveal="up-sm"] { transform: translateY(30px); }
 [data-reveal="blur"] { filter: blur(10px); }
 [data-reveal="blur"].is-in { filter: blur(0); }
+[data-reveal="left"] { transform: translate(-40px, 0); }
+[data-reveal="right"] { transform: translate(40px, 0); }
 
 [data-reveal-delay="1"] { transition-delay: 0.05s; }
 [data-reveal-delay="2"] { transition-delay: 0.1s; }
@@ -99,6 +101,8 @@
   .lazy-img, .lazy-soft { opacity: 1 !important; filter: none !important; transform: none !important; }
   .ticker__track,
   .logo-ticker__track { animation: none !important; }
+  .numbers-map__pin { opacity: 1 !important; transform: none !important; }
+  .numbers-map__dot::after { animation: none !important; opacity: 0 !important; }
   .grain::after { animation: none !important; }
 
   /* Flip statement: stack both messages instead of overlaying */

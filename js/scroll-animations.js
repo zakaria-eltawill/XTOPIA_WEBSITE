@@ -76,6 +76,19 @@
       });
   });
 
+  /* ---------- Numbers map pins (home 1.3) — reveal UK, Slovakia, Egypt, Saudi in order ---------- */
+  const mapPins = gsap.utils.toArray('.numbers-map__pin');
+  if (mapPins.length) {
+    if (reduceMotion) {
+      mapPins.forEach((p) => p.classList.add('is-in'));
+    } else {
+      ScrollTrigger.create({
+        trigger: '.numbers-map', start: 'top 75%',
+        onEnter: () => mapPins.forEach((p, i) => setTimeout(() => p.classList.add('is-in'), i * 180)),
+      });
+    }
+  }
+
   /* ---------- Floor stack (SOHO deep-dive) ---------- */
   gsap.utils.toArray('.floor').forEach((f, i) => {
     ScrollTrigger.create({
@@ -222,6 +235,7 @@ function initFlipFallback() {
   document.querySelectorAll('.p-word').forEach((w) => (w.style.opacity = 1));
   document.querySelectorAll('.floor').forEach((f) => f.classList.add('is-in'));
   document.querySelectorAll('.feature__media').forEach((m) => m.classList.add('is-in'));
+  document.querySelectorAll('.numbers-map__pin').forEach((p) => p.classList.add('is-in'));
   if (b) {
     // Reveal flip B once the flip section scrolls into view.
     if ('IntersectionObserver' in window) {
