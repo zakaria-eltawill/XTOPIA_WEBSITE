@@ -2259,3 +2259,29 @@ a.contact__detail-value:hover { color: var(--color-sage); }
   .careers-hero__grid { grid-template-columns: 1fr; }
   .careers-positions__grid { grid-template-columns: 1fr; }
 }
+
+
+/* TROFI — Innovation Lab / opening concepts (profile p.8) */
+.opening-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.opening-layout__text .logo-optical { --logo-scale: 0.9; margin-bottom: clamp(1.25rem, 2.5vw, 2rem); }
+.opening-layout__text .proj-mix { margin-top: 1.5rem; line-height: 1.9; }
+.opening-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.9rem, 1.6vw, 1.5rem); }
+.opening-tile { margin: 0; }
+.opening-tile__img { aspect-ratio: 1 / 1; overflow: hidden; border-radius: 6px; background: var(--c-charcoal); }
+.opening-tile__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.9s var(--ease-out); }
+.opening-tile:hover .opening-tile__img img { transform: scale(1.05); }
+.opening-tile__label { margin-top: 0.65rem; text-align: center; font-family: var(--font-body); font-weight: 400; font-size: 13px; letter-spacing: 0.04em; color: var(--text-on-dark); }
+@media (max-width: 900px) {
+  .opening-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .opening-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening-tile__img img { transition: none; }
+}
+
+
+/* Brand logo grid (TROFI portfolio etc.) is static — remove the edge-fade mask
+   inherited from the marquee .logo-wall so the outer columns aren't washed out */
+.logo-wall-section .logo-wall { -webkit-mask-image: none; mask-image: none; overflow: visible; }
