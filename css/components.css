@@ -738,41 +738,6 @@
   border-color: var(--color-dark-olive);
 }
 
-/* ---------- Ticker ---------- */
-.ticker {
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-}
-
-.ticker__track {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  will-change: transform;
-  animation: marquee 38s linear infinite;
-  animation-play-state: running !important;
-  /* never pause, even on hover */
-}
-
-.ticker--reverse .ticker__track {
-  animation-direction: reverse;
-}
-
-.ticker__item {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  padding-inline: clamp(1.5rem, 3vw, 3rem);
-}
-
-.ticker__num {
-  font-family: var(--font-heading);
-  font-weight: 300;
-  font-size: clamp(28px, 3.5vw, 46px);
-  line-height: 1;
-}
-
 .ticker__label {
   font-family: var(--font-heading);
   font-weight: 200;

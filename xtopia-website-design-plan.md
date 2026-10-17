@@ -1,3 +1,5 @@
+> ⚠️ Superseded (October 2026): see docs/rebrand-2026/. Kept for reference only.
+
 # XTOPIA — Full Website Design Plan
 > **Version:** 1.0 · 2026
 > **Type:** Cinematic, Scroll-Driven, Community-Destination Platform

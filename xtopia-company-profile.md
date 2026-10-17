@@ -1,3 +1,5 @@
+> ⚠️ Superseded (October 2026): see docs/rebrand-2026/. Kept for reference only.
+
 # XTOPIA — Company Profile
 > **Document:** Company Profile 3.0 · 2026
 > **Positioning:** Community-Driven Platform

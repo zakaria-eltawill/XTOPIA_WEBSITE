@@ -1,7 +1,7 @@
 /* ============================================================
    XTOPIA — scroll-animations.js
-   GSAP ScrollTrigger: count-ups, flip statement pin, framework
-   columns, feature reveal, floor stack, philosophy screens.
+   GSAP ScrollTrigger: count-ups, flip statement pin,
+   feature reveal, floor stack, philosophy screens.
    Degrades gracefully when GSAP/ScrollTrigger absent or reduced-motion.
    ============================================================ */
 (function () {
@@ -55,15 +55,6 @@
 
   if (!hasST) { initFlipFallback(); return; }
   gsap.registerPlugin(ScrollTrigger);
-
-  /* ---------- Framework columns ---------- */
-  gsap.utils.toArray('.fw-col').forEach((col, i) => {
-    gsap.from(col, {
-      y: 80, opacity: 0, duration: 0.4, ease: 'power3.out', delay: i * 0.05,
-      scrollTrigger: { trigger: col, start: 'top 85%' },
-    });
-    ScrollTrigger.create({ trigger: col, start: 'top 80%', onEnter: () => col.classList.add('is-in') });
-  });
 
   /* ---------- Feature media reveal (clip-path wipe) ---------- */
   gsap.utils.toArray('.feature__media').forEach((media) => {

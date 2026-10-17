@@ -223,31 +223,6 @@
 }
 
 /* ============================================================
-   FRAMEWORK (3 columns)
-   ============================================================ */
-.framework__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 4vw, 4rem); }
-.fw-col { padding-top: 2rem; transition: background var(--dur-med) var(--ease-out); border-radius: 4px; }
-.fw-col__num {
-  font-family: var(--font-heading);
-  font-weight: 200;
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  line-height: 1;
-  color: var(--color-cream);
-}
-.fw-col__icon { width: 64px; height: 64px; object-fit: contain; margin: 1.5rem 0; opacity: 0.9; }
-.fw-col__title {
-  font-family: var(--font-heading);
-  font-weight: 200;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-size: 15px;
-  margin-bottom: 1rem;
-}
-.fw-col__line { height: 1px; background: var(--c-line-bright); transform-origin: left; transform: scaleX(0); margin: 1.5rem 0; }
-.fw-col.is-in .fw-col__line { transform: scaleX(1); transition: transform 1s var(--ease-out) 0.3s; }
-.fw-col:hover { background: rgba(194,199,163,0.06); }
-
-/* ============================================================
    VERTICALS — Asymmetrical grid (replacement of h-scroll)
    ============================================================ */
 .verticals-section {
@@ -1509,11 +1484,6 @@
 .contact__left-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .contact__logo { height: 30px; width: auto; }
 
-.contact__title {
-  font-family: var(--font-heading); font-weight: 300;
-  font-size: clamp(2.75rem, 6.2vw, 6.25rem); line-height: 0.92; letter-spacing: -0.02em;
-}
-.contact__title .u-italic { font-weight: 300; }
 .contact__lead { max-width: 40ch; margin-top: 1.75rem; }
 
 .contact__details { display: flex; flex-direction: column; }
@@ -1581,6 +1551,28 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 .contact__submit:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0,0,0,0.22); }
 .contact__submit.is-sent { background: var(--color-dark-olive); }
 
+.field--select label {
+  position: static; display: block; margin-bottom: 0.6rem;
+  font-family: var(--font-heading); font-weight: 200; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 11px; color: rgba(17,16,16,0.5);
+}
+.field--select select {
+  width: 100%; padding: 0.9rem 1.75rem 0.9rem 0; border-bottom: 1px solid rgba(17,16,16,0.22);
+  font-family: var(--font-body); font-size: clamp(15px, 1.1vw, 18px); color: var(--c-void); background: transparent;
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+}
+.field--select select:invalid { color: rgba(17,16,16,0.5); }
+.field--select::before {
+  content: '↓'; position: absolute; right: 0; top: 2.8rem; font-size: 14px; color: rgba(17,16,16,0.4); pointer-events: none;
+}
+
+.contact__map { margin-top: 1rem; border-radius: 4px; overflow: hidden; max-width: 260px; aspect-ratio: 446/300; }
+.contact__map img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.contact__social { display: flex; gap: 1rem; }
+.contact__social a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--c-line); color: var(--color-cream); transition: background var(--dur-fast) var(--ease-out); }
+.contact__social svg { width: 16px; height: 16px; fill: currentColor; }
+.contact__social a:hover { background: rgba(255,255,255,0.08); }
+
 /* ============================================================
    Responsive
    ============================================================ */
@@ -1601,7 +1593,6 @@ a.contact__detail-value:hover { color: var(--color-sage); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .brand-grid { grid-template-columns: repeat(2, 1fr); }
   .proj-grid { grid-template-columns: 1fr; }
-  .framework__cols { grid-template-columns: 1fr; gap: 3rem; }
   .h-scroll__track { flex-direction: column; }
   .v-panel { flex-basis: auto; height: 88vh; }
   .v-panel__num { font-size: 50vw; }
@@ -2227,4 +2218,44 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 
 @media (max-width: 600px) {
   .company-card__founder-photo { width: 60px; height: 60px; }
+}
+
+/* ============================================================
+   CAREERS — Phase 7
+   ============================================================ */
+.careers-hero { padding: calc(var(--nav-height) + 3rem) 0 clamp(3rem, 6vw, 4.5rem); }
+.careers-hero__top { margin-bottom: clamp(2.5rem, 5vw, 4rem); display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.careers-hero__logo { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; }
+.careers-hero__logo img { width: 100%; height: 100%; object-fit: contain; }
+.careers-hero__title { margin-bottom: clamp(3rem, 6vw, 5rem); text-align: left; }
+.careers-hero__grid { align-items: center; gap: clamp(2.5rem, 6vw, 6rem); }
+.careers-hero__lead { font-size: clamp(1.1rem, 1.3vw, 1.25rem); line-height: 1.7; max-width: 45ch; }
+.careers-hero__logos { margin-top: clamp(2rem, 4vw, 2.75rem); }
+.careers-hero__logo-row { display: flex; align-items: center; gap: clamp(1.25rem, 3vw, 2rem); margin-top: 1rem; flex-wrap: wrap; }
+.careers-hero__logo-row .logo-optical { --logo-scale: 0.4; opacity: 0.85; }
+.careers-hero__join { margin-top: clamp(2.5rem, 5vw, 3rem); padding-top: clamp(2.5rem, 5vw, 3rem); border-top: 1px solid rgba(255,255,255,0.1); }
+.careers-hero__join .eyebrow { margin-bottom: 1.25rem; }
+.careers-hero__join-title { font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.25; margin-bottom: 1.5rem; }
+.careers-hero__email { display: inline-block; font-family: var(--font-heading); font-size: clamp(22px, 2.8vw, 36px); text-decoration: none; border-bottom: 2px solid rgba(255,255,255,0.5); padding-bottom: 8px; transition: border-color var(--dur-fast) var(--ease-out); color: var(--text-on-dark); }
+.careers-hero__email:hover { border-color: var(--text-on-dark); }
+.careers-hero__image { width: 100%; aspect-ratio: 4/5; max-height: 80vh; overflow: hidden; border-radius: 4px; }
+.careers-hero__image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.careers-positions { padding-block: clamp(4.5rem, 10vw, 8rem); scroll-margin-top: 96px; }
+.careers-positions__grid { align-items: start; gap: clamp(2.5rem, 5vw, 4rem); }
+.careers-positions__heading { font-size: clamp(40px, 5vw, 70px); font-weight: 700; text-transform: uppercase; line-height: 1.1; margin-bottom: 2rem; }
+.careers-positions__intro { font-size: 1.2rem; max-width: 30ch; }
+
+.career-accordion { border-bottom: 1px solid rgba(0,0,0,0.8); }
+.career-accordion--first { border-top: 1px solid rgba(0,0,0,0.8); }
+.career-accordion__toggle { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; background: none; border: none; cursor: pointer; text-align: left; }
+.career-accordion__name { font-size: 1.5rem; font-weight: 600; }
+.career-accordion__icon { font-size: 1.5rem; font-weight: 300; }
+.career-accordion__content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out); }
+.career-accordion__body { padding-bottom: 1.5rem; }
+.career-accordion__body .btn { margin-top: 0.5rem; }
+
+@media (max-width: 900px) {
+  .careers-hero__grid { grid-template-columns: 1fr; }
+  .careers-positions__grid { grid-template-columns: 1fr; }
 }

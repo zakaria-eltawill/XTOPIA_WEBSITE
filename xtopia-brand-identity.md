@@ -1,3 +1,5 @@
+> ⚠️ Superseded (October 2026): see docs/rebrand-2026/. Kept for reference only.
+
 # XTOPIA — Brand Identity Guide
 > **Document:** Brand & Identity Guidelines · 2026
 > **Type:** Community-Driven Platform
