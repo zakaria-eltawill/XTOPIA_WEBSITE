@@ -883,6 +883,55 @@
 @media (max-width: 600px) {
   .leader-grid { grid-template-columns: repeat(2, 1fr); }
 }
+.leader-card__media img { transition: filter var(--dur-med), transform var(--dur-med) var(--ease-out); }
+.leader-card:hover .leader-card__media img { filter: grayscale(0); transform: scale(1.04); }
+.leader-card--lg .leader-card__media { aspect-ratio: 4/5; }
+.theme-light .leader-card__name { color: var(--color-navy); }
+.theme-light .leader-card__title { color: var(--accent-italic); }
+.leader-grid--board { max-width: 860px; margin-inline: auto; }
+
+/* ---------- PEOPLE — Phase 6: Our companies ---------- */
+.x-mask--sm { max-width: 72px; }
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.company-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+}
+.company-card .logo-optical { --logo-scale: 0.6; margin-top: 0.25rem; }
+.company-card__tag { align-self: flex-start; font-size: 11px; }
+.company-card__founders { display: flex; flex-wrap: wrap; gap: 1.25rem 1.75rem; margin-top: 0.75rem; }
+.company-card__founder { display: flex; align-items: center; gap: 0.9rem; }
+.company-card__founder-photo { width: 72px; height: 72px; border-radius: 50%; overflow: hidden; flex-shrink: 0; box-shadow: 0 0 0 1px rgba(46, 46, 46, 0.12); }
+.company-card__founder-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter var(--dur-med); }
+.company-card:hover .company-card__founder-photo img { filter: grayscale(0); }
+.company-card__founder-name { font-family: var(--font-heading); font-weight: 600; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.3; color: var(--text-on-light); }
+.company-card__partnership { font-family: var(--font-body); font-weight: 300; font-size: clamp(14px, 1.1vw, 16px); line-height: 1.5; color: var(--color-taupe-text); max-width: 28ch; }
+.company-card__cta {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-navy);
+}
+.company-card__cta .btn__arrow { display: inline-block; transition: transform var(--dur-med); }
+.company-card:hover .company-card__cta .btn__arrow { transform: translateX(4px); }
+@media (max-width: 1023px) {
+  .company-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .company-grid { grid-template-columns: 1fr; }
+}
 
 /* ---------- 1.10 Closing ---------- */
 .closing-cta {
@@ -2174,4 +2223,8 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 }
 @media (prefers-reduced-motion: reduce) {
   .soho-feature__img img { transform: none; transition: none; }
+}
+
+@media (max-width: 600px) {
+  .company-card__founder-photo { width: 60px; height: 60px; }
 }
