@@ -12,9 +12,7 @@
   // Detect page path to style transparent nav bar correctly over light/split heroes
   const path = window.location.pathname;
   const filename = path.split('/').pop() || 'index.html';
-  if (filename.includes('about.html') || filename.includes('contact.html')) {
-    nav.classList.add('nav--light-links'); // Right side links are dark, logo on left split remains white over black split
-  }
+  // (about/contact used to have split light heroes; both are dark now, so no light-links variant)
 
   const burger = nav.querySelector('.nav__burger');
   const overlay = document.querySelector('.nav-overlay');

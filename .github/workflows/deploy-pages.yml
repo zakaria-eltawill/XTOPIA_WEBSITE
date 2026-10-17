@@ -37,6 +37,7 @@ jobs:
           rm -rf /tmp/deploy/docs /tmp/deploy/tools /tmp/deploy/partials
           rm -f /tmp/deploy/CLAUDE.md /tmp/deploy/SKILLS.md
           rm -f /tmp/deploy/xtopia-*.md
+          rm -rf /tmp/deploy/assets/_archive
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3

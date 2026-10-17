@@ -8,6 +8,14 @@
   <meta http-equiv="Expires" content="0" />
   <title>XTOPIA — Let's Build Something Great</title>
   <meta name="description" content="Start a conversation with XTOPIA — a community-focused business-building platform based in Jeddah, Saudi Arabia." />
+  <meta property="og:title" content="XTOPIA — Let's Build Something Great" />
+  <meta property="og:description" content="Start a conversation with XTOPIA — a community-focused business-building platform based in Jeddah, Saudi Arabia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.xtopia.life/assets/images/rebrand-2026/photos/brand/hero-cover-motion-bw.webp" />
+  <meta property="og:url" content="https://xtopia.life/contact.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://xtopia.life/contact.html" />
+
 
   
   
@@ -16,13 +24,13 @@
   <link rel="preload" href="assets/Fonts/Montserrat/Montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/Fonts/Barques-ExtraBold.otf" as="font" type="font/otf" crossorigin />
 
-  <link rel="stylesheet" href="css/reset.css?v=86" />
-  <link rel="stylesheet" href="css/variables.css?v=86" />
-  <link rel="stylesheet" href="css/typography.css?v=86" />
-  <link rel="stylesheet" href="css/layout.css?v=86" />
-  <link rel="stylesheet" href="css/components.css?v=86" />
-  <link rel="stylesheet" href="css/sections.css?v=86" />
-  <link rel="stylesheet" href="css/animations.css?v=86" />
+  <link rel="stylesheet" href="css/reset.css?v=87" />
+  <link rel="stylesheet" href="css/variables.css?v=87" />
+  <link rel="stylesheet" href="css/typography.css?v=87" />
+  <link rel="stylesheet" href="css/layout.css?v=87" />
+  <link rel="stylesheet" href="css/components.css?v=87" />
+  <link rel="stylesheet" href="css/sections.css?v=95" />
+  <link rel="stylesheet" href="css/animations.css?v=87" />
   <link rel="icon" type="image/jpeg" href="assets/images/favicon_icon/fav_icon.jpg" />
 </head>
 <body>
@@ -89,8 +97,7 @@
       <div class="nav__item dropdown">
         <a class="nav__cta" href="contact.html">Contact <span aria-hidden="true">→</span></a>
         <div class="dropdown__menu">
-          <a class="dropdown__sub-link" data-confirm="email-domain" href="mailto:info@xtopia.com">Email</a>
-          <!-- CONFIRM: email domain — info@xtopia.com vs @xtopia.life -->
+          <a class="dropdown__sub-link" href="mailto:hr@xtopia.life">Email</a>
           <a class="dropdown__sub-link" href="contact.html#map">Map</a>
           <a class="dropdown__sub-link" href="contact.html#form">Contact Form</a>
           <a class="dropdown__sub-link" href="contact.html#info">Company Information</a>
@@ -147,8 +154,7 @@
         <button class="nav-overlay__toggle" aria-label="Toggle Submenu"><span class="arrow">↓</span></button>
       </div>
       <div class="nav-overlay__sub">
-        <a data-confirm="email-domain" href="mailto:info@xtopia.com">Email</a>
-        <!-- CONFIRM: email domain — info@xtopia.com vs @xtopia.life -->
+        <a href="mailto:hr@xtopia.life">Email</a>
         <a href="contact.html#map">Map</a>
         <a href="contact.html#form">Contact Form</a>
         <a href="contact.html#info">Company Information</a>
@@ -159,70 +165,75 @@
 <!-- @nav-overlay:end -->
 
 <main>
-    <!-- ============ 7.1 CONTACT ============ -->
-    <section class="contact">
-      <!-- Left -->
-      <div class="contact__left grid-texture grain" id="info">
-        <div class="contact__left-top">
-          <p class="type-label u-dim">Jeddah, Saudi Arabia</p>
-        </div>
-
-        <div>
-          <h1 class="title-split">
+    <!-- ============ A — CONTACT HERO (biz-hero spirit) ============ -->
+    <section class="contact-hero theme-dark grain x-watermark" id="info">
+      <div class="container contact-hero__grid">
+        <div class="contact-hero__text">
+          <p class="eyebrow type-label" data-reveal="fade">Contact</p>
+          <h1 class="title-split" data-reveal="up-sm">
             <span class="title-split__line1">Let's build</span>
             <span class="title-split__line2">something together.</span>
           </h1>
-          <p class="type-body u-dim contact__lead">Whether you have an idea, a space, a community, or you're an entrepreneur looking for a partner — we'd like to hear from you.</p>
+          <p class="contact-hero__lead" data-reveal="up-sm" data-reveal-delay="1">Whether you have an idea, a space, a community, or you're an entrepreneur looking for a partner — we'd like to hear from you.</p>
+          <div class="contact-hero__quick" data-reveal="fade" data-reveal-delay="2">
+            <a class="contact-hero__chip" href="mailto:hr@xtopia.life"><span>Email</span>hr@xtopia.life</a>
+            <span class="contact-hero__chip"><span>Based in</span>Jeddah, Saudi Arabia</span>
+          </div>
         </div>
-
-        <ul class="contact__details">
-          <li>
-            <span class="contact__detail-label">Location</span>
-            <span class="contact__detail-value">Jeddah, Saudi Arabia</span>
-          </li>
-          <li>
-            <span class="contact__detail-label">Email</span>
-            <a class="contact__detail-value" data-confirm="email-domain" href="mailto:info@xtopia.com">info@xtopia.com</a>
-            <!-- CONFIRM: email domain — info@xtopia.com vs @xtopia.life -->
-          </li>
-          <li>
-            <span class="contact__detail-label">Platform</span>
-            <span class="contact__detail-value">Community-Driven Destination</span>
-          </li>
-        </ul>
-
-        <div class="contact__map" id="map">
-          <img src="assets/images/maps/map-soho-jeddah-location-dark.png" alt="XTOPIA — Jeddah, Saudi Arabia" loading="lazy" />
+        <div class="contact-hero__x x-mask" aria-hidden="true">
+          <img src="assets/images/rebrand-2026/x/x-closing-bw.webp" alt="" />
         </div>
+      </div>
+    </section>
 
-        <!-- CONFIRM: social media URLs not provided — icons hidden until confirmed -->
-        <div class="contact__social" id="social" data-confirm="social-links" hidden>
+    <!-- ============ B — DIRECT CONTACT + FORM ============ -->
+    <section class="contact-main theme-light">
+      <div class="container contact-main__grid">
+        <aside class="contact-aside" data-reveal="up-sm">
+          <p class="eyebrow type-label">Reach us directly</p>
+          <a class="contact-card" href="mailto:hr@xtopia.life">
+            <span class="contact-card__label">Email</span>
+            <span class="contact-card__value">hr@xtopia.life</span>
+            <span class="contact-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <div class="contact-card" id="map">
+            <span class="contact-card__label">Headquarters</span>
+            <span class="contact-card__value">Jeddah, Saudi Arabia</span>
+          </div>
+
+          <p class="eyebrow type-label contact-aside__eyebrow">Who we'd love to hear from</p>
+          <ul class="contact-audience">
+            <li><span>01</span>Entrepreneurs with a concept worth building</li>
+            <li><span>02</span>Landowners &amp; developers</li>
+            <li><span>03</span>Brands &amp; franchise partners</li>
+            <li><span>04</span>Talent — <a href="careers.html#positions">see open positions</a></li>
+          </ul>
+
+          <div class="contact__social" id="social" data-confirm="social-links" hidden>
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1018.6 12 6.6 6.6 0 0012 5.4zm0 10.9A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zM18.8 5a1.5 1.5 0 11-1.5-1.5A1.5 1.5 0 0118.8 5z"/></svg></a>
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8.98h4v12H3zM9.5 8.98h3.8v1.6h.05a4.2 4.2 0 013.78-2.08c4 0 4.77 2.64 4.77 6.07v6.41h-4v-5.69c0-1.36 0-3.1-1.89-3.1s-2.18 1.48-2.18 3v5.79h-4z"/></svg></a>
           <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.1L8 21H5l7.4-8.5L4.5 3h6.6l4.5 5.6zm-1.1 16h1.7L7.7 4.8H5.9z"/></svg></a>
         </div>
-      </div>
+        </aside>
 
-      <!-- Right -->
-      <div class="contact__right">
-        <div class="contact__form-wrap">
-          <p class="eyebrow type-label" style="color:rgba(17,16,16,0.55);">Start a Conversation</p>
+        <div class="contact-form-card" data-reveal="up-sm" data-reveal-delay="1">
+          <p class="eyebrow type-label">Start a conversation</p>
           <h2 class="contact__form-title">Send us a <span class="u-italic">message.</span></h2>
           <form class="contact__form" id="form" data-contact-form novalidate>
             <div class="field-row">
               <div class="field">
-                <input type="text" id="name" name="name" placeholder=" " required />
+                <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
                 <label for="name">Name</label>
               </div>
               <div class="field">
-                <input type="email" id="email" name="email" placeholder=" " required />
+                <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required />
                 <label for="email">Email</label>
               </div>
             </div>
             <div class="field field--select">
               <label for="reason">I'm reaching out about</label>
               <select id="reason" name="reason" required>
-                <option value="" disabled selected hidden></option>
+                <option value="" disabled selected hidden>Select a topic</option>
                 <option value="entrepreneur">Partnering as an entrepreneur</option>
                 <option value="landowners">Landowners &amp; developers</option>
                 <option value="brand">Brand &amp; franchise partnerships</option>
@@ -284,8 +295,7 @@
         </div>
         <div class="footer__col">
           <h4>Contact</h4>
-          <a data-confirm="email-domain" href="mailto:info@xtopia.com">Email</a>
-          <!-- CONFIRM: email domain — info@xtopia.com vs @xtopia.life -->
+          <a href="mailto:hr@xtopia.life">Email</a>
           <a href="contact.html#map">Map</a>
           <a href="contact.html#form">Contact Form</a>
           <a href="contact.html#info">Company Information</a>
@@ -308,11 +318,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="js/main.js?v=86"></script>
-  <script src="js/loader.js?v=86"></script>
-  <script src="js/nav.js?v=86"></script>
-  <script src="js/cursor.js?v=86"></script>
-  <script src="js/scroll-animations.js?v=86"></script>
-  <script src="js/contact-form.js?v=86"></script>
+  <script src="js/main.js?v=87"></script>
+  <script src="js/loader.js?v=87"></script>
+  <script src="js/nav.js?v=88"></script>
+  <script src="js/cursor.js?v=87"></script>
+  <script src="js/scroll-animations.js?v=87"></script>
+  <script src="js/custom-select.js?v=1"></script>
+  <script src="js/contact-form.js?v=87"></script>
 </body>
 </html>
