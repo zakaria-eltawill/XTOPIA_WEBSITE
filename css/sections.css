@@ -2408,3 +2408,7 @@ a.contact-card:hover .contact-card__arrow { transform: translate(4px, -50%); }
 .cursor .cursor__ring span,
 .cursor.is-view .cursor__ring span { display: none !important; }
 .cursor.is-view .cursor__dot { opacity: 1; }
+
+/* Loader — the (unused) wipe layer sat on top of the logo and counter, hiding them */
+.loader__wipe { display: none; }
+.loader__mark { width: min(56vw, 340px); position: relative; z-index: 1; }
