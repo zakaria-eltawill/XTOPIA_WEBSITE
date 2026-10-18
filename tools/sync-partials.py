@@ -83,7 +83,7 @@ def sync_page(rel_path: str) -> bool:
         text = pattern.sub(lambda _m: replacement, text, count=1)
 
     if text != original:
-        path.write_text(text, encoding="utf-8")
+        path.write_bytes(text.encode("utf-8"))  # keep LF line endings on Windows
         print(f"updated  {rel_path}")
         return True
     print(f"unchanged {rel_path}")

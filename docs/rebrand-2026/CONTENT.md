@@ -1,5 +1,15 @@
 # XTOPIA — Content Source of Truth (Company Profile, October 2026)
 
+> **Client general rule (Khadija, 2026-10-18):** *"We don't put anything that isn't in the company
+> profile — this file is the reference. Content that's logically in the profile, we use it, worded
+> for the web rather than copy-pasted."* Applied as a full-site sweep: any fact, section or name not
+> traceable to this file was removed from the live site (see `PLAN.md` D12–D21 / Progress log,
+> 2026-10-18).
+>
+> **Contact emails (client confirmed, 2026-10-18):** `info@xtopia.life` for every general-purpose
+> contact point (nav/footer "Contact" link, `contact.html`). `hr@xtopia.life` stays only for
+> careers-specific contact (`careers.html` hero + job "Apply Now" links).
+>
 > Every **fact** on the website (names, numbers, dates, project data) must come from this file and stay exact.
 > **Wording is not copy-paste (client, 2026-10-16):** *"The profile is the baseline… not meant to be an exact copy. We can copy right and paraphrase here and there to make it website friendly."* Shorten, split and paraphrase for the web; keep strong headlines verbatim where they work.
 > Source: `COMPANY_PROFILE_OCTOBER.pdf` (36 pages). Publishing of its content is **approved by the client** (✅ below), except what is marked ❌ not used.
@@ -50,6 +60,14 @@
 
 Countries (map): **Saudi Arabia · Egypt · United Kingdom · Slovakia**
 (Old site says 5 incl. Kuwait → remove Kuwait.)
+
+Country ↔ company mapping (client confirmed, 2026-10-18):
+- Saudi Arabia — Headquarters, Jeddah · TROFI · MHYA · ARADA Saudi
+- Egypt — **BEYOND** · XEED
+- United Kingdom — TROFI
+- Slovakia — MHYA (industrial & logistics parks)
+
+(BEYOND = Egypt, not Saudi Arabia — the profile's "Saudi expansion" under "Taking BEYOND further" is a future ambition, not current footprint.)
 
 **Remove from site:** 3,000+ employees, 35M+ SQM, 18+ Parks, 10 Developments, 30+ F&B brands, 5 countries.
 
@@ -202,7 +220,7 @@ Intro line (p.5): *Co-founded by Ali Al Shareef alongside entrepreneurs who know
 
 Note: these three currently live under `verticals/developments.html` → they **move to ARADA Saudi**.
 Al Remal old figure "2.66M SQM" → new **2.5M SQM**.
-Taif and Al Jawhara are **not in the October profile** ⚠️ CONFIRM keep or remove.
+Taif and Al Jawhara are **not in the October profile** — ✅ confirmed dropped (client, 2026-10-18).
 
 ---
 
