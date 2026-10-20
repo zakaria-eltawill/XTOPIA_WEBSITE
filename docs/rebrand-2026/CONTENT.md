@@ -268,11 +268,10 @@ Taif and Al Jawhara are **not in the October profile** — ✅ confirmed dropped
 |---|---|---|
 | Ali Al Shareef | Founder & Group CEO | as shown today on people.html / `rebrand-2026/people/leadership-ali-al-shareef.webp` |
 | Tariq Altuwaijri | Co-Founder, Group CBDO | as shown today on people.html (file is misnamed `team-trofi-hassan-alshareef-md.png`) |
-| Jordana Semaan | Group CPO | `photos/team/team-exec-jordana-semaan-cpo.png` |
 | Nadim Kayyali | Group General Counsel | as shown today on people.html (file is misnamed `team-dev-robert-hanka.png`) |
 | Khalid Abdelmajeed | Group CFO | `rebrand-2026/people/leadership-khalid-abdelmajeed.webp` |
 
-Removed from group leadership: Nomaan Yunus, Alaa Saad.
+Removed from group leadership: Nomaan Yunus, Alaa Saad, Jordana Semaan (client, 2026-10-20: remove Jordana from the whole website).
 Board of Directors: unchanged (Mohammad Dahban – Chairman, Ali Alshareef, Anas Alsairafy, Abdullah Alsayed, Amr Sulaiman).
 
 ### Company teams — shown on each company page `#team` (client: *"you click TROFI and get more info and full team"*)

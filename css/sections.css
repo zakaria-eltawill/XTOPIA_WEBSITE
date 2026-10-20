@@ -2412,3 +2412,7 @@ a.contact-card:hover .contact-card__arrow { transform: translate(4px, -50%); }
 /* Loader — the (unused) wipe layer sat on top of the logo and counter, hiding them */
 .loader__wipe { display: none; }
 .loader__mark { width: min(56vw, 340px); position: relative; z-index: 1; }
+
+/* Leadership — 4 leaders: 4 columns, 2×2 on tablet */
+.leader-grid:not(.leader-grid--board) { grid-template-columns: repeat(4, 1fr); max-width: 1080px; margin-inline: auto; }
+@media (max-width: 1023px) { .leader-grid:not(.leader-grid--board) { grid-template-columns: repeat(2, 1fr); max-width: 640px; } }
