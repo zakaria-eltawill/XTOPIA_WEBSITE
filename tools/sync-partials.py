@@ -26,15 +26,15 @@ PARTIALS_DIR = ROOT / "partials"
 PAGES = [
     "index.html", "about.html", "verticals.html", "careers.html",
     "people.html", "contact.html",
-    "verticals/befit.html", "verticals/beyond.html",
-    "verticals/developments.html", "verticals/trofi.html",
-    # add verticals/mhya.html, arada.html, xeed.html once those pages exist
+    "verticals/beyond.html",
+    "verticals/trofi.html",
+    "verticals/mhya.html", "verticals/arada.html", "verticals/xeed.html",
 ]
 
 MARKERS = {
     "nav": ("nav.html", "@nav:start", "@nav:end"),
     "nav-overlay": ("nav-overlay.html", "@nav-overlay:start", "@nav-overlay:end"),
-    # footer not synced yet on this branch (old-design-new-content)
+    "footer": ("footer.html", "@footer:start", "@footer:end"),
 }
 
 _ATTR_RE = re.compile(r'(src|href)="([^"]*)"')

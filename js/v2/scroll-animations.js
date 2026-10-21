@@ -1,0 +1,272 @@
+/* ============================================================
+   XTOPIA — scroll-animations.js
+   GSAP ScrollTrigger: count-ups, flip statement pin,
+   feature reveal, floor stack, philosophy screens.
+   Degrades gracefully when GSAP/ScrollTrigger absent or reduced-motion.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasST = window.gsap && window.ScrollTrigger;
+
+  /* ---------- Count-ups ([data-count]) ---------- */
+  function formatCount(el, value) {
+    const dec = parseInt(el.dataset.decimals || '0', 10);
+    if (el.dataset.pad) return String(Math.round(value)).padStart(parseInt(el.dataset.pad, 10), '0');
+    if (dec === 0) return Math.round(value).toLocaleString('en-US');
+    return value.toFixed(dec);
+  }
+  function runCount(el) {
+    const target = parseFloat(el.dataset.count);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const finalText = prefix + formatCount(el, target) + suffix;
+
+    // Reserve the final footprint up front so counting never reflows the
+    // layout (which caused the numbers to jump up/down). Tabular figures keep
+    // the digit columns from jiggling as the value changes.
+    el.style.display = 'inline-block';
+    el.style.fontVariantNumeric = 'tabular-nums';
+    el.style.whiteSpace = 'nowrap';
+    el.textContent = finalText;
+    el.style.minWidth = Math.ceil(el.getBoundingClientRect().width) + 'px';
+
+    if (reduceMotion || !window.gsap) { return; } // already shows final value
+
+    const obj = { v: 0 };
+    el.textContent = prefix + formatCount(el, 0) + suffix;
+    gsap.to(obj, {
+      v: target, duration: 0.8, ease: 'power2.out',
+      onUpdate: () => { el.textContent = prefix + formatCount(el, obj.v) + suffix; },
+    });
+  }
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length) {
+    if (!('IntersectionObserver' in window)) {
+      counters.forEach(runCount);
+    } else {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((e) => { if (e.isIntersecting) { runCount(e.target); obs.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      counters.forEach((el) => io.observe(el));
+    }
+  }
+
+  if (!hasST) { initFlipFallback(); return; }
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- Feature media reveal (clip-path wipe) ---------- */
+  gsap.utils.toArray('.feature__media').forEach((media) => {
+    gsap.fromTo(media,
+      { clipPath: 'inset(100% 0 0 0)' },
+      {
+        clipPath: 'inset(0% 0 0 0)', duration: 0.5, ease: 'power4.out',
+        scrollTrigger: { trigger: media, start: 'top 80%' },
+        onStart: () => media.classList.add('is-in')
+      });
+  });
+
+  /* ---------- Numbers map pins (home 1.3) — reveal UK, Slovakia, Egypt, Saudi in order ---------- */
+  const mapPins = gsap.utils.toArray('.numbers-map__pin');
+  if (mapPins.length) {
+    if (reduceMotion) {
+      mapPins.forEach((p) => p.classList.add('is-in'));
+    } else {
+      ScrollTrigger.create({
+        trigger: '.numbers-map', start: 'top 75%',
+        onEnter: () => mapPins.forEach((p, i) => setTimeout(() => p.classList.add('is-in'), i * 180)),
+      });
+    }
+  }
+
+  /* ---------- One group — connecting line (home 1.8) ---------- */
+  const oneGroupLine = document.querySelector('.one-group__line-fill');
+  if (oneGroupLine) {
+    if (reduceMotion) {
+      oneGroupLine.style.width = '100%';
+    } else {
+      gsap.fromTo(oneGroupLine, { width: '0%' }, {
+        width: '100%', ease: 'none',
+        scrollTrigger: { trigger: '.one-group', start: 'top 70%', end: 'bottom 65%', scrub: true },
+      });
+    }
+  }
+
+  /* ---------- Biz-hero X: load-in scale + scroll parallax (the 5 company pages) ---------- */
+  const bizHeroX = document.querySelector('.biz-hero__x img');
+  if (bizHeroX && hasST && !reduceMotion) {
+    gsap.fromTo(bizHeroX, { scale: 1.08 }, { scale: 1, duration: 1.3, ease: 'power3.out' });
+    gsap.fromTo(bizHeroX, { yPercent: -6 }, {
+      yPercent: 6, ease: 'none',
+      scrollTrigger: { trigger: '.biz-hero', start: 'top top', end: 'bottom top', scrub: true },
+    });
+  }
+
+  /* ---------- MHYA neighbourhood band parallax (verticals/mhya.html only) ---------- */
+  const mhyaBand = document.querySelector('.mhya-neigh__band img');
+  if (mhyaBand && hasST && !reduceMotion) {
+    gsap.fromTo(mhyaBand, { yPercent: -10 }, {
+      yPercent: 10, ease: 'none',
+      scrollTrigger: { trigger: mhyaBand.closest('.mhya-neigh__band'), start: 'top bottom', end: 'bottom top', scrub: true },
+    });
+  }
+
+  /* ---------- Floor stack (SOHO deep-dive) ---------- */
+  gsap.utils.toArray('.floor').forEach((f, i) => {
+    ScrollTrigger.create({
+      trigger: f, start: 'top 90%',
+      onEnter: () => setTimeout(() => f.classList.add('is-in'), i * 40)
+    });
+  });
+
+  /* ---------- Philosophy pinned screens (about) ---------- */
+  gsap.utils.toArray('.philosophy__screen').forEach((screen) => {
+    const words = screen.querySelectorAll('.p-word');
+    if (!words.length) return;
+    gsap.fromTo(words,
+      { opacity: 0.12 },
+      {
+        opacity: 1, stagger: 0.15, ease: 'none',
+        scrollTrigger: { trigger: screen, start: 'top 70%', end: 'center center', scrub: true }
+      });
+  });
+
+  /* ---------- OUR VALUES — Pinned Scroll-Swap ---------- */
+  const valuesSection = document.querySelector('.values-section');
+  const valuesList = valuesSection && valuesSection.querySelector('.values-list');
+  const valueRows = valuesSection ? gsap.utils.toArray(valuesSection.querySelectorAll('.value-row')) : [];
+
+  if (valuesSection && valuesList && valueRows.length > 1 && !reduceMotion) {
+    // Prevent the IO reveal system from interfering
+    valueRows.forEach(row => row.removeAttribute('data-reveal'));
+
+    // Measure tallest card before stacking
+    let maxH = 0;
+    valueRows.forEach(row => {
+      row.style.position = 'relative';
+      const h = row.offsetHeight;
+      if (h > maxH) maxH = h;
+    });
+
+    // Set up container as stacking context
+    valuesList.style.position = 'relative';
+    valuesList.style.overflow = 'hidden';
+    valuesList.style.height = maxH + 'px';
+
+    // Inject progress dots
+    const progressEl = document.createElement('div');
+    progressEl.className = 'values-progress';
+    valueRows.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'values-progress__dot' + (i === 0 ? ' is-active' : '');
+      progressEl.appendChild(dot);
+    });
+    valuesList.after(progressEl);
+    const dots = progressEl.querySelectorAll('.values-progress__dot');
+
+    // Stack all cards absolutely in the same spot
+    valueRows.forEach((row, i) => {
+      row.style.position = 'absolute';
+      row.style.top = '0';
+      row.style.left = '0';
+      row.style.right = '0';
+      row.style.margin = '0 auto';
+
+      if (i === 0) {
+        gsap.set(row, { y: 0, opacity: 1, visibility: 'visible' });
+      } else {
+        gsap.set(row, { y: 30, opacity: 0, visibility: 'hidden' });
+      }
+    });
+
+    // Track which value is active for the progress dots
+    let activeIdx = 0;
+    function setActiveDot(idx) {
+      if (idx === activeIdx) return;
+      dots[activeIdx].classList.remove('is-active');
+      dots[idx].classList.add('is-active');
+      activeIdx = idx;
+    }
+
+    // Build GSAP scrub timeline
+    const count = valueRows.length;
+    const tlVals = gsap.timeline({
+      scrollTrigger: {
+        trigger: valuesSection,
+        start: 'top top',
+        end: `+=${count * 65}%`,
+        pin: true,
+        scrub: 0.6,
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+      }
+    });
+
+    for (let i = 0; i < count - 1; i++) {
+      const curr = valueRows[i];
+      const next = valueRows[i + 1];
+      const nextIdx = i + 1;
+      const prevIdx = i;
+
+      // --- Outgoing card: fades out + moves up ---
+      tlVals.to(curr, {
+        y: -20,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.in',
+        onStart: () => { curr.style.visibility = 'visible'; setActiveDot(nextIdx); },
+        onComplete: () => { curr.style.visibility = 'hidden'; },
+        onReverseComplete: () => { curr.style.visibility = 'visible'; setActiveDot(prevIdx); }
+      }, `swap${i}`);
+
+      // --- Incoming card: enters from below + fades in ---
+      tlVals.to(next, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power2.out',
+        onStart: () => { next.style.visibility = 'visible'; },
+        onReverseComplete: () => { next.style.visibility = 'hidden'; }
+      }, `swap${i}`);
+
+      // Hold for comfortable reading
+      tlVals.to({}, { duration: 0.35 });
+    }
+  }
+  /* ---------- Flip statement (home 1.2) ---------- */
+  const flip = document.querySelector('.flip');
+  if (flip) {
+    const aWords = flip.querySelectorAll('.flip__a .word');
+    const bBlock = flip.querySelector('.flip__b');
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: flip, start: 'top top', end: '+=80%', pin: true, scrub: 0.1 },
+    });
+    aWords.forEach((w) => {
+      tl.to(w, { opacity: 1, filter: 'blur(0px)', duration: 0.2 });
+    });
+    tl.to({}, { duration: 0.5 }); // Space to read while scrolling
+    tl.to(flip.querySelector('.flip__a'), { opacity: 0, filter: 'blur(10px)', duration: 0.2 });
+    if (bBlock) tl.to(bBlock, { opacity: 1, filter: 'blur(0px)', duration: 0.25 }, '<0.1');
+  }
+})();
+
+/* Flip fallback when GSAP/ScrollTrigger missing or reduced motion */
+function initFlipFallback() {
+  document.querySelectorAll('.flip__a .word').forEach((w) => w.classList.add('is-on'));
+  const b = document.querySelector('.flip__b');
+  document.querySelectorAll('.p-word').forEach((w) => (w.style.opacity = 1));
+  document.querySelectorAll('.floor').forEach((f) => f.classList.add('is-in'));
+  document.querySelectorAll('.feature__media').forEach((m) => m.classList.add('is-in'));
+  document.querySelectorAll('.numbers-map__pin').forEach((p) => p.classList.add('is-in'));
+  document.querySelectorAll('.one-group__line-fill').forEach((l) => (l.style.width = '100%'));
+  if (b) {
+    // Reveal flip B once the flip section scrolls into view.
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) b.classList.add('is-on'); });
+      }, { threshold: 0.5 });
+      io.observe(b.closest('.flip'));
+    } else { b.classList.add('is-on'); }
+  }
+}

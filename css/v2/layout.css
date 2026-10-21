@@ -1,0 +1,197 @@
+/* ============================================================
+   XTOPIA — Layout & section scaffolding
+   ============================================================ */
+
+.section {
+  position: relative;
+  padding-block: clamp(5rem, 12vh, 12rem);
+}
+.section--flush { padding-block: 0; }
+.section--dark  { background: var(--c-void); color: var(--color-cream); }
+.section--panel { background: var(--c-charcoal); color: var(--color-cream); }
+.section--cream { background: var(--color-cream); color: var(--c-void); }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.container--wide { max-width: 1920px; }
+.container--narrow { max-width: 1100px; }
+
+/* Full-viewport blocks */
+.screen {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Generic grids */
+.grid {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 7rem);
+}
+.split--reverse > :first-child { order: 2; }
+.split--top { align-items: start; }
+
+/* Stack helpers */
+.stack > * + * { margin-top: var(--space-md); }
+.stack-sm > * + * { margin-top: var(--space-sm); }
+.stack-lg > * + * { margin-top: var(--space-lg); }
+
+.flow-line {
+  height: 1px;
+  background: var(--c-line);
+  width: 100%;
+}
+
+/* Eyebrow label + rule */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-cream-dim);
+}
+.eyebrow::before {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background: var(--c-line-bright);
+}
+.section--cream .eyebrow { color: rgba(17,16,16,0.6); }
+.section--cream .eyebrow::before { background: rgba(17,16,16,0.3); }
+
+/* ============================================================
+   October 2026 — theme classes
+   Every <section> carries exactly one of these.
+   ============================================================ */
+.theme-light {
+  background: var(--surface-light);
+  color: var(--text-on-light);
+}
+.theme-light .eyebrow { color: var(--color-taupe-text); }
+.theme-light .eyebrow::before { background: var(--color-taupe); }
+.theme-light [data-count],
+.theme-light .stat-row__num,
+.theme-light .type-number { color: var(--accent-number); }
+.theme-light em,
+.theme-light .u-italic,
+.theme-light .type-italic { color: var(--accent-italic); }
+
+.theme-dark {
+  background: var(--surface-dark);
+  color: var(--text-on-dark);
+}
+.theme-dark .eyebrow { color: var(--accent-number-dark); }
+.theme-dark .eyebrow::before { background: var(--accent-number-dark); }
+.theme-dark [data-count],
+.theme-dark .stat-row__num,
+.theme-dark .type-number,
+.theme-dark .type-label { color: var(--accent-number-dark); }
+.theme-dark em,
+.theme-dark .u-italic,
+.theme-dark .type-italic { color: var(--text-on-dark); }
+
+/* Media frames */
+.media {
+  position: relative;
+  overflow: hidden;
+}
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.media--portrait { aspect-ratio: 3 / 4; }
+.media--square   { aspect-ratio: 1 / 1; }
+.media--wide     { aspect-ratio: 16 / 9; }
+.media--tall     { aspect-ratio: 4 / 5; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1023px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .split,
+  .split--reverse { grid-template-columns: 1fr; }
+  .split--reverse > :first-child { order: 0; }
+  .grid--2,
+  .grid--3,
+  .grid--4 { grid-template-columns: 1fr; }
+  .section { padding-block: clamp(3.5rem, 9vh, 6rem); }
+  
+  .mobile-break { display: block; }
+  .mobile-push-up { padding-bottom: 15vh !important; }
+}
+@media (min-width: 768px) {
+  .mobile-break { display: none; }
+}
+
+
+/* ============================================================
+   EDITORIAL BACKGROUNDS & COLOR BLOCKING
+   ============================================================ */
+.bg-cream { background-color: var(--color-cream); color: var(--c-void); }
+.bg-dark-olive { background-color: var(--color-dark-olive); color: var(--color-cream); }
+.bg-navy { background-color: var(--color-navy); color: var(--color-cream); }
+.bg-light-blue { background-color: var(--color-light-blue); color: var(--color-navy); }
+.bg-sage { background-color: var(--color-sage); color: var(--color-navy); }
+.bg-maroon { background-color: var(--color-maroon); color: var(--color-cream); }
+
+/* Dynamic Splits */
+.bg-split-navy-olive {
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy) 50%, var(--color-dark-olive) 50%, var(--color-dark-olive) 100%);
+  color: var(--color-cream);
+}
+@media (min-width: 1024px) {
+  .bg-split-navy-olive { background: linear-gradient(90deg, var(--color-navy) 0%, var(--color-navy) 50%, var(--color-dark-olive) 50%, var(--color-dark-olive) 100%); }
+}
+
+.bg-split-sage-cream {
+  background: linear-gradient(180deg, var(--color-sage) 0%, var(--color-sage) 50%, var(--color-cream) 50%, var(--color-cream) 100%);
+  color: var(--c-void);
+}
+@media (min-width: 1024px) {
+  .bg-split-sage-cream { background: linear-gradient(90deg, var(--color-sage) 0%, var(--color-sage) 50%, var(--color-cream) 50%, var(--color-cream) 100%); }
+}
+
+.bg-split-cream-blue {
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream) 50%, var(--color-light-blue) 50%, var(--color-light-blue) 100%);
+  color: var(--color-navy);
+}
+@media (min-width: 1024px) {
+  .bg-split-cream-blue { background: linear-gradient(90deg, var(--color-cream) 0%, var(--color-cream) 50%, var(--color-light-blue) 50%, var(--color-light-blue) 100%); }
+}
+
+/* Inner Layout Blocks */
+.editorial-card {
+  background-color: var(--color-light-blue);
+  color: var(--color-navy);
+  padding: 3rem;
+  border-radius: 8px;
+}
+.editorial-card h1, .editorial-card h2, .editorial-card h3, .editorial-card h4, .editorial-card h5, .editorial-card h6 {
+  color: var(--color-navy);
+}
+.editorial-card p {
+  color: var(--color-navy);
+  opacity: 0.9;
+}

@@ -1002,7 +1002,7 @@ textarea:focus {
   max-width: 100%;
   object-fit: contain;
 }
-.logo--arada   { --logo-h: 39px; }
+.logo--arada   { --logo-h: 56px; } /* ARADA SAUDI lockup (wordmark + SAUDI) */
 .logo--xtopia  { --logo-h: 33px; }
 .logo--mhya    { --logo-h: 72px; }
 .logo--trofi   { --logo-h: 41px; }

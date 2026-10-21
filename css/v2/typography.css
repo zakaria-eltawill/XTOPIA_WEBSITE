@@ -1,0 +1,253 @@
+/* ============================================================
+   XTOPIA — Typography
+   Font files live in /assets/Fonts (capital F).
+   url() is resolved relative to THIS stylesheet, so the same
+   ../assets/Fonts/ path works for top-level and nested pages.
+   ============================================================ */
+
+/* ---- MONTSERRAT (headings, labels, lead text — October 2026 profile) ---- */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/Fonts/Montserrat/Montserrat-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/Fonts/Montserrat/Montserrat-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/Fonts/Montserrat/Montserrat-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/Fonts/Montserrat/Montserrat-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/Fonts/Montserrat/Montserrat-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- BARQUES (primary) ---- */
+@font-face {
+  font-family: 'Barques';
+  src: url('../../assets/Fonts/Barques-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barques';
+  src: url('../../assets/Fonts/Barques-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barques';
+  src: url('../../assets/Fonts/Barques-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barques';
+  src: url('../../assets/Fonts/Barques-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barques';
+  src: url('../../assets/Fonts/Barques-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barques';
+  src: url('../../assets/Fonts/Barques-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Book Antiqua (secondary — italic only, never standalone) ---- */
+@font-face {
+  font-family: 'Book Antiqua';
+  src: url('../../assets/Fonts/bookantiquaitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Book Antiqua';
+  src: url('../../assets/Fonts/ANTQUABI.TTF') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---- Acumin Variable Concept (descriptors / labels) ---- */
+@font-face {
+  font-family: 'Acumin Variable Concept';
+  src: url('../../assets/Fonts/AcuminVariableConcept.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   October 2026 profile — font tokens
+   ============================================================ */
+:root {
+  --font-heading: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Acumin Variable Concept', 'Montserrat', sans-serif;
+  --font-accent:  'Book Antiqua', Georgia, serif;
+  --font-number:  'Barques', 'Montserrat', sans-serif;
+}
+
+/* ============================================================
+   Type scale
+   ============================================================ */
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--color-cream);
+  background: var(--c-void);
+  letter-spacing: 0.005em;
+}
+
+/* Display — Montserrat, sentence case (profile drops forced uppercase) */
+.type-hero {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(36px, 4.9vw, 90px);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+.type-display {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(40px, 6.6vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+.type-display--sm { font-size: clamp(2.4rem, 5vw, 4.25rem); line-height: 0.95; }
+
+/* Heading — Montserrat Bold */
+.type-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(28px, 3.8vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+.type-subhead {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+}
+
+/* Accent — Book Antiqua Italic (used sparingly for warmth; never alone) */
+.type-italic {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 48px);
+  line-height: 1.2;
+}
+
+/* Stat numbers — Barques ExtraBold (numbers only, never headings) */
+.type-number {
+  font-family: var(--font-number);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+/* Descriptor / Labels — Montserrat Bold, tracked uppercase */
+.type-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.type-caption {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.15em;
+}
+
+/* Body — Acumin Concept Light */
+.type-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}
+
+/* Mobile: shrink the oversized display type so long words fit on screen */
+@media (max-width: 600px) {
+  .type-hero    { font-size: clamp(1.4rem, 8vw, 2.5rem); letter-spacing: -0.02em; line-height: 0.96; }
+  .type-display { font-size: clamp(1.6rem, 7.6vw, 2.5rem); }
+  .type-heading { font-size: clamp(1.4rem, 6vw, 2.1rem); }
+}
+
+/* Utilities */
+em, i, .u-italic { font-family: 'Book Antiqua', Georgia, serif; font-style: italic; font-weight: 400; text-transform: none; }
+.u-dim      { color: var(--color-cream-dim); }
+.u-sage     { color: var(--color-sage); }
+.u-center   { text-align: center; }
+.u-fluid-img { display: block; width: 100%; height: auto; }
+
+
+/* ============================================================
+   EDITORIAL ITALICS
+   ============================================================ */
+.u-italic, em {
+  font-family: 'Book Antiqua', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-maroon);
+  transition: color 0.3s ease;
+}
+
+/* Dynamic styling for dark backgrounds */
+.section--dark:not(#flip) .u-italic, .section--dark:not(#flip) em,
+.bg-dark-olive .u-italic, .bg-dark-olive em,
+.bg-navy .u-italic, .bg-navy em,
+.bg-split-navy-olive .u-italic, .bg-split-navy-olive em,
+.careers-hero .u-italic, .careers-hero em,
+.story-narrative .u-italic, .story-narrative em,
+.philosophy .u-italic, .philosophy em,
+.footer .u-italic, .footer em,
+.values-section .u-italic, .values-section em,
+.nav-overlay .u-italic, .nav-overlay em {
+  color: var(--color-sage);
+}
+
+#flip .u-italic, #flip em {
+  color: inherit !important;
+}
