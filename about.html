@@ -12,13 +12,13 @@
   
   
 
-  <link rel="stylesheet" href="css/reset.css?v=62" />
-  <link rel="stylesheet" href="css/variables.css?v=62" />
-  <link rel="stylesheet" href="css/typography.css?v=62" />
-  <link rel="stylesheet" href="css/layout.css?v=62" />
-  <link rel="stylesheet" href="css/components.css?v=62" />
-  <link rel="stylesheet" href="css/sections.css?v=62" />
-  <link rel="stylesheet" href="css/animations.css?v=62" />
+  <link rel="stylesheet" href="css/reset.css?v=100" />
+  <link rel="stylesheet" href="css/variables.css?v=100" />
+  <link rel="stylesheet" href="css/typography.css?v=100" />
+  <link rel="stylesheet" href="css/layout.css?v=100" />
+  <link rel="stylesheet" href="css/components.css?v=100" />
+  <link rel="stylesheet" href="css/sections.css?v=100" />
+  <link rel="stylesheet" href="css/animations.css?v=100" />
   <link rel="icon" type="image/jpeg" href="assets/images/favicon_icon/fav_icon.jpg" />
 </head>
 <body>
@@ -37,26 +37,48 @@
   <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
     <!-- ============ NAV ============ -->
-  <header class="nav" data-nav>
+  <!-- @nav:start -->
+<header class="nav" data-nav>
     <a class="nav__logo" href="index.html" aria-label="XTOPIA home">
       <img src="assets/images/logos/brand/logo-xtopia-wordmark-white-outline.png" alt="XTOPIA" />
     </a>
     <nav class="nav__links" aria-label="Primary">
       <div class="nav__item dropdown">
-        <a class="nav__link is-active" href="about.html">About</a>
+        <a class="nav__link" href="about.html">About</a>
         <div class="dropdown__menu">
           <a class="dropdown__sub-link" href="about.html#story">Our story</a>
-          <a class="dropdown__sub-link" href="about.html#values">Our Values</a>
+          <a class="dropdown__sub-link" href="about.html#advantage">The XTOPIA Advantage</a>
           <a class="dropdown__sub-link" href="about.html#presence">Our footprint</a>
         </div>
       </div>
       <div class="nav__item dropdown">
         <a class="nav__link" href="verticals.html">Our Ecosystem</a>
-        <div class="dropdown__menu">
-          <a class="dropdown__sub-link" href="verticals/trofi.html">F&amp;B</a>
-          <a class="dropdown__sub-link" href="verticals/befit.html">Sports &amp; Wellness</a>
-          <a class="dropdown__sub-link" href="verticals/developments.html">Developments</a>
-          <a class="dropdown__sub-link" href="verticals/beyond.html">Activations</a>
+        <div class="dropdown__menu dropdown__menu--mega">
+          <a class="dropdown__mega-item" href="verticals/trofi.html">
+            <img class="dropdown__mega-logo logo-optical logo--trofi" src="assets/images/rebrand-2026/logos/logo-trofi-white.svg" alt="TROFI" />
+            <span class="dropdown__mega-name">TROFI</span>
+            <span class="dropdown__mega-sector">Food &amp; Hospitality</span>
+          </a>
+          <a class="dropdown__mega-item" href="verticals/beyond.html">
+            <img class="dropdown__mega-logo logo-optical logo--beyond" src="assets/images/rebrand-2026/logos/logo-beyond-white.svg" alt="BEYOND" />
+            <span class="dropdown__mega-name">BEYOND</span>
+            <span class="dropdown__mega-sector">Sports &amp; Active Living</span>
+          </a>
+          <a class="dropdown__mega-item" href="verticals/mhya.html">
+            <img class="dropdown__mega-logo logo-optical logo--mhya" src="assets/images/rebrand-2026/logos/logo-mhya-white.svg" alt="MHYA" />
+            <span class="dropdown__mega-name">MHYA</span>
+            <span class="dropdown__mega-sector">Development &amp; Places</span>
+          </a>
+          <a class="dropdown__mega-item" href="verticals/arada.html">
+            <img class="dropdown__mega-logo logo-optical logo--arada" src="assets/images/rebrand-2026/logos/logo-arada-white.svg" alt="ARADA Saudi" />
+            <span class="dropdown__mega-name">ARADA Saudi <span class="dropdown__mega-tag">Partnership</span></span>
+            <span class="dropdown__mega-sector">Master-planned Communities</span>
+          </a>
+          <a class="dropdown__mega-item" href="verticals/xeed.html">
+            <img class="dropdown__mega-logo logo-optical logo--xeed" src="assets/images/rebrand-2026/logos/logo-xeed-mark-white.svg" alt="XEED" />
+            <span class="dropdown__mega-name">XEED</span>
+            <span class="dropdown__mega-sector">Agriculture &amp; Food</span>
+          </a>
         </div>
       </div>
       <div class="nav__item">
@@ -68,7 +90,7 @@
       <div class="nav__item dropdown">
         <a class="nav__cta" href="contact.html">Contact <span aria-hidden="true">→</span></a>
         <div class="dropdown__menu">
-          <a class="dropdown__sub-link" href="mailto:info@xtopia.com">Email</a>
+          <a class="dropdown__sub-link" href="mailto:info@xtopia.life">Email</a>
           <a class="dropdown__sub-link" href="contact.html#map">Map</a>
           <a class="dropdown__sub-link" href="contact.html#form">Contact Form</a>
           <a class="dropdown__sub-link" href="contact.html#info">Company Information</a>
@@ -80,9 +102,11 @@
       <span></span><span></span>
     </button>
   </header>
+<!-- @nav:end -->
 
       <!-- ============ MOBILE OVERLAY MENU ============ -->
-  <div class="nav-overlay" data-overlay>
+  <!-- @nav-overlay:start -->
+<div class="nav-overlay" data-overlay>
     <div class="nav-overlay__item-wrap">
       <div class="nav-overlay__header">
         <a href="about.html" class="nav-overlay__link">About</a>
@@ -90,7 +114,7 @@
       </div>
       <div class="nav-overlay__sub">
         <a href="about.html#story">Our story</a>
-        <a href="about.html#values">Our Values</a>
+        <a href="about.html#advantage">The XTOPIA Advantage</a>
         <a href="about.html#presence">Our footprint</a>
       </div>
     </div>
@@ -100,10 +124,11 @@
         <button class="nav-overlay__toggle" aria-label="Toggle Submenu"><span class="arrow">↓</span></button>
       </div>
       <div class="nav-overlay__sub">
-        <a href="verticals/trofi.html">F&amp;B</a>
-        <a href="verticals/befit.html">Sports &amp; Wellness</a>
-        <a href="verticals/developments.html">Developments</a>
-        <a href="verticals/beyond.html">Activations</a>
+        <a href="verticals/trofi.html">TROFI</a>
+        <a href="verticals/beyond.html">BEYOND</a>
+        <a href="verticals/mhya.html">MHYA</a>
+        <a href="verticals/arada.html">ARADA Saudi (Partnership)</a>
+        <a href="verticals/xeed.html">XEED</a>
       </div>
     </div>
     <div class="nav-overlay__item-wrap">
@@ -122,7 +147,7 @@
         <button class="nav-overlay__toggle" aria-label="Toggle Submenu"><span class="arrow">↓</span></button>
       </div>
       <div class="nav-overlay__sub">
-        <a href="mailto:info@xtopia.com">Email</a>
+        <a href="mailto:info@xtopia.life">Email</a>
         <a href="contact.html#map">Map</a>
         <a href="contact.html#form">Contact Form</a>
         <a href="contact.html#info">Company Information</a>
@@ -130,6 +155,7 @@
       </div>
     </div>
   </div>
+<!-- @nav-overlay:end -->
 
 <main>
     <!-- ============ 2.1 ABOUT HERO ============ -->
@@ -321,7 +347,7 @@
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/main.js?v=62"></script>
   <script src="js/loader.js?v=62"></script>
-  <script src="js/nav.js?v=62"></script>
+  <script src="js/nav.js?v=100"></script>
   <script src="js/cursor.js?v=62"></script>
   <script src="js/scroll-animations.js?v=62"></script>
   <script src="js/horizontal-scroll.js?v=62"></script>

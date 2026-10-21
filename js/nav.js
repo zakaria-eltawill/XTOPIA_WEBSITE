@@ -19,6 +19,21 @@
   const burger = nav.querySelector('.nav__burger');
   const overlay = document.querySelector('.nav-overlay');
 
+  /* Active-link state — computed here rather than hardcoded per page, so the
+     nav/overlay partials (tools/sync-partials.py) stay byte-identical across pages. */
+  (function setActiveLinks() {
+    const inVerticalsDir = /\/verticals\//.test(path);
+    const links = document.querySelectorAll('.nav__link, .nav__cta, .nav-overlay__link');
+    links.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+      const linkFile = href.split('/').pop().split('#')[0].split('?')[0];
+      let active = linkFile === filename;
+      if (!active && inVerticalsDir && linkFile === 'verticals.html') active = true;
+      link.classList.toggle('is-active', active);
+    });
+  })();
+
   /* Scroll state */
   let ticking = false;
   function onScroll() {
