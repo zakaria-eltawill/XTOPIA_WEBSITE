@@ -270,3 +270,32 @@ function initFlipFallback() {
     } else { b.classList.add('is-on'); }
   }
 }
+
+/* Duo showcase — cards reveal from their outer edge, core pops in between */
+(function () {
+  var duos = document.querySelectorAll('.duo');
+  if (!duos.length || !window.gsap || !window.ScrollTrigger) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.registerPlugin(ScrollTrigger);
+  duos.forEach(function (d) {
+    var cards = d.querySelectorAll('.duo__card');
+    var tl = gsap.timeline({ scrollTrigger: { trigger: d, start: 'top 78%' } });
+    if (cards[0]) tl.fromTo(cards[0], { clipPath: 'inset(0 0 0 100% round 18px)', x: 40 }, { clipPath: 'inset(0 0 0 0% round 18px)', x: 0, duration: 1.2, ease: 'power4.inOut' }, 0);
+    if (cards[1]) tl.fromTo(cards[1], { clipPath: 'inset(0 100% 0 0 round 18px)', x: -40 }, { clipPath: 'inset(0 0% 0 0 round 18px)', x: 0, duration: 1.2, ease: 'power4.inOut' }, 0.1);
+    tl.from(d.querySelectorAll('.duo__num, .duo__tagline'), { opacity: 0, y: -12, duration: 0.6, stagger: 0.08 }, 0.7)
+      .from(d.querySelectorAll('.duo__body > *'), { opacity: 0, y: 18, duration: 0.6, stagger: 0.05, ease: 'power3.out' }, 0.8);
+    var core = d.querySelector('.duo__core');
+    if (core) tl.from(core, { scale: 0, opacity: 0, duration: 0.8, ease: 'back.out(1.7)' }, 1.1);
+  });
+})();
+
+/* Ecosystem row — CSS-driven reveal (line draws, items rise in sequence) */
+(function () {
+  var rows = document.querySelectorAll('.eco-row');
+  rows.forEach(function (row) {
+    if (!('IntersectionObserver' in window)) { row.classList.add('is-in'); return; }
+    var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { row.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.25 });
+    io.observe(row);
+  });
+  if (!window.gsap) return;
+})();

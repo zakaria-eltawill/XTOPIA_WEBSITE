@@ -374,3 +374,49 @@ function initFlipFallback() {
   gsap.from(sec.querySelectorAll('.xeed-col__num, .xeed-col__title, .xeed-col__text'), { y: 20, opacity: 0, duration: 0.7, stagger: 0.06, delay: 0.3, ease: 'power3.out', scrollTrigger: { trigger: sec.querySelector('.xeed-cols'), start: 'top 85%' } });
   gsap.from(sec.querySelectorAll('.xeed-stat'), { y: 30, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: sec.querySelector('.xeed-stats'), start: 'top 90%' } });
 })();
+
+/* Ecosystem row — CSS-driven reveal (line draws, items rise in sequence) */
+(function () {
+  var rows = document.querySelectorAll('.eco-row');
+  rows.forEach(function (row) {
+    if (!('IntersectionObserver' in window)) { row.classList.add('is-in'); return; }
+    var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { row.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.25 });
+    io.observe(row);
+  });
+  if (!window.gsap) return;
+  var lock = document.querySelector('.hero-lockup__word');
+  if (lock) {
+    gsap.set(lock.children, { opacity: 0, y: 8 });
+    var play = function () { gsap.to(lock.children, { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, delay: 0.3, ease: 'power2.out' }); };
+    if (document.documentElement.classList.contains('is-loaded')) play(); else window.addEventListener('xtopia:loaded', play, { once: true });
+    setTimeout(function () { gsap.set(lock.children, { opacity: 1, y: 0 }); }, 9000);
+  }
+})();
+
+/* Duo showcase — cards reveal from their outer edge, core pops in between */
+(function () {
+  var duos = document.querySelectorAll('.duo');
+  if (!duos.length || !window.gsap || !window.ScrollTrigger) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.registerPlugin(ScrollTrigger);
+  duos.forEach(function (d) {
+    var cards = d.querySelectorAll('.duo__card');
+    var tl = gsap.timeline({ scrollTrigger: { trigger: d, start: 'top 78%' } });
+    if (cards[0]) tl.fromTo(cards[0], { clipPath: 'inset(0 0 0 100% round 18px)', x: 40 }, { clipPath: 'inset(0 0 0 0% round 18px)', x: 0, duration: 1.2, ease: 'power4.inOut' }, 0);
+    if (cards[1]) tl.fromTo(cards[1], { clipPath: 'inset(0 100% 0 0 round 18px)', x: -40 }, { clipPath: 'inset(0 0% 0 0 round 18px)', x: 0, duration: 1.2, ease: 'power4.inOut' }, 0.1);
+    tl.from(d.querySelectorAll('.duo__num, .duo__tagline'), { opacity: 0, y: -12, duration: 0.6, stagger: 0.08 }, 0.7)
+      .from(d.querySelectorAll('.duo__body > *'), { opacity: 0, y: 18, duration: 0.6, stagger: 0.05, ease: 'power3.out' }, 0.8);
+    var core = d.querySelector('.duo__core');
+    if (core) tl.from(core, { scale: 0, opacity: 0, duration: 0.8, ease: 'back.out(1.7)' }, 1.1);
+  });
+})();
+
+
+/* BEYOND destinations gallery reveal */
+(function () {
+  var g = document.querySelector('.dest2__gallery');
+  if (!g) return;
+  if (!('IntersectionObserver' in window)) { g.classList.add('is-in'); return; }
+  var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { g.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.2 });
+  io.observe(g);
+})();

@@ -1146,3 +1146,15 @@ textarea:focus {
 @media (max-width: 767px) {
   .points { grid-template-columns: 1fr; }
 }
+/* Mega-menu (client, 22 Oct): logos only, smaller, more air; Partnership tag kept under ARADA */
+.dropdown__menu--mega { --logo-scale: 0.5; gap: clamp(1.5rem, 3vw, 2.75rem); padding: 1.75rem 2.25rem; min-width: 0; align-items: center; }
+.dropdown__mega-item { flex: 0 0 auto; padding: 0.9rem 0.6rem; gap: 0.6rem; justify-content: center; min-height: 64px; }
+.dropdown__mega-item .dropdown__mega-tag { margin-top: 0.1rem; }
+@media (max-width: 1200px) { .dropdown__menu--mega { flex-wrap: nowrap; } .dropdown__mega-item { flex: 0 0 auto; } }
+.dropdown__menu.dropdown__menu--mega { width: max-content; max-width: 92vw; }
+
+/* Mega-menu: optical balance + ARADA on the same line, tag tucked under it */
+.dropdown__menu--mega .dropdown__mega-item { position: relative; }
+.dropdown__menu--mega .logo--mhya { height: calc(var(--logo-h) * var(--logo-scale, 1) * 1.3); }
+.dropdown__menu--mega .logo--xeed { height: calc(var(--logo-h) * var(--logo-scale, 1) * 1.35); }
+.dropdown__menu--mega .dropdown__mega-tag { position: absolute; left: 50%; top: calc(50% + 15px); transform: translateX(-50%); margin: 0; white-space: nowrap; font-size: 8px; padding: 0.15rem 0.5rem; }
