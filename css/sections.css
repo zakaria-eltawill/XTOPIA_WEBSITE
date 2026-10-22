@@ -2140,3 +2140,9 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 @media (max-width: 600px) { .dest2__gallery { grid-template-columns: repeat(2, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .dest2__card { opacity: 1; transform: none; } }
 .dest2__info { padding: 1rem 1rem 1.1rem; } .dest2__name { font-size: 14px; }
+
+/* Optical balance wherever the five logos appear together (matches the mega-menu) */
+:is(.eco-row__logo, .verticals-grid--row .v-card__content, .careers-hero__logo-row) .logo--mhya { height: calc(var(--logo-h) * var(--logo-scale, 1) * 1.3); }
+:is(.eco-row__logo, .verticals-grid--row .v-card__content, .careers-hero__logo-row) .logo--xeed { height: calc(var(--logo-h) * var(--logo-scale, 1) * 1.35); }
+.acc-bar__logo-wrap .logo--mhya { --logo-scale: 0.72; }
+.acc-bar__logo-wrap .logo--xeed { --logo-scale: 0.74; }
