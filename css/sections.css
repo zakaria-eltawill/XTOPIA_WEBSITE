@@ -2146,3 +2146,16 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 :is(.eco-row__logo, .verticals-grid--row .v-card__content, .careers-hero__logo-row) .logo--xeed { height: calc(var(--logo-h) * var(--logo-scale, 1) * 1.35); }
 .acc-bar__logo-wrap .logo--mhya { --logo-scale: 0.72; }
 .acc-bar__logo-wrap .logo--xeed { --logo-scale: 0.74; }
+
+/* Ecosystem cards (client, 22 Oct): big cards, two per row in order 01→04, 05 full width */
+.verticals-grid--row { grid-template-columns: repeat(2, 1fr); gap: clamp(1.25rem, 2.5vw, 2.5rem); }
+.verticals-grid--row .v-card, .verticals-grid--row .v-card:nth-child(n+4) { grid-column: auto; height: clamp(420px, 60vh, 580px); }
+.verticals-grid--row .v-card:last-child { grid-column: 1 / -1; }
+.verticals-grid--row .v-card__num { font-size: clamp(3.5rem, 6vw, 5.5rem); left: 2rem; top: 1.25rem; }
+.verticals-grid--row .v-card__content { padding: clamp(1.5rem, 3vw, 3rem); }
+.verticals-grid--row .v-card__logo.logo-optical { --logo-scale: 0.85; margin-bottom: 1.25rem; }
+.verticals-grid--row .v-card__meta { font-size: 11px; }
+.verticals-grid--row .type-italic.v-card__tag { font-size: clamp(20px, 2vw, 28px); margin-bottom: 1.5rem; }
+.verticals-grid--row .btn--pill { padding: 0.95rem 1.8rem; font-size: 12px; }
+@media (max-width: 767px) { .verticals-grid--row { grid-template-columns: 1fr; } .verticals-grid--row .v-card { height: 400px; } }
+.v-card__partner { display: inline-block; margin: -0.5rem 0 0.9rem; font-size: 10px; padding: 0.3rem 0.8rem; }
