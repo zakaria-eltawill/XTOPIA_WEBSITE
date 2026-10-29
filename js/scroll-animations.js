@@ -420,3 +420,13 @@ function initFlipFallback() {
   var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { g.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.2 });
   io.observe(g);
 })();
+
+
+/* Generic grid reveal (.setting__grid) */
+(function () {
+  document.querySelectorAll('.setting__grid').forEach(function (g) {
+    if (!('IntersectionObserver' in window)) { g.classList.add('is-in'); return; }
+    var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { g.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.15 });
+    io.observe(g);
+  });
+})();

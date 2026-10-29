@@ -2517,3 +2517,35 @@ a.contact-card:hover .contact-card__arrow { transform: translate(4px, -50%); }
 :is(.eco-row__logo, .verticals-grid--row .v-card__content, .careers-hero__logo-row) .logo--xeed { height: calc(var(--logo-h) * var(--logo-scale, 1) * 1.35); }
 .acc-bar__logo-wrap .logo--mhya { --logo-scale: 0.72; }
 .acc-bar__logo-wrap .logo--xeed { --logo-scale: 0.74; }
+
+/* eco-row: ARADA set apart as the strategic partnership */
+.eco-row__item--partner { padding-left: clamp(1rem, 2vw, 1.75rem); border-left: 1px dashed rgba(191,212,221,0.35); }
+.eco-row__item--partner::before { left: clamp(1rem, 2vw, 1.75rem); }
+.eco-row__num--partner { font-family: var(--font-heading) !important; font-size: 10px !important; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 700; }
+.eco-row--light .eco-row__item--partner { border-left-color: rgba(0,38,62,0.3); }
+@media (max-width: 900px) { .eco-row__item--partner { grid-column: 1 / -1; border-left: 0; padding-left: 0; } .eco-row__item--partner::before { left: 0; } }
+/* Ecosystem accordion — ARADA set apart as the strategic partnership */
+.acc-divider { background: #0b0b0b; border-top: 1px solid rgba(240,237,227,0.12); padding: 1.1rem 0 0.9rem; }
+.acc-divider span { display: inline-flex; align-items: center; gap: 0.9rem; font-family: var(--font-heading); font-weight: 700; font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: #BFD4DD; }
+.acc-divider span::before { content: ''; width: 28px; height: 1px; background: #BFD4DD; }
+.acc-bar__idx--partner { font-size: 0; }
+.acc-bar__idx--partner::before { content: '·'; font-size: 18px; color: #BFD4DD; }
+.careers-hero__sep { width: 1px; height: 28px; background: rgba(240,237,227,0.3); align-self: center; }
+
+/* Round 3b: forward-looking note, quiet legal line under the Next block */
+.fine-print {
+  display: block;
+  max-width: none;
+  margin: 3rem 0 0;
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--c-line);
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cream-dim);
+  opacity: 0.6;
+}
+@media (max-width: 767px) { .fine-print { font-size: 9px; letter-spacing: 0.12em; } }

@@ -2159,3 +2159,54 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 .verticals-grid--row .btn--pill { padding: 0.95rem 1.8rem; font-size: 12px; }
 @media (max-width: 767px) { .verticals-grid--row { grid-template-columns: 1fr; } .verticals-grid--row .v-card { height: 400px; } }
 .v-card__partner { display: inline-block; margin: -0.5rem 0 0.9rem; font-size: 10px; padding: 0.3rem 0.8rem; }
+
+/* eco-row: ARADA set apart as the strategic partnership */
+.eco-row__item--partner { padding-left: clamp(1rem, 2vw, 1.75rem); border-left: 1px dashed rgba(191,212,221,0.35); }
+.eco-row__item--partner::before { left: clamp(1rem, 2vw, 1.75rem); }
+.eco-row__num--partner { font-family: var(--font-heading) !important; font-size: 10px !important; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 700; }
+.eco-row--light .eco-row__item--partner { border-left-color: rgba(0,38,62,0.3); }
+@media (max-width: 900px) { .eco-row__item--partner { grid-column: 1 / -1; border-left: 0; padding-left: 0; } .eco-row__item--partner::before { left: 0; } }
+/* Ecosystem cards: 4 businesses in order + ARADA as a separate strategic partnership */
+.v-grid-label { grid-column: 1 / -1; margin: 0; font-family: var(--font-heading); font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #00263E; display: flex; align-items: center; gap: 1rem; }
+.v-grid-label::after { content: ''; flex: 1; height: 1px; background: rgba(0,38,62,0.25); }
+.v-grid-label--partner { margin-top: clamp(1rem, 2vw, 1.75rem); }
+.verticals-grid--row .v-card__num--partner { font-family: var(--font-heading); font-weight: 700; font-size: 11px !important; letter-spacing: 0.28em; text-transform: uppercase; top: 1.6rem; padding: 0.45rem 0.9rem; border: 1px solid rgba(191,212,221,0.55); border-radius: 100px; color: #BFD4DD; opacity: 1; }
+
+/* ARADA — strategic partnership badge + "A complete setting for everyday life" */
+.vhero__badge { display: inline-block; margin-bottom: 1.5rem; padding: 0.45rem 1rem; border: 1px solid rgba(191,212,221,0.6); border-radius: 100px; font-family: var(--font-heading); font-weight: 700; font-size: 10.5px; letter-spacing: 0.3em; text-transform: uppercase; color: #BFD4DD; background: rgba(0,0,0,0.25); backdrop-filter: blur(4px); }
+.setting__grid { list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(240,237,227,0.15); border-left: 1px solid rgba(240,237,227,0.15); }
+.setting__item { position: relative; padding: clamp(1.5rem, 2.6vw, 2.25rem); border-right: 1px solid rgba(240,237,227,0.15); border-bottom: 1px solid rgba(240,237,227,0.15); transition: background 0.4s; opacity: 0; transform: translateY(24px); }
+.setting__grid.is-in .setting__item { opacity: 1; transform: none; transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1) calc(var(--i)*0.08s), transform 0.8s cubic-bezier(0.16,1,0.3,1) calc(var(--i)*0.08s), background 0.4s; }
+.setting__item:hover { background: rgba(191,212,221,0.05); }
+.setting__icon { display: inline-flex; width: 44px; height: 44px; color: #BFD4DD; margin-bottom: 1.25rem; }
+.setting__icon svg { width: 100%; height: 100%; }
+.setting__num { position: absolute; top: clamp(1.5rem, 2.6vw, 2.25rem); right: clamp(1.5rem, 2.6vw, 2.25rem); font-family: var(--font-number); font-weight: 800; font-size: 14px; color: rgba(191,212,221,0.7); }
+.setting__title { font-family: var(--font-heading); font-weight: 600; font-size: clamp(1.05rem, 1.4vw, 1.25rem); color: var(--color-cream); margin-bottom: 0.4rem; }
+.setting__text { font-size: 14.5px; line-height: 1.55; color: var(--color-cream-dim); }
+.setting__note { margin-top: 1.5rem; font-family: var(--font-accent); font-style: italic; color: var(--color-cream-dim); }
+@media (max-width: 900px) { .setting__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .setting__grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .setting__item { opacity: 1; transform: none; } }
+
+/* Round 3: keep MHYA framework lines level (titles reserve two lines) */
+@media (min-width: 768px) {
+  .fw-col__title { line-height: 1.5; min-height: 3em; }
+}
+
+/* Round 3b: forward-looking note, quiet legal line under the Next block */
+.fine-print {
+  display: block;
+  max-width: none;
+  margin: 3rem 0 0;
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--c-line);
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cream-dim);
+  opacity: 0.6;
+}
+@media (max-width: 767px) { .fine-print { font-size: 9px; letter-spacing: 0.12em; } }
