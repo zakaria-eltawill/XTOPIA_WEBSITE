@@ -1,6 +1,10 @@
 /* ============================================================
    XTOPIA — contact-form.js
-   Floating labels + fake submit lifecycle (no backend).
+   The site has no backend yet, so a valid submit opens the
+   visitor's email app with the message pre-filled and addressed
+   to the right inbox (careers -> hr@, everything else -> info@).
+   Swap this for a form service (e.g. Web3Forms / Formspree)
+   once the client provides an access key.
    ============================================================ */
 (function () {
   'use strict';
@@ -10,29 +14,34 @@
 
   const btn = form.querySelector('.contact__submit');
   const label = btn ? btn.querySelector('.contact__submit-label') : null;
+  const setText = (t) => { if (label) label.textContent = t; };
+  const val = (n) => { const el = form.elements[n]; return el ? String(el.value || '').trim() : ''; };
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
     if (!btn || btn.dataset.busy === '1') return;
 
-    btn.dataset.busy = '1';
-    const setText = (t) => { if (label) label.textContent = t; };
+    const reasonEl = form.elements.reason;
+    const reasonText = reasonEl && reasonEl.selectedIndex > 0 ? reasonEl.options[reasonEl.selectedIndex].text : '';
+    const to = val('reason') === 'careers' ? 'hr@xtopia.life' : 'info@xtopia.life';
+    const subject = val('subject') || (reasonText ? 'Website enquiry: ' + reasonText : 'Website enquiry');
+    const body = [
+      val('message'),
+      '',
+      '—',
+      'Name: ' + val('name'),
+      'Email: ' + val('email'),
+      reasonText ? 'Topic: ' + reasonText : ''
+    ].filter((l, i, a) => !(l === '' && i === a.length - 1)).join('\n');
 
-    setText('SENDING');
-    let dots = 0;
-    const anim = setInterval(() => { dots = (dots + 1) % 4; setText('SENDING' + '.'.repeat(dots)); }, 300);
+    btn.dataset.busy = '1';
+    setText('OPENING YOUR EMAIL…');
+    window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
     setTimeout(() => {
-      clearInterval(anim);
-      btn.classList.add('is-sent');
-      setText('SENT ✓');
-      form.reset();
-      setTimeout(() => {
-        btn.classList.remove('is-sent');
-        setText('SEND A MESSAGE');
-        btn.dataset.busy = '0';
-      }, 3200);
-    }, 1600);
+      setText('SEND A MESSAGE');
+      btn.dataset.busy = '0';
+    }, 3000);
   });
 })();

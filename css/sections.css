@@ -2070,7 +2070,7 @@ a.contact__detail-value:hover { color: var(--color-sage); }
 .duo__core { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3; width: clamp(150px, 13vw, 190px); aspect-ratio: 1; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1.1rem; background: #0e0e0e; border: 1px solid rgba(191,212,221,0.45); box-shadow: 0 0 0 10px rgba(14,14,14,0.55), 0 20px 50px rgba(0,0,0,0.5); pointer-events: none; }
 .duo__core::after { content: ''; position: absolute; inset: -12px; border-radius: 50%; border: 1px solid rgba(191,212,221,0.35); animation: duo-pulse 3.4s ease-out infinite; }
 @keyframes duo-pulse { 0% { transform: scale(0.92); opacity: 0.9; } 100% { transform: scale(1.3); opacity: 0; } }
-.duo__core-kicker { font-family: var(--font-heading); font-weight: 700; font-size: 8.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #BFD4DD; margin-bottom: 0.35rem; }
+.duo__core-kicker { font-family: var(--font-heading); font-weight: 700; font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #BFD4DD; margin-bottom: 0.35rem; }
 .duo__core-text { font-family: var(--font-accent); font-style: italic; font-size: clamp(14px, 1.15vw, 17px); line-height: 1.25; color: #FFFBF7; }
 .duo-foot { margin-top: clamp(2rem, 4vw, 3rem); }
 @media (max-width: 860px) {
@@ -2210,3 +2210,70 @@ a.contact__detail-value:hover { color: var(--color-sage); }
   opacity: 0.6;
 }
 @media (max-width: 767px) { .fine-print { font-size: 9px; letter-spacing: 0.12em; } }
+
+/* ---------- November 2026: Chairman & CEO messages (About) ---------- */
+.messages { background: var(--color-navy); color: var(--color-cream); padding: clamp(5rem, 10vw, 9rem) 0; }
+.messages .eyebrow { color: var(--color-light-blue); }
+.messages .eyebrow::before { background: var(--color-light-blue); }
+.messages__title { font-family: var(--font-heading); font-weight: 200; text-transform: uppercase; font-size: clamp(30px, 4.4vw, 64px); line-height: 1.05; margin-top: 1.25rem; }
+.messages__title em { font-family: var(--font-accent); font-style: italic; text-transform: none; color: var(--color-light-blue); }
+.msg { display: grid; grid-template-columns: minmax(220px, 4fr) 7fr; gap: clamp(2rem, 6vw, 7rem); align-items: start; margin-top: clamp(3.5rem, 7vw, 6rem); padding-top: clamp(3.5rem, 7vw, 6rem); border-top: 1px solid rgba(239,237,227,0.16); }
+.msg--reverse { grid-template-columns: 7fr minmax(220px, 4fr); }
+.msg--reverse .msg__person { order: 2; }
+.msg__person { margin: 0; position: sticky; top: calc(var(--nav-height) + 2rem); }
+.msg__photo { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: #0b1c2a; }
+.msg__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; filter: grayscale(1) contrast(1.05); }
+.msg__person figcaption { display: flex; flex-direction: column; gap: 0.35rem; margin-top: 1.25rem; }
+.msg__name { font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.04em; }
+.msg__role { font-family: var(--font-heading); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-light-blue); }
+.msg__label { font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-light-blue); margin-bottom: 1.75rem; }
+.msg__lead { margin: 0 0 2rem; font-family: var(--font-accent); font-style: italic; font-size: clamp(24px, 2.7vw, 40px); line-height: 1.25; color: var(--color-cream); }
+.msg__body > p:not(.msg__label):not(.msg__sign) { font-family: var(--font-body); font-weight: 300; font-size: clamp(15px, 1.15vw, 17px); line-height: 1.75; color: rgba(239,237,227,0.82); max-width: 62ch; margin-bottom: 1.25rem; }
+.msg__sign { margin-top: 2.25rem; font-family: var(--font-accent); font-style: italic; font-size: 22px; color: var(--color-light-blue); }
+.msg__sign::before { content: ""; display: block; width: 48px; height: 1px; background: var(--color-light-blue); opacity: 0.6; margin-bottom: 1rem; }
+@media (max-width: 900px) {
+  .msg, .msg--reverse { grid-template-columns: 1fr; gap: 2rem; }
+  .msg--reverse .msg__person { order: 0; }
+  .msg__person { position: static; display: flex; align-items: center; gap: 1.25rem; }
+  .msg__photo { width: 104px; flex: 0 0 104px; aspect-ratio: 1; border-radius: 50%; }
+  .msg__person figcaption { margin-top: 0; }
+  .msg__lead { font-size: 24px; }
+}
+
+/* November 2026 mobile audit: team cards fit the phone width (no sideways scroll) */
+.team-grid > * { min-width: 0; }
+.compact-card__info { min-width: 0; }
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .compact-card__media { width: 76px; height: 76px; }
+  .compact-card__name { font-size: 15px; }
+}
+
+/* Mobile audit: SOHO split stacks on phones (was forced 2-col inline) */
+.feature__grid--split { align-items: center; }
+@media (min-width: 1024px) { .feature__grid--split { grid-template-columns: 0.85fr 1.15fr; } }
+@media (max-width: 1023px) {
+  .feature__grid--split { gap: 2.5rem; }
+  #soho .vstats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.75rem; }
+  #soho .vstat .lbl { white-space: normal; }
+}
+@media (max-width: 767px) { .fine-print { font-size: 10px; letter-spacing: 0.1em; opacity: 0.7; } }
+
+/* Mobile/tablet only (desktop untouched): home hero lockup sits in the true centre */
+@media (max-width: 1023px) {
+  #top.hero { align-items: center; }
+  #top .hero__inner.mobile-push-up { padding: var(--nav-height) var(--gutter) var(--nav-height) !important; min-height: 100svh; }
+  #top .hero-lockup { width: min(78vw, 520px); }
+}
+
+/* Mobile only: XEED "From farm to shelf" reads top-to-bottom, centred */
+@media (max-width: 767px) {
+  .route__steps { flex-direction: column; flex-wrap: nowrap; gap: 0.6rem; width: 100%; font-size: 11.5px; letter-spacing: 0.12em; }
+  .route__steps span:not([aria-hidden]) { width: min(100%, 300px); text-align: center; padding: 0.8rem 1rem; }
+  .route__steps span[aria-hidden] { transform: rotate(90deg); line-height: 1; opacity: 0.55; }
+  .route .type-italic { font-size: clamp(20px, 6vw, 26px); line-height: 1.3; max-width: 22ch; margin-inline: auto; }
+}
+@media (max-width: 767px) {
+  .route .eyebrow { justify-content: center; padding-left: 0; margin-inline: auto; }
+  .route .eyebrow::before { display: none; }
+}
