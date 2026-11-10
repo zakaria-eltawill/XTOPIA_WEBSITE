@@ -2549,3 +2549,32 @@ a.contact-card:hover .contact-card__arrow { transform: translate(4px, -50%); }
   opacity: 0.6;
 }
 @media (max-width: 767px) { .fine-print { font-size: 9px; letter-spacing: 0.12em; } }
+
+/* ---------- Round 4: calmer phone layout (desktop untouched) ---------- */
+@media (max-width: 767px) {
+  .grid-texture::before { display: none; }
+  .grain::after { display: none; }
+  .duo__stats { display: none; }          /* same figures appear in the section right below */
+  .duo__core { display: none; }
+  .duo { gap: 1rem; }
+  #intro .type-heading { text-transform: none; font-size: 17px; line-height: 1.65; letter-spacing: 0; font-weight: 300; }
+  #framework { display: none; }           /* home: the five companies are listed again in the cards below */
+  .cta-block { min-height: 60vh; }
+  .cta-block__actions { flex-direction: column; width: 100%; }
+  .cta-block__actions .btn { width: min(100%, 320px); justify-content: center; }
+}
+
+/* Round 4: TROFI brand wall tighter, last three logos match the rest */
+.logo-wall-section .logo-wall { gap: clamp(1rem, 2vw, 2rem) clamp(1.5rem, 3vw, 3rem); margin-top: 3rem; }
+.logo-wall-section .logo-wall-item { aspect-ratio: 3 / 2; }
+.logo-wall-item.logo-wall-item--sm img { max-height: 56%; max-width: 62%; }
+@media (min-width: 1025px) { .logo-wall-section .logo-wall { grid-template-columns: repeat(6, 1fr); } }
+@media (max-width: 560px) { .logo-wall-section .logo-wall { gap: 1rem 1.5rem; } }
+@media (max-width: 560px) {
+  .logo-wall-section .logo-wall { grid-template-columns: repeat(3, 1fr); gap: 0.5rem 1rem; margin-top: 2rem; }
+  .logo-wall-item.logo-wall-item--sm img { max-height: 68%; max-width: 78%; }
+}
+@media (max-width: 767px) {
+  .stat-row.duo-foot { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; }
+  .stat-row.duo-foot .stat-row__item { padding-left: 1rem; border-left: 1px solid var(--c-line-bright); }
+}

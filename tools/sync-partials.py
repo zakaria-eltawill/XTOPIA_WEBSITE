@@ -25,7 +25,7 @@ PARTIALS_DIR = ROOT / "partials"
 
 PAGES = [
     "index.html", "about.html", "verticals.html", "careers.html",
-    "people.html", "contact.html",
+    "people.html", "contact.html", "privacy.html", "terms.html",
     "verticals/beyond.html",
     "verticals/trofi.html",
     "verticals/mhya.html", "verticals/arada.html", "verticals/xeed.html",

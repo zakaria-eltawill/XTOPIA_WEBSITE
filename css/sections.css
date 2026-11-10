@@ -2277,3 +2277,50 @@ a.contact__detail-value:hover { color: var(--color-sage); }
   .route .eyebrow { justify-content: center; padding-left: 0; margin-inline: auto; }
   .route .eyebrow::before { display: none; }
 }
+
+/* ---------- Round 4: legal pages ---------- */
+.legal { padding: calc(var(--nav-height) + clamp(3rem, 8vw, 6rem)) 0 clamp(4rem, 9vw, 7rem); }
+.legal__wrap { max-width: 860px; }
+.legal__draft { display: inline-block; margin-bottom: 2rem; padding: 0.5rem 0.9rem; border: 1px dashed var(--color-maroon); border-radius: 4px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-maroon); }
+.legal__title { font-family: var(--font-heading); font-weight: 200; text-transform: uppercase; font-size: clamp(32px, 5vw, 64px); line-height: 1.05; margin-top: 1rem; color: var(--text-on-light); }
+.legal__meta { font-family: var(--font-heading); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; margin: 1rem 0 2.5rem; }
+.legal h2 { font-family: var(--font-heading); font-weight: 500; font-size: 17px; margin: 2.5rem 0 0.75rem; color: var(--text-on-light); }
+.legal p, .legal li { font-family: var(--font-body); font-weight: 300; font-size: 16px; line-height: 1.75; color: var(--text-on-light); opacity: 0.88; }
+.legal p + p { margin-top: 0.9rem; }
+.legal ul { margin: 0.5rem 0 0.9rem 1.2rem; list-style: disc; }
+.legal li { margin-bottom: 0.5rem; }
+.legal a { color: var(--color-maroon); text-decoration: underline; text-underline-offset: 3px; }
+.legal strong { font-weight: 500; }
+
+/* ---------- Round 4 (client, Nov 2026) ---------- */
+/* Home CTA: two actions */
+.cta-block__actions { display: flex; flex-wrap: wrap; gap: 1rem 1.25rem; justify-content: center; align-items: center; }
+/* About: leadership message portraits much smaller, beside the name */
+@media (min-width: 901px) {
+  .msg, .msg--reverse { grid-template-columns: 1fr; gap: 2rem; max-width: 980px; }
+  .msg--reverse .msg__person { order: 0; }
+  .msg__person { position: static; display: flex; align-items: center; gap: 1.5rem; }
+  .msg__photo { width: 132px; flex: 0 0 132px; aspect-ratio: 1; border-radius: 50%; }
+  .msg__person figcaption { margin-top: 0; }
+}
+/* ARADA projects: name is the title, tagline on its own line */
+.proj-title { margin-bottom: 0; }
+.proj-tagline { font-family: var(--font-accent); font-style: italic; font-size: clamp(20px, 2.1vw, 30px); line-height: 1.25; margin-top: 0.6rem; color: var(--color-light-blue); }
+.bg-cream .proj-tagline { color: var(--color-maroon); }
+
+/* ---------- Round 4: calmer phone layout (desktop untouched) ---------- */
+@media (max-width: 767px) {
+  .grid-texture::before { display: none; }
+  .grain::after { display: none; }
+  .duo__stats { display: none; }          /* same figures appear in the section right below */
+  .duo__core { display: none; }
+  .duo { gap: 1rem; }
+  #intro .type-heading { text-transform: none; font-size: 17px; line-height: 1.65; letter-spacing: 0; font-weight: 300; }
+  #framework { display: none; }           /* home: the five companies are listed again in the cards below */
+  .cta-block { min-height: 60vh; }
+  .cta-block__actions { flex-direction: column; width: 100%; }
+  .cta-block__actions .btn { width: min(100%, 320px); justify-content: center; }
+}
+.cta-block__actions { margin-top: clamp(2rem, 4vw, 3rem); }
+.cta-block__actions .btn--solid { border-color: var(--color-dark-olive); }
+.cta-block__actions .btn--solid:hover { background-color: var(--color-cream); border-color: var(--color-cream); color: var(--c-void); }

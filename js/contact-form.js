@@ -29,7 +29,7 @@
     const body = [
       val('message'),
       '',
-      '—',
+      '---',
       'Name: ' + val('name'),
       'Email: ' + val('email'),
       reasonText ? 'Topic: ' + reasonText : ''
